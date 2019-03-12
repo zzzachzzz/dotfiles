@@ -1,0 +1,16 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Anaconda",
+		"Monokai Extended",
+		"Naomi",
+		"Package Control",
+		"PackageResourceViewer",
+		"SideBarEnhancements",
+		"Theme - Gravity"
+	]
+}

@@ -1,0 +1,8 @@
+{
+    "python_interpreter": "python3",
+    "anaconda_linter_underlines": false,
+    "anaconda_linter_mark_style": "none",
+    "auto_formatting": false,
+    // "anaconda_linting": false,
+    // "swallow_startup_errors": false,
+}
