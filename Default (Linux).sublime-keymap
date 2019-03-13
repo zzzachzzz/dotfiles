@@ -1,0 +1,17 @@
+[
+    { "keys": ["ctrl+shift+c"], "command": "cancel_build" },
+    { "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_menu" },
+    { "keys": ["ctrl+k", "ctrl+o"], "command": "prompt_open_folder"},
+    { "keys": ["ctrl+shift+down"], "command": "select_lines", "args": {"forward": true} },
+    { "keys": ["ctrl+shift+up"], "command": "select_lines", "args": {"forward": false} },
+    { "keys": ["ctrl+k", "ctrl+k"], "command": "toggle_side_bar" },
+    {
+        "keys": ["j", "j"],
+        "command": "exit_insert_mode",
+        "context":
+        [
+            { "key": "setting.command_mode", "operand": false },
+            { "key": "setting.is_widget", "operand": false }
+        ]
+    },
+]

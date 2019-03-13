@@ -1,26 +1,19 @@
 {
-    // Colors
-    "color_scheme": "Packages/Theme - Gravity/Monokai Gravity.tmTheme",
-    "theme": "Gravity.sublime-theme",
-
-    // Enable Vintage Mode
-    "ignored_packages": [], // Ignores Vintage by default
-
-    // Font
-    "dpi_scale": 1.0,
-    "font_size": 14,
-
-    // Whitespace
-    "tab_size": 4,
+	"bold_folder_labels": true,
+	"caret_style": "solid",
+	"color_scheme": "Packages/Theme - Gravity/Monokai Gravity v2.sublime-color-scheme",
+	"dpi_scale": 1.0,
+	"draw_white_space": "selection",
+	"ensure_newline_at_eof_on_save": true,
+	"font_size": 14,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+	],
+	"show_full_path": true,
+	"tab_size": 4,
+	"theme": "Gravity.sublime-theme",
 	"translate_tabs_to_spaces": true,
-    "draw_white_space": "selection",
-    "trim_trailing_white_space_on_save": true,
-    "ensure_newline_at_eof_on_save": true,
-
-    // Look & Feel
-    "caret_style": "solid",
-    "wide_caret": true,
-    "bold_folder_labels": true,
-    "highlight_line": true,
-    "show_full_path": true,
+	"trim_trailing_white_space_on_save": true,
+	"wide_caret": true,
 }
