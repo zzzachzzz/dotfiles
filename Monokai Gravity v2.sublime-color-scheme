@@ -1,0 +1,10 @@
+{
+    "variables":
+    {
+        "blue": "hsl(203, 55%, 63%)",
+    },
+    "globals":
+    {
+        "block_caret": "var(blue)",
+    }
+}
