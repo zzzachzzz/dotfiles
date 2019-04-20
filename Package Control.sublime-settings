@@ -5,7 +5,7 @@
 	],
 	"installed_packages":
 	[
-		"Anaconda",
+		"Jedi - Python autocompletion",
 		"Naomi",
 		"Package Control",
 		"PackageResourceViewer",
