@@ -39,4 +39,8 @@
     { "keys": ["ctrl+j"], "command": "sublime_jedi_docstring"},
     { "keys": ["alt+b"], "command": "sublime_jedi_goto"},
     // Jedi
+
+    // Custom copy_pytest_command
+    { "keys": ["ctrl+shift+r"], "command": "copy_pytest_command" },
+    // Custom copy_pytest_command
 ]
