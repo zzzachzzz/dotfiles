@@ -1,0 +1,47 @@
+{
+	"auto_complete_cycle": true,
+	"auto_complete_function_params": "required",
+	"auto_complete_triggers":
+	[
+		{
+			"characters": ".",
+			"selector": "source.python"
+		},
+		{
+			"characters": "<",
+			"selector": "text.html"
+		}
+	],
+	"bold_folder_labels": true,
+	"caret_style": "solid",
+	"color_scheme": "Packages/Naomi/Candyman.tmTheme",
+	"completion_timeout": 3,
+	"dpi_scale": 1.0,
+	"draw_white_space": "selection",
+	"enable_in_sublime_repl": false,
+	"enable_tooltip": true,
+	"ensure_newline_at_eof_on_save": true,
+	"follow_imports": false,
+	"font_size": 14,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+	],
+	"python_interpreter": "/usr/bin/python",
+	"python_package_paths":
+	[
+		"/Users/zacharyros/Developer/crane/crane_apps",
+		"/Users/zacharyros/Developer/crane/crane_apps/common",
+		"/Users/zacharyros/Developer/crane/crane_apps/perception/tests/api/api-tests"
+	],
+	"python_virtualenv": "",
+	"show_full_path": true,
+	"sublime_completions_visibility": "jedi",
+	"sublime_goto_layout": "single-panel",
+	"tab_size": 4,
+	"theme": "Gravity One.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"vintage_start_in_command_mode": true,
+	"wide_caret": true
+}

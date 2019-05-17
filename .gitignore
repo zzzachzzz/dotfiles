@@ -1,0 +1,8 @@
+# Ignore all
+*
+# Except for
+!*.sublime-keymap
+!*.sublime-settings
+!*.sublime-color-scheme
+!*.sublime-build
+

@@ -1,0 +1,17 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"gruvbox",
+		"Jedi - Python autocompletion",
+		"Naomi",
+		"Package Control",
+		"PackageResourceViewer",
+		"Pretty JSON",
+		"SideBarEnhancements",
+		"Theme - Gravity"
+	]
+}
