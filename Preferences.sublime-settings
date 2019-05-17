@@ -28,12 +28,6 @@
 	[
 	],
 	"python_interpreter": "/usr/bin/python",
-	"python_package_paths":
-	[
-		"/Users/zacharyros/Developer/crane/crane_apps",
-		"/Users/zacharyros/Developer/crane/crane_apps/common",
-		"/Users/zacharyros/Developer/crane/crane_apps/perception/tests/api/api-tests"
-	],
 	"python_virtualenv": "",
 	"show_full_path": true,
 	"sublime_completions_visibility": "jedi",
