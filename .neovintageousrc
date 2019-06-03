@@ -1,0 +1,15 @@
+" Type :h neovintageousrc for help.
+noremap J 5j
+noremap K 5k
+noremap W 5w
+noremap B 5b
+noremap M J
+noremap 0 ^
+noremap ^ 0
+noremap ; :
+noremap , ;
+" map < ,
+noremap <lt> ,
+noremap <C-s> :w<CR>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv

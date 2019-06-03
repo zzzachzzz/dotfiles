@@ -5,12 +5,14 @@
 	],
 	"installed_packages":
 	[
-		"gruvbox",
+		"Jade",
 		"Jedi - Python autocompletion",
 		"Naomi",
+		"NeoVintageous",
 		"Package Control",
 		"PackageResourceViewer",
 		"Pretty JSON",
+		"Python Flake8 Lint",
 		"SideBarEnhancements",
 		"Theme - Gravity"
 	]

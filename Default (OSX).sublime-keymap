@@ -5,16 +5,16 @@
     { "keys": ["ctrl+shift+down"], "command": "select_lines", "args": {"forward": true} },
     { "keys": ["ctrl+shift+up"], "command": "select_lines", "args": {"forward": false} },
     { "keys": ["super+k", "super+k"], "command": "toggle_side_bar" },
-    // Vintage - exit insert mode
+
+    // Neovintageous
     {
         "keys": ["j", "j"],
-        "command": "exit_insert_mode",
-        "context":
-        [
-            { "key": "setting.command_mode", "operand": false },
-            { "key": "setting.is_widget", "operand": false }
-        ]
+        "command": "_enter_normal_mode",
+        "args": {"mode": "mode_insert"},
+        "context": [{"key": "vi_insert_mode_aware"}]
     },
+    // Neovintageous
+
     // Tab through auto complete suggestions
     {
         "keys": ["tab"],
