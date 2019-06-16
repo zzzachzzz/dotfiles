@@ -13,3 +13,6 @@ noremap <lt> ,
 noremap <C-s> :w<CR>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+set number
+imap jj <Esc>
+
