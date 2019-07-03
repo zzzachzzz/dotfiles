@@ -18,3 +18,4 @@ vnoremap <S-Tab> <gv
 
 imap jj <Esc>
 set number
+
