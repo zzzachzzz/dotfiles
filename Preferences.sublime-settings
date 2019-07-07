@@ -27,7 +27,8 @@
 		"*.tga",
 		"*.ttf",
 		"*.zip",
-		".webassets-cache/**"
+		".webassets-cache/**",
+		"node_modules/**"
 	],
 	"bold_folder_labels": true,
 	"caret_style": "solid",
