@@ -6,13 +6,16 @@ noremap B 5b
 noremap M J
 noremap 0 ^
 noremap ^ 0
-noremap ; :
 noremap , ;
-" map < ,
+" nnoremap ; :
+" below is: noremap < ,
+noremap m `
+noremap ` m
 noremap <lt> ,
 noremap <C-s> :w<CR>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
-set number
+
 imap jj <Esc>
+set number
 
