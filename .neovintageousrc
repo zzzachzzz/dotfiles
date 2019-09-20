@@ -6,16 +6,18 @@ noremap B 5b
 noremap M J
 noremap 0 ^
 noremap ^ 0
-noremap , ;
+" g_ goes to end of line without newline character
+noremap $ g_
 " nnoremap ; :
 " below is: noremap < ,
 noremap m `
 noremap ` m
 noremap <lt> ,
+noremap , ;
 noremap <C-s> :w<CR>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
+" No effect in Sublime Neovintageous
 imap jj <Esc>
 set number
-

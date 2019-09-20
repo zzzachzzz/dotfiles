@@ -34,6 +34,7 @@
 	"caret_style": "solid",
 	"color_scheme": "Packages/Theme - Gravity/Monokai Gravity v2.sublime-color-scheme",
 	"completion_timeout": 3,
+	"default_line_ending": "unix",
 	"dpi_scale": 1.0,
 	"draw_white_space": "selection",
 	"enable_in_sublime_repl": false,
@@ -49,7 +50,8 @@
 		"Vintageous"
 	],
 	"neovintageous_build_version": 11100,
-	"python_interpreter": "/usr/bin/python",
+	// "python_interpreter": "/usr/bin/python",
+	"python_interpreter": "C:\\Program Files (x86)\\Python37-32\\python.exe",
 	"python_virtualenv": "",
 	"show_full_path": true,
 	"sublime_completions_visibility": "jedi",
