@@ -28,7 +28,11 @@
 		"*.ttf",
 		"*.zip",
 		".webassets-cache/**",
-		"node_modules/**"
+		"node_modules/**",
+		"wp-content/cache/**",
+		"*.min.js",
+		"*.min.css",
+		"*.sql"
 	],
 	"bold_folder_labels": true,
 	"caret_style": "solid",
@@ -45,12 +49,12 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"Naomi",
 		"Six",
 		"Vintage",
 		"Vintageous"
 	],
 	"neovintageous_build_version": 11100,
-	// "python_interpreter": "/usr/bin/python",
 	"python_interpreter": "C:\\Program Files (x86)\\Python37-32\\python.exe",
 	"python_virtualenv": "",
 	"show_full_path": true,

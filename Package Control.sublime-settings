@@ -5,13 +5,14 @@
 	],
 	"installed_packages":
 	[
-		"Jade",
+		"Babel",
 		"Jedi - Python autocompletion",
 		"Naomi",
 		"NeoVintageous",
 		"Package Control",
 		"PackageResourceViewer",
 		"Pretty JSON",
+		"SCSS",
 		"SideBarEnhancements",
 		"Theme - Gravity"
 	]

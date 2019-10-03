@@ -17,6 +17,7 @@ noremap , ;
 noremap <C-s> :w<CR>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+noremap <Space> "
 
 " No effect in Sublime Neovintageous
 imap jj <Esc>
