@@ -17,8 +17,26 @@ noremap , ;
 noremap <C-s> :w<CR>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
-noremap <Space> "
 
+" Stupid hack since .neovintageousrc needs <Space> (can't indent)
+try
+let mapleader="<Space>"
+catch
+endtry
 " No effect in Sublime Neovintageous
-imap jj <Esc>
-set number
+if 1
+    let mapleader = "\<Space>"
+    imap jj <Esc>
+    set number
+    func! GetSelectedText()
+        normal gv"xy
+        let result = getreg("x")
+        return result
+    endfunc
+    if !has("clipboard") && executable("clip.exe")
+        noremap <C-c> :call system('clip.exe', GetSelectedText())<CR>
+        noremap <C-x> :call system('clip.exe', GetSelectedText())<CR>gvx
+    endif
+endif
+
+nnoremap <Leader>a ggVG
