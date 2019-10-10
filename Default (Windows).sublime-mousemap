@@ -1,0 +1,8 @@
+[
+    // Remove a cursor with alt + leftClick
+    {
+        "button": "button1", "count": 1, "modifiers": ["alt"],
+        "press_command": "drag_select",
+        "press_args": {"by": "lines", "subtractive": true}
+    },
+]

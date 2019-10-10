@@ -2,6 +2,7 @@
 *
 # Except for
 !*.sublime-keymap
+!*.sublime-mousemap
 !*.sublime-settings
 !*.sublime-color-scheme
 !*.sublime-build
