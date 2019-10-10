@@ -3,6 +3,10 @@
 	"in_process_packages":
 	[
 	],
+	"install_prereleases":
+	[
+		"NeoVintageous"
+	],
 	"installed_packages":
 	[
 		"Babel",
@@ -11,6 +15,7 @@
 		"NeoVintageous",
 		"Package Control",
 		"PackageResourceViewer",
+		"PowerShell",
 		"Pretty JSON",
 		"SCSS",
 		"SideBarEnhancements",
