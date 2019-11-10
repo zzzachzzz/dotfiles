@@ -1,10 +1,10 @@
 [
     { "keys": ["ctrl+shift+c"], "command": "cancel_build" },
-    { "keys": ["alt+k", "alt+m"], "command": "toggle_menu" },
-    { "keys": ["alt+k", "alt+o"], "command": "prompt_open_folder"},
+    { "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_menu" },
+    { "keys": ["ctrl+k", "ctrl+o"], "command": "prompt_open_folder"},
     { "keys": ["ctrl+shift+down"], "command": "select_lines", "args": {"forward": true} },
     { "keys": ["ctrl+shift+up"], "command": "select_lines", "args": {"forward": false} },
-    { "keys": ["alt+k", "alt+k"], "command": "toggle_side_bar" },
+    { "keys": ["ctrl+k", "ctrl+k"], "command": "toggle_side_bar" },
 
     // Neovintageous
     {
@@ -37,7 +37,7 @@
     },
     // Jedi
     { "keys": ["ctrl+j"], "command": "sublime_jedi_docstring"},
-    { "keys": ["alt+b"], "command": "sublime_jedi_goto"},
+    { "keys": ["ctrl+b"], "command": "sublime_jedi_goto"},
     // Jedi
 
     // Custom copy_pytest_command
