@@ -5,7 +5,7 @@ noremap W 5w
 noremap B 5b
 noremap M J
 noremap 0 ^
-noremap ^ 0
+noremap ) 0
 noremap ; :
 " g_ goes to end of line without newline character
 noremap $ g_
@@ -13,6 +13,10 @@ noremap $ g_
 " below is: noremap < ,
 noremap m `
 noremap ` m
+noremap ' "
+noremap q @
+noremap @ q
+noremap qq @@
 noremap <lt> ,
 noremap , ;
 noremap <C-s> :w<CR>
@@ -37,6 +41,7 @@ if 1
         let result = getreg("x")
         return result
     endfunc
+    " For WSL accessing Windows clipboard
     if !has("clipboard") && executable("clip.exe")
         noremap <C-c> :call system('clip.exe', GetSelectedText())<CR>
         noremap <C-x> :call system('clip.exe', GetSelectedText())<CR>gvx
@@ -49,5 +54,13 @@ noremap <Leader>k :NextView<CR>
 noremap <Leader>h :FocusGroup group=0<CR>
 noremap <Leader>l :FocusGroup group=1<CR>
 endif
+
+" Yank and paste using system clipboard.
+noremap <leader>y "+y
+noremap <leader>Y "+Y
+noremap <leader>p "+p
+noremap <leader>P "+P
+noremap <leader>d "+d
+noremap <leader>D "+D
 
 nnoremap <Leader>a ggVG

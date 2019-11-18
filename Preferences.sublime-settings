@@ -29,7 +29,10 @@
 		"*.swf",
 		"*.tga",
 		"*.ttf",
-		"*.zip"
+		"*.zip",
+		"package-lock.json",
+		"*.map",
+		"*.css.BAK*"
 	],
 	"bold_folder_labels": true,
 	"caret_style": "solid",
@@ -71,7 +74,7 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"vintage_start_in_command_mode": true,
-	"vintageous_use_ctrl_keys": null,
+	"vintageous_use_ctrl_keys": true,
 	"vintageous_use_super_keys": null,
 	"wide_caret": true
 }

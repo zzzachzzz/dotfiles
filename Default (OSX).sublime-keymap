@@ -36,7 +36,7 @@
             ]
     },
     // Jedi
-    { "keys": ["ctrl+j"], "command": "sublime_jedi_docstring"},
+    { "keys": ["super+j"], "command": "sublime_jedi_docstring"},
     { "keys": ["super+b"], "command": "sublime_jedi_goto"},
     // Jedi
 
