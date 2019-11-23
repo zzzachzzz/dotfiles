@@ -1,10 +1,25 @@
 [
     { "keys": ["ctrl+shift+c"], "command": "cancel_build" },
-    { "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_menu" },
-    { "keys": ["ctrl+k", "ctrl+o"], "command": "prompt_open_folder"},
-    { "keys": ["ctrl+shift+down"], "command": "select_lines", "args": {"forward": true} },
-    { "keys": ["ctrl+shift+up"], "command": "select_lines", "args": {"forward": false} },
-    { "keys": ["ctrl+k", "ctrl+k"], "command": "toggle_side_bar" },
+    { "keys": ["alt+k", "alt+m"], "command": "toggle_menu" },
+    { "keys": ["alt+k", "alt+o"], "command": "prompt_open_folder"},
+    { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
+    { "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
+    { "keys": ["alt+k", "alt+k"], "command": "toggle_side_bar" },
+    { "keys": ["alt+d"], "command": "find_under_expand" },
+    { "keys": ["alt+k", "alt+d"], "command": "find_under_expand_skip" },
+    { "keys": ["alt+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
+    { "keys": ["alt+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+    { "keys": ["alt+p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+    { "keys": ["alt+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+    { "keys": ["alt+n"], "command": "new_file" },
+    { "keys": ["alt+s"], "command": "save" },
+    { "keys": ["alt+shift+s"], "command": "prompt_save_as" },
+    { "keys": ["alt+w"], "command": "close" },
+    { "keys": ["alt+shift+t"], "command": "reopen_last_file" },
+
+    // Unbinds
+    { "keys": ["ctrl+b"], "command": "" },  // build
+    { "keys": ["ctrl+f"], "command": "" },  // find
 
     // Neovintageous
     {
@@ -36,8 +51,8 @@
             ]
     },
     // Jedi
-    { "keys": ["ctrl+j"], "command": "sublime_jedi_docstring"},
-    { "keys": ["ctrl+b"], "command": "sublime_jedi_goto"},
+    { "keys": ["alt+j"], "command": "sublime_jedi_docstring"},
+    { "keys": ["alt+b"], "command": "sublime_jedi_goto"},
     // Jedi
 
     // Custom copy_pytest_command
