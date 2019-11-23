@@ -54,13 +54,12 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Naomi",
 		"Six",
 		"Vintage",
 		"Vintageous"
 	],
 	"neovintageous_build_version": 11100,
-	"python_interpreter": "C:\\Program Files (x86)\\Python37-32\\python.exe",
+	"python_interpreter": "/usr/bin/python3",
 	"python_virtualenv": "",
 	"show_full_path": true,
 	"show_line_endings": true,
