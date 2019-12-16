@@ -8,6 +8,10 @@
 			"selector": "source.python"
 		},
 		{
+			"characters": ".<",
+			"selector": "source.cs"
+		},
+		{
 			"characters": "<",
 			"selector": "text.html"
 		}
