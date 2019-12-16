@@ -1,10 +1,11 @@
 [
     { "keys": ["ctrl+shift+c"], "command": "cancel_build" },
+    { "keys": ["alt+k", "alt+k"], "command": "toggle_side_bar" },
     { "keys": ["alt+k", "alt+m"], "command": "toggle_menu" },
     { "keys": ["alt+k", "alt+o"], "command": "prompt_open_folder"},
     { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
     { "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
-    { "keys": ["alt+k", "alt+k"], "command": "toggle_side_bar" },
+    // Windows ctrl -> alt rebinds
     { "keys": ["alt+d"], "command": "find_under_expand" },
     { "keys": ["alt+k", "alt+d"], "command": "find_under_expand_skip" },
     { "keys": ["alt+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
@@ -16,11 +17,9 @@
     { "keys": ["alt+shift+s"], "command": "prompt_save_as" },
     { "keys": ["alt+w"], "command": "close" },
     { "keys": ["alt+shift+t"], "command": "reopen_last_file" },
-
     // Unbinds
     { "keys": ["ctrl+b"], "command": "" },  // build
     { "keys": ["ctrl+f"], "command": "" },  // find
-
     // Neovintageous
     {
         "keys": ["j", "j"],
@@ -28,8 +27,6 @@
         "args": {"mode": "mode_insert"},
         "context": [{"key": "vi_insert_mode_aware"}]
     },
-    // Neovintageous
-
     // Tab through auto complete suggestions
     {
         "keys": ["tab"],
@@ -50,12 +47,31 @@
                 { "key": "auto_complete_visible", "operator": "equal", "operand": true }
             ]
     },
+    { "keys": ["ctrl+j"], "command": "goto_definition" },
     // Jedi
-    { "keys": ["alt+j"], "command": "sublime_jedi_docstring"},
-    { "keys": ["alt+b"], "command": "sublime_jedi_goto"},
-    // Jedi
-
+    {
+        "keys": ["ctrl+j"],
+        "command": "sublime_jedi_goto",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.py"
+            }
+        ]
+    },
+    // OmniSharp
+    {
+        "keys": ["ctrl+j"],
+        "command": "omni_sharp_go_to_definition",
+        "context": [
+            {
+                "key": "selector",
+                "operator": "equal",
+                "operand": "source.cs"
+            }
+        ]
+    },
     // Custom copy_pytest_command
     { "keys": ["ctrl+shift+r"], "command": "copy_pytest_command" },
-    // Custom copy_pytest_command
 ]

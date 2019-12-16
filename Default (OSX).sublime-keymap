@@ -1,11 +1,10 @@
 [
     { "keys": ["ctrl+shift+c"], "command": "cancel_build" },
+    { "keys": ["super+k", "super+k"], "command": "toggle_side_bar" },
     { "keys": ["super+k", "super+m"], "command": "toggle_menu" },
     { "keys": ["super+k", "super+o"], "command": "prompt_open_folder"},
     { "keys": ["ctrl+shift+down"], "command": "select_lines", "args": {"forward": true} },
     { "keys": ["ctrl+shift+up"], "command": "select_lines", "args": {"forward": false} },
-    { "keys": ["super+k", "super+k"], "command": "toggle_side_bar" },
-
     // Neovintageous
     {
         "keys": ["j", "j"],
@@ -13,8 +12,6 @@
         "args": {"mode": "mode_insert"},
         "context": [{"key": "vi_insert_mode_aware"}]
     },
-    // Neovintageous
-
     // Tab through auto complete suggestions
     {
         "keys": ["tab"],
@@ -60,7 +57,6 @@
             }
         ]
     },
-
     // Custom copy_pytest_command
     { "keys": ["ctrl+shift+r"], "command": "copy_pytest_command" },
 ]
