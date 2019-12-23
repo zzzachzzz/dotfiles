@@ -5,4 +5,3 @@ sublime/*
 !*.sublime-settings
 !*.sublime-color-scheme
 !*.sublime-build
-!.neovintageousrc
