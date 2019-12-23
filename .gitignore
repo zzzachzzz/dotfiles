@@ -1,6 +1,5 @@
-# Ignore all
-*
-# Except for
+# Ignore all in Sublime except for...
+sublime/*
 !*.sublime-keymap
 !*.sublime-mousemap
 !*.sublime-settings
