@@ -1,0 +1,9 @@
+# Aliases
+alias cmd="cmd.exe /c"
+alias subl="subl.exe"
+alias h="cd ~/_"
+alias wh="cd /mnt/d/Users/Zach/Desktop/"
+
+# Other
+export DISPLAY="localhost:0.0"
+
