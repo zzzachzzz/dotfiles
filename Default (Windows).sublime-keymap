@@ -9,14 +9,19 @@
     { "keys": ["alt+d"], "command": "find_under_expand" },
     { "keys": ["alt+k", "alt+d"], "command": "find_under_expand_skip" },
     { "keys": ["alt+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
+    { "keys": ["alt+shift+f"], "command": "show_panel", "args": {"panel": "find_in_files"} },
     { "keys": ["alt+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
     { "keys": ["alt+p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
     { "keys": ["alt+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
-    { "keys": ["alt+n"], "command": "new_file" },
+    { "keys": ["alt+t"], "command": "new_file" },
     { "keys": ["alt+s"], "command": "save" },
     { "keys": ["alt+shift+s"], "command": "prompt_save_as" },
     { "keys": ["alt+w"], "command": "close" },
     { "keys": ["alt+shift+t"], "command": "reopen_last_file" },
+    { "keys": ["alt+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+    { "keys": ["alt+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+    { "keys": ["alt+;"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
+    { "keys": ["alt+k", "alt+/"], "command": "toggle_inline_diff" },
     // Unbinds
     { "keys": ["ctrl+b"], "command": "" },  // build
     { "keys": ["ctrl+f"], "command": "" },  // find
@@ -48,6 +53,7 @@
             ]
     },
     { "keys": ["ctrl+j"], "command": "goto_definition" },
+    { "keys": ["ctrl+k"], "command": "jump_back" },
     // Jedi
     {
         "keys": ["ctrl+j"],

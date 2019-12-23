@@ -24,6 +24,7 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
 set ignorecase
+set scrolloff=3
 
 " Stupid hack since .neovintageousrc needs <Space> (can't indent)
 try
@@ -32,20 +33,10 @@ catch
 endtry
 " No effect in Neovintageous
 if 1
-    let mapleader = "\<Space>"
+    let mapleader=" "
     imap jj <Esc>
     set number
     set expandtab ts=4 sw=4 ai
-    func! GetSelectedText()
-        normal gv"xy
-        let result = getreg("x")
-        return result
-    endfunc
-    " For WSL accessing Windows clipboard
-    if !has("clipboard") && executable("clip.exe")
-        noremap <C-c> :call system('clip.exe', GetSelectedText())<CR>
-        noremap <C-x> :call system('clip.exe', GetSelectedText())<CR>gvx
-    endif
 " Neovintageous specific
 else
 noremap <Leader><Tab> :NextViewInStack<CR>
