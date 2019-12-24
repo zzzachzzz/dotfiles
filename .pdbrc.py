@@ -1,21 +1,14 @@
-"""
-Configuration file for pdb++ based on the author's own config
-"""
-
 import readline
 import pdb
 
+# Configuration file for pdb++ based on the author's own config
 class Config(pdb.DefaultConfig):
-
     editor = 'e'
     stdin_paste = 'epaste'
     filename_color = pdb.Color.lightgray
     use_terminal256formatter = False
-    #exec_if_unfocused = "play ~/sounds/dialtone.wav 2> /dev/null &"
 
     def __init__(self):
-        # readline.parse_and_bind('set convert-meta on')
-        # readline.parse_and_bind('Meta-/: complete')
         try:
             from pygments.formatters import terminal
         except ImportError:
@@ -29,12 +22,10 @@ class Config(pdb.DefaultConfig):
                 terminal.Name.Function:      ('darkgreen',   'blue'),
                 terminal.Name.Namespace:     ('teal',        'turquoise'),
                 })
-            # Mine
             self.sticky_by_default = True
 
     def setup(self, pdb):
-        # make 'l' an alias to 'longlist'
         Pdb = pdb.__class__
-        Pdb.do_l = Pdb.do_longlist
+        Pdb.do_l = Pdb.do_longlist  # Make 'l' an alias to 'longlist'
         Pdb.do_st = Pdb.do_sticky
 
