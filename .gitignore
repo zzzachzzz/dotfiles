@@ -5,3 +5,5 @@ sublime/*
 !*.sublime-settings
 !*.sublime-color-scheme
 !*.sublime-build
+
+.DS_Store

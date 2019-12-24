@@ -1,4 +1,15 @@
-" Type :h neovintageousrc for help.
+set number
+syntax on
+colo monokai
+set ignorecase
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set laststatus=2
+set statusline=\ %F
+set shortmess+=F
+
+imap jj <Esc>
 noremap J 5j
 noremap K 5k
 noremap W 5w
@@ -9,35 +20,25 @@ noremap ) 0
 noremap ; :
 " g_ goes to end of line without newline character
 noremap $ g_
-" nnoremap ; :
-" below is: noremap < ,
 noremap m `
 noremap ` m
 noremap ' "
 noremap q @
 noremap @ q
 noremap qq @@
+" Below is: noremap < ,
 noremap <lt> ,
 noremap , ;
 noremap <C-s> :w<CR>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
-set ignorecase
-set scrolloff=3
-
-" Stupid hack since .neovintageousrc needs <Space> (can't indent)
-try
+" .neovintageousrc needs <Space>
 let mapleader="<Space>"
-catch
-endtry
 " No effect in Neovintageous
 if 1
-    let mapleader=" "
-    imap jj <Esc>
-    set number
-    set expandtab ts=4 sw=4 ai
-" Neovintageous specific
+    let mapleader = " "
+" Neovintageous specific (can't indent)
 else
 noremap <Leader><Tab> :NextViewInStack<CR>
 noremap <Leader>j :PrevView<CR>
@@ -55,3 +56,9 @@ noremap <leader>d "+d
 noremap <leader>D "+D
 
 nnoremap <Leader>a ggVG
+
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-commentary'
+Plug 'pangloss/vim-javascript'
+call plug#end()
+

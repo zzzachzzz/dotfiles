@@ -6,4 +6,5 @@ alias wh="cd /mnt/d/Users/Zach/Desktop/"
 
 # Other
 export DISPLAY="localhost:0.0"
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 

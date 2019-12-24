@@ -5,9 +5,13 @@ alias python=python3
 export TERM="xterm-256color"
 [ -z "$TMUX" ] && tmux new-session -A -s main
 
+# Bash completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 # Other
 export EDITOR="vim"
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+export PATH="/usr/local/bin:$PATH"
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # WSL Specific Profile
 if uname -r | grep -q "Microsoft"; then
