@@ -1,4 +1,6 @@
-# Ignore all in Sublime except for...
+.vim/*
+!.vim/colors
+
 sublime/*
 !*.sublime-keymap
 !*.sublime-mousemap

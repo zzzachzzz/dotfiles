@@ -1,6 +1,6 @@
 set number
 syntax on
-colo monokai
+colo monokai_custom
 set ignorecase
 set expandtab
 set tabstop=2

@@ -2,6 +2,7 @@
 ln -s ~/github/dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/github/dotfiles/.vimrc ~/.vimrc
 ln -s ~/github/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/github/dotfiles/.vim/ ~/.vim
 ln -s ~/github/dotfiles/.vimrc ~/github/dotfiles/sublime/.neovintageousrc
 ln -s ~/github/dotfiles/sublime/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 # }}}
@@ -12,6 +13,7 @@ ln -s ~/_/github/dotfiles/.vimrc ~/.bash_profile
 ln -s ~/_/github/dotfiles/.vimrc ~/.wsl_bash_profile
 ln -s ~/_/github/dotfiles/.vimrc ~/.vimrc
 ln -s ~/_/github/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/_/github/dotfiles/.vim/ ~/.vim
 
 # Windows symlinks (from cmd)
 mklink "%UserProfile%\AppData\Roaming\Sublime Text 3\Packages\User\.neovintageousrc" "%UserProfile%\_\github\dotfiles\.vimrc"
