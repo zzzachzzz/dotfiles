@@ -67,7 +67,7 @@
         ]
     },
     // OmniSharp
-    {
+    /*{
         "keys": ["ctrl+j"],
         "command": "omni_sharp_go_to_definition",
         "context": [
@@ -77,7 +77,7 @@
                 "operand": "source.cs"
             }
         ]
-    },
+    },*/
     // Custom copy_pytest_command
     { "keys": ["ctrl+shift+r"], "command": "copy_pytest_command" },
 ]
