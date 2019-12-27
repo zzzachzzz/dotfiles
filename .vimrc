@@ -8,6 +8,7 @@ set shiftwidth=2
 set laststatus=2
 set statusline=\ %F
 set shortmess+=F
+set nocompatible
 
 imap jj <Esc>
 noremap J 5j
@@ -58,16 +59,25 @@ noremap <Leader>D "+D
 nnoremap <Leader>a ggVG
 
 " Windows & Tabs
-nmap <Leader>s :split<CR><C-w>w
-nmap <Leader>v :vsplit<CR><C-w>w
+nmap <Leader>s :new<CR><C-w>J
+nmap <Leader>v :vnew<CR><C-w>L
 nmap <Leader>w <C-w>w
 nmap <Leader>j <C-w>j
 nmap <Leader>k <C-w>k
 nmap <Leader>h <C-w>h
 nmap <Leader>l <C-w>l
-nmap <Leader>t :tabedit
+nmap <Leader>J <C-w>J
+nmap <Leader>K <C-w>K
+nmap <Leader>H <C-w>H
+nmap <Leader>L <C-w>L
+nmap <Leader>n :tabedit<Space>
+nmap <Leader>t :find<Space>
 nmap <Tab> :tabnext<CR>
 nmap <S-Tab> :tabprev<CR>
+
+" no_plugins.vim
+set path+=**
+set wildmenu
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
