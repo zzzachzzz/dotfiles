@@ -89,6 +89,10 @@ nmap <leader>8 8gt
 nmap <leader>9 9gt
 nmap <leader>0 :tablast<CR>
 
+" Comment lines with '/' (registers as '_')
+vmap <C-_> :Commentary<CR>
+nmap <C-_> :Commentary<CR>
+
 " no_plugins.vim
 set path+=**
 set wildmenu
