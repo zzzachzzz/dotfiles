@@ -58,9 +58,11 @@ noremap <Leader>D "+D
 
 nnoremap <Leader>a ggVG
 
-" Windows & Tabs
-nmap <Leader>s :new<CR><C-w>J
-nmap <Leader>v :vnew<CR><C-w>L
+" Windows & Tabs & Buffers
+nmap <Leader>s :split<CR><C-w>J
+nmap <Leader>v :vsplit<CR><C-w>L
+nmap <Leader>ns :new<CR><C-w>J
+nmap <Leader>nv :vnew<CR><C-w>L
 nmap <Leader>w <C-w>w
 nmap <Leader>j <C-w>j
 nmap <Leader>k <C-w>k
@@ -70,10 +72,22 @@ nmap <Leader>J <C-w>J
 nmap <Leader>K <C-w>K
 nmap <Leader>H <C-w>H
 nmap <Leader>L <C-w>L
-nmap <Leader>n :tabedit<Space>
-nmap <Leader>t :find<Space>
-nmap <Tab> :tabnext<CR>
-nmap <S-Tab> :tabprev<CR>
+nmap <Leader>t :tabedit<Space>
+nmap <C-p> :find<Space>
+nmap <Tab> :bnext<CR>
+nmap <S-Tab> :bprev<CR>
+nmap <Leader><Tab> :tabnext<CR>
+nmap <Leader><S-Tab> :tabprev<CR>
+nmap <leader>1 1gt
+nmap <leader>2 2gt
+nmap <leader>3 3gt
+nmap <leader>4 4gt
+nmap <leader>5 5gt
+nmap <leader>6 6gt
+nmap <leader>7 7gt
+nmap <leader>8 8gt
+nmap <leader>9 9gt
+nmap <leader>0 :tablast<CR>
 
 " no_plugins.vim
 set path+=**
