@@ -9,6 +9,7 @@ set laststatus=2
 set statusline=\ %F
 set shortmess+=F
 set nocompatible
+set wildmenu
 
 imap jj <Esc>
 noremap J 5j
@@ -59,45 +60,46 @@ noremap <Leader>D "+D
 nnoremap <Leader>a ggVG
 
 " Windows & Tabs & Buffers
-nmap <Leader>s :split<CR><C-w>J
-nmap <Leader>v :vsplit<CR><C-w>L
-nmap <Leader>ns :new<CR><C-w>J
-nmap <Leader>nv :vnew<CR><C-w>L
-nmap <Leader>w <C-w>w
-nmap <Leader>j <C-w>j
-nmap <Leader>k <C-w>k
-nmap <Leader>h <C-w>h
-nmap <Leader>l <C-w>l
-nmap <Leader>J <C-w>J
-nmap <Leader>K <C-w>K
-nmap <Leader>H <C-w>H
-nmap <Leader>L <C-w>L
-nmap <Leader>t :tabedit<Space>
-nmap <C-p> :find<Space>
-nmap <Tab> :bnext<CR>
-nmap <S-Tab> :bprev<CR>
-nmap <Leader><Tab> :tabnext<CR>
-nmap <Leader><S-Tab> :tabprev<CR>
-nmap <leader>1 1gt
-nmap <leader>2 2gt
-nmap <leader>3 3gt
-nmap <leader>4 4gt
-nmap <leader>5 5gt
-nmap <leader>6 6gt
-nmap <leader>7 7gt
-nmap <leader>8 8gt
-nmap <leader>9 9gt
-nmap <leader>0 :tablast<CR>
+noremap <Leader>s :split<CR><C-w>J
+noremap <Leader>v :vsplit<CR><C-w>L
+noremap <Leader>ns :new<CR><C-w>J
+noremap <Leader>nv :vnew<CR><C-w>L
+noremap <Leader>w <C-w>w
+noremap <Leader>j <C-w>j
+noremap <Leader>k <C-w>k
+noremap <Leader>h <C-w>h
+noremap <Leader>l <C-w>l
+noremap <Leader>J <C-w>J
+noremap <Leader>K <C-w>K
+noremap <Leader>H <C-w>H
+noremap <Leader>L <C-w>L
+noremap <Leader>t :tabedit<Space>
+noremap <Tab> :bnext<CR>
+noremap <S-Tab> :bprev<CR>
+noremap <Leader><Tab> :tabnext<CR>
+noremap <Leader><S-Tab> :tabprev<CR>
+noremap <Leader>1 1gt
+noremap <Leader>2 2gt
+noremap <Leader>3 3gt
+noremap <Leader>4 4gt
+noremap <Leader>5 5gt
+noremap <Leader>6 6gt
+noremap <Leader>7 7gt
+noremap <Leader>8 8gt
+noremap <Leader>9 9gt
+noremap <Leader>0 :tablast<CR>
+
+" FZF
+noremap <C-p> :Files<CR>
+noremap <Leader>ls :Buffers<CR>
 
 " Comment lines with '/' (registers as '_')
 vmap <C-_> :Commentary<CR>
 nmap <C-_> :Commentary<CR>
 
-" no_plugins.vim
-set path+=**
-set wildmenu
-
 call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
 call plug#end()
