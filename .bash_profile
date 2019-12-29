@@ -9,7 +9,7 @@ export TERM="xterm-256color"
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # FZF include hidden files
-export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+export FZF_DEFAULT_COMMAND='rg --hidden --glob "!.git" --files-with-matches ""'
 
 # Other
 export EDITOR="vim"
