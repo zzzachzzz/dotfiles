@@ -10,6 +10,7 @@ set statusline=\ %F
 set shortmess+=F
 set nocompatible
 set wildmenu
+set hidden
 
 imap jj <Esc>
 noremap J 5j
@@ -25,9 +26,6 @@ noremap $ g_
 noremap m `
 noremap ` m
 noremap ' "
-noremap q @
-noremap @ q
-noremap qq @@
 " Below is: noremap < ,
 noremap <lt> ,
 noremap , ;
@@ -74,8 +72,8 @@ noremap <Leader>K <C-w>K
 noremap <Leader>H <C-w>H
 noremap <Leader>L <C-w>L
 noremap <Leader>t :tabedit<Space>
-noremap <Tab> :bnext<CR>
-noremap <S-Tab> :bprev<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprev<CR>
 noremap <Leader><Tab> :tabnext<CR>
 noremap <Leader><S-Tab> :tabprev<CR>
 noremap <Leader>1 1gt
@@ -94,8 +92,7 @@ noremap <C-p> :Files<CR>
 noremap <Leader>ls :Buffers<CR>
 
 " Comment lines with '/' (registers as '_')
-vmap <C-_> :Commentary<CR>
-nmap <C-_> :Commentary<CR>
+noremap <C-_> :Commentary<CR>
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
