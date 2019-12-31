@@ -1,7 +1,9 @@
 # Aliases
-alias cmd="cmd.exe /c"
+alias cmd="cmd.exe"
+alias ps="powershell.exe"
 alias subl="subl.exe"
 alias h="cd ~/_"
+alias chrome="chrome.exe"
 
 # Other
 export DISPLAY="localhost:0.0"
