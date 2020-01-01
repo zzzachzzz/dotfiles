@@ -8,6 +8,10 @@ source $ZSH/oh-my-zsh.sh
 
 # PS1, Git Prompt, & Enable Colors {{{
 autoload -U colors && colors
+if [ ! -f ~/.git-prompt.sh ]; then
+  echo "~/.git-prompt.sh is missing. Downloading..."
+  curl -fL https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh --output ~/.git-prompt.sh
+fi
 [ -f ~/.git-prompt.sh ] && source ~/.git-prompt.sh  # Source for __git_ps1
 setopt PROMPT_SUBST;  # Needed for __git_ps1 prompt
 PS1=$'\n%F{14}%~%F{1} // %F{14}$(__git_ps1 "(%s)")\n%B$ %f%b'
