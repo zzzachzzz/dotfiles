@@ -1,5 +1,5 @@
 # Oh-My-Zsh {{{
-export ZSH="/Users/zach/.oh-my-zsh"
+export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 plugins=()

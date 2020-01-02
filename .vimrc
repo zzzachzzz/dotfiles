@@ -55,6 +55,8 @@ noremap <Leader>P "+P
 noremap <Leader>d "+d
 noremap <Leader>D "+D
 
+cnoremap <C-r><Leader> <C-r>+
+
 nnoremap <Leader>a ggVG
 
 " Windows & Tabs & Buffers
