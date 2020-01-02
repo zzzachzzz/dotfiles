@@ -1,3 +1,10 @@
+# Path {{{
+export PATH="/usr/local/bin:$PATH"
+if uname -s | grep -q "Linux"; then
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
+# }}}
+
 # Oh-My-Zsh {{{
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
@@ -53,10 +60,6 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 # }}}
 
-# Aliases {{{
-alias python=python3
-# }}}
-
 # Tmux & auto attach to session {{{
 export TERM="xterm-256color"
 [ -z "$TMUX" ] && tmux new-session -A -s main
@@ -67,10 +70,10 @@ export FZF_DEFAULT_COMMAND='rg --hidden --glob "!.git" --files-with-matches ""'
 
 # Other {{{
 export EDITOR="vim"
-export PATH="/usr/local/bin:$PATH"
+alias python=python3
 # }}}
 
-# WSL Specific Profile
+# WSL specific profile
 if uname -r | grep -q "Microsoft"; then
     [ -f ~/.wsl_profile ] && . ~/.wsl_profile
 fi
