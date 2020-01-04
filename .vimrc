@@ -11,6 +11,9 @@ set shortmess+=F
 set nocompatible
 set wildmenu
 set hidden
+set encoding=utf8
+set backspace=indent,eol,start
+au BufEnter * set fo-=c fo-=r fo-=o
 
 imap jj <Esc>
 noremap J 5j
@@ -65,14 +68,17 @@ noremap <Leader>v :vsplit<CR><C-w>L
 noremap <Leader>ns :new<CR><C-w>J
 noremap <Leader>nv :vnew<CR><C-w>L
 noremap <Leader>w <C-w>w
-noremap <Leader>j <C-w>j
-noremap <Leader>k <C-w>k
-noremap <Leader>h <C-w>h
-noremap <Leader>l <C-w>l
 noremap <Leader>J <C-w>J
 noremap <Leader>K <C-w>K
 noremap <Leader>H <C-w>H
 noremap <Leader>L <C-w>L
+
+" Resize windows
+noremap <silent> <S-Up> :<C-U>ObviousResizeUp 5<CR>
+noremap <silent> <S-Down> :<C-U>ObviousResizeDown 5<CR>
+noremap <silent> <S-Left> :<C-U>ObviousResizeLeft 5<CR>
+noremap <silent> <S-Right> :<C-U>ObviousResizeRight 5<CR>
+
 noremap <Leader>t :tabedit<Space>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprev<CR>
@@ -102,7 +108,14 @@ let g:fzf_action = {
 " Comment lines with '/' (registers as '_')
 noremap <C-_> :Commentary<CR>
 
+" NerdTree
+noremap <Leader><Space> :NERDTreeToggle<CR>
+let g:NERDTreeIgnore = ['^.git$']
+
 call plug#begin('~/.vim/plugged')
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'talek/obvious-resize'
+Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
