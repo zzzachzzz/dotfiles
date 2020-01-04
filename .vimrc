@@ -91,7 +91,13 @@ noremap <Leader>0 :tablast<CR>
 
 " FZF
 noremap <C-p> :Files<CR>
-noremap <Leader>ls :Buffers<CR>
+noremap <Leader>f :Files<CR>
+noremap <Leader>b :Buffers<CR>
+
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 " Comment lines with '/' (registers as '_')
 noremap <C-_> :Commentary<CR>
