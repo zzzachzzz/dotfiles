@@ -18,6 +18,8 @@ source ~/.zplug/init.zsh
 # Plugins {{{
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "plugins/extract", from:oh-my-zsh
 # }}}
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -29,7 +31,7 @@ zplug load
 # }}}
 
 # Zsh Plugin Keybinds {{{
-bindkey '^j' autosuggest-accept
+bindkey '^n' autosuggest-accept
 # }}}
 
 # PS1, Git Prompt, & Enable Colors {{{
