@@ -34,12 +34,26 @@ zplug load
 bindkey '^n' autosuggest-accept
 # }}}
 
+# Misc. Files to Download if Missing {{{
+files=(
+  ~/.git-prompt.sh  # For __git_ps1
+  ~/.ctagsrc  # Improved JavaScript tag patterns
+)
+urls=(
+  https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+  https://raw.githubusercontent.com/romainl/ctags-patterns-for-javascript/master/ctagsrc
+)
+for i in {1..$#files}; do
+  if [ ! -f $files[$i] ]; then
+    echo "$files[$i] is missing. Downloading..."
+    curl -fL $urls[$i] --output $files[$i]
+  fi
+done
+unset files urls i
+# }}}
+
 # PS1, Git Prompt, & Enable Colors {{{
 autoload -U colors && colors
-if [ ! -f ~/.git-prompt.sh ]; then
-  echo "~/.git-prompt.sh is missing. Downloading..."
-  curl -fL https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh --output ~/.git-prompt.sh
-fi
 [ -f ~/.git-prompt.sh ] && source ~/.git-prompt.sh  # Source for __git_ps1
 setopt PROMPT_SUBST;  # Needed for __git_ps1 prompt
 PS1=$'\n%F{14}%~%F{1} // %F{14}$(__git_ps1 "(%s)")\n%B$ %f%b'
@@ -73,6 +87,7 @@ export FZF_DEFAULT_COMMAND='rg --hidden --glob "!.git" --files-with-matches ""'
 # Other {{{
 export EDITOR="vim"
 alias python=python3
+alias mktags="ctags -R --exclude=@$HOME/.ctagsignore --options=$HOME/.ctagsrc ."
 # }}}
 
 # WSL specific profile

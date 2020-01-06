@@ -1,6 +1,7 @@
 set number
 syntax on
 colo monokai_custom
+set cursorline
 set ignorecase
 set expandtab
 set tabstop=2
@@ -99,6 +100,7 @@ noremap <Leader>0 :tablast<CR>
 noremap <C-p> :Files<CR>
 noremap <Leader>f :Files<CR>
 noremap <Leader>b :Buffers<CR>
+noremap <Leader>F :Rg<Space>
 
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
