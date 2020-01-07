@@ -82,12 +82,12 @@ export TERM="xterm-256color"
 # }}}
 
 # FZF include hidden files
-export FZF_DEFAULT_COMMAND='rg --hidden --glob "!.git" --files-with-matches ""'
+export FZF_DEFAULT_COMMAND='rg --hidden --ignore-file ~/.ignore --files-with-matches ""'
 
 # Other {{{
 export EDITOR="vim"
 alias python=python3
-alias mktags="ctags -R --exclude=@$HOME/.ctagsignore --options=$HOME/.ctagsrc ."
+alias mktags="ctags -R --exclude=@$HOME/.ignore --options=$HOME/.ctagsrc ."
 # }}}
 
 # WSL specific profile

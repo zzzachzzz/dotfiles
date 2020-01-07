@@ -3,7 +3,7 @@ ln -s ~/github/dotfiles/.zshrc ~/.zshrc
 ln -s ~/github/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/github/dotfiles/.vimrc ~/.vimrc
 ln -s ~/github/dotfiles/.vim/ ~/.vim
-ln -s ~/github/dotfiles/.ctagsignore ~/.ctagsignore
+ln -s ~/github/dotfiles/.ignore ~/.ignore
 ln -s ~/github/dotfiles/.gitignore_global ~/.gitignore_global
 ln -s ~/github/dotfiles/.vimrc ~/github/dotfiles/sublime/.neovintageousrc
 ln -s ~/github/dotfiles/sublime/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
@@ -16,7 +16,7 @@ ln -s ~/_/github/dotfiles/.wsl_profile ~/.wsl_profile
 ln -s ~/_/github/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/_/github/dotfiles/.vimrc ~/.vimrc
 ln -s ~/_/github/dotfiles/.vim/ ~/.vim
-ln -s ~/_/github/dotfiles/.ctagsignore ~/.ctagsignore
+ln -s ~/_/github/dotfiles/.ignore ~/.ignore
 ln -s ~/_/github/dotfiles/.gitignore_global ~/.gitignore_global
 
 # Windows symlinks (from cmd)
