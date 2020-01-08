@@ -1,5 +1,10 @@
 .git
+tags
 node_modules
 *.json
+*.yaml
 *.svg
+[Bb]in
+[Bb]uild
+[Dd]ebug
 
