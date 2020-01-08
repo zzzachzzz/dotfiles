@@ -1,3 +1,13 @@
+call plug#begin('~/.vim/plugged')
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'talek/obvious-resize'
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-commentary'
+Plug 'pangloss/vim-javascript'
+call plug#end()
+
 set number
 syntax on
 colo monokai_custom
@@ -113,14 +123,16 @@ noremap <C-_> :Commentary<CR>
 " NerdTree
 noremap <Leader><Space> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['^.git$']
+command! NTF NERDTreeFind
 
-call plug#begin('~/.vim/plugged')
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'talek/obvious-resize'
-Plug 'preservim/nerdtree'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-commentary'
-Plug 'pangloss/vim-javascript'
-call plug#end()
+function! ToggleScrollOff999()
+    if &scrolloff == 999 || &scrolloff == 0
+        set scrolloff=3
+    else
+        set scrolloff=999
+    endif
+endfunction
+
+command! Scroll call ToggleScrollOff999()
+call ToggleScrollOff999()  " Sets inital scrolloff value
 
