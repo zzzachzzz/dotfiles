@@ -61,8 +61,8 @@ PS1=$'\n%F{14}%~%F{1} // %F{14}$(__git_ps1 "(%s)")\n%B$ %f%b'
 
 # Zsh Settings {{{
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt autocd
 autoload -Uz compinit
 compinit

@@ -1,3 +1,6 @@
 # Ctags File for Vim
 tags
+*.swp
+*.swo
+*.swn
 

@@ -17,7 +17,6 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set laststatus=2
-set statusline=\ %F
 set shortmess+=F
 set nocompatible
 set wildmenu
@@ -106,7 +105,7 @@ noremap <Leader>8 8gt
 noremap <Leader>9 9gt
 noremap <Leader>0 :tablast<CR>
 
-" FZF
+" FZF {{{
 noremap <C-p> :Files<CR>
 noremap <Leader>f :Files<CR>
 noremap <Leader>b :Buffers<CR>
@@ -116,6 +115,7 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
+" }}}
 
 " Comment lines with '/' (registers as '_')
 noremap <C-_> :Commentary<CR>

@@ -1,6 +1,7 @@
 # Aliases {{{
 alias cmd="cmd.exe"
-alias ps="powershell.exe"
+alias psh="powershell.exe"
+alias explorer="explorer.exe"
 alias subl="subl.exe"
 alias h="cd ~/_"
 alias chrome="chrome.exe"
