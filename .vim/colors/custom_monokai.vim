@@ -114,7 +114,7 @@ call s:h("Normal",        { "fg": s:white,      "bg": s:trueblack })
 call s:h("ColorColumn",   {                     "bg": s:lightblack })
 call s:h("Cursor",        { "fg": s:black,      "bg": s:white })
 call s:h("CursorColumn",  {                     "bg": s:lightblack2 })
-call s:h("CursorLine",    {                     "bg": s:lightblack2 })
+call s:h("CursorLine",    {                     "bg": s:trueblack })
 call s:h("NonText",       { "fg": s:lightgrey })
 call s:h("StatusLine",    { "fg": s:trueblack,   "bg": s:purple,        "format": "reverse" })
 call s:h("StatusLineNC",  { "fg": s:trueblack,   "bg": s:white,     "format": "reverse" })
@@ -129,7 +129,7 @@ call s:h("ErrorMsg",      { "fg": s:black,      "bg": s:red,          "format": 
 call s:h("WarningMsg",    { "fg": s:red })
 call s:h("VertSplit",     { "fg": s:darkgrey,   "bg": s:darkblack })
 call s:h("LineNr",        { "fg": s:grey,       "bg": s:trueblack })
-call s:h("CursorLineNr",  { "fg": s:orange,     "bg": s:lightblack })
+call s:h("CursorLineNr",  { "fg": s:orange,     "bg": s:trueblack })
 call s:h("SignColumn",    {                     "bg": s:lightblack })
 
 " spell

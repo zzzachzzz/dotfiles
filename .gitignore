@@ -1,11 +1,22 @@
-/.vim/*
-!/.vim/colors/
+.vim/*
+!.vim/colors/
+.vim/plugged/*
+!.vim/plugged/
+.vim/plugged/vim-airline-themes/*
+!.vim/plugged/vim-airline-themes/
+.vim/plugged/vim-airline-themes/autoload/*
+!.vim/plugged/vim-airline-themes/autoload/
+.vim/plugged/vim-airline-themes/autoload/airline/*
+!.vim/plugged/vim-airline-themes/autoload/airline/
+.vim/plugged/vim-airline-themes/autoload/airline/themes/*
+!.vim/plugged/vim-airline-themes/autoload/airline/themes/
+!.vim/plugged/vim-airline-themes/autoload/airline/themes/custom_base16_monokai.vim
 
-/sublime/*
-!/sublime/*.sublime-keymap
-!/sublime/*.sublime-mousemap
-!/sublime/*.sublime-settings
-!/sublime/*.sublime-color-scheme
-!/sublime/*.sublime-build
+sublime/*
+!sublime/*.sublime-keymap
+!sublime/*.sublime-mousemap
+!sublime/*.sublime-settings
+!sublime/*.sublime-color-scheme
+!sublime/*.sublime-build
 
 .DS_Store

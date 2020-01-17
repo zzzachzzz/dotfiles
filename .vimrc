@@ -5,12 +5,18 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'chrisbra/Colorizer'
 Plug 'pangloss/vim-javascript'
 call plug#end()
 
+set nocompatible
+set noshowmode
+set termguicolors
 set number
 syntax on
-colo monokai_custom
+colo custom_monokai
 set cursorline
 set ignorecase
 set expandtab
@@ -18,7 +24,6 @@ set tabstop=2
 set shiftwidth=2
 set laststatus=2
 set shortmess+=F
-set nocompatible
 set wildmenu
 set hidden
 set encoding=utf8
@@ -92,18 +97,6 @@ noremap <silent> <S-Right> :<C-U>ObviousResizeRight 5<CR>
 noremap <Leader>t :tabedit<Space>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprev<CR>
-noremap <Leader><Tab> :tabnext<CR>
-noremap <Leader><S-Tab> :tabprev<CR>
-noremap <Leader>1 1gt
-noremap <Leader>2 2gt
-noremap <Leader>3 3gt
-noremap <Leader>4 4gt
-noremap <Leader>5 5gt
-noremap <Leader>6 6gt
-noremap <Leader>7 7gt
-noremap <Leader>8 8gt
-noremap <Leader>9 9gt
-noremap <Leader>0 :tablast<CR>
 
 " FZF {{{
 noremap <C-p> :Files<CR>
@@ -123,19 +116,70 @@ command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-hea
 " Comment lines with '/' (registers as '_')
 noremap <C-_> :Commentary<CR>
 
-" NerdTree
+" Vim-Airline {{{
+let g:airline_powerline_fonts = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_count = 1
+let g:airline#extensions#tabline#tab_nr_type = 1  " Tab number
+let g:airline#extensions#tabline#tabnr_formatter = 'tabnr'
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#buf_label_first = 0
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#keymap_ignored_filetypes = ['nerdtree']
+let g:airline#extensions#tabline#buffer_nr_show = 0
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_theme = 'custom_base16_monokai'
+let g:airline_section_y = '' "Get rid of the file encoding
+let g:airline_section_z = '%l:%c'
+" Truncate the status mode to one capital letter
+let g:airline_mode_map = {
+\ '__' : '-',
+\ 'n'  : 'N',
+\ 'i'  : 'I',
+\ 'R'  : 'R',
+\ 'c'  : 'C',
+\ 'v'  : 'V',
+\ 'V'  : 'V',
+\ '^V' : 'V',
+\ 's'  : 'S',
+\ 'S'  : 'S',
+\ '^S' : 'S',
+\ }
+nmap <Leader>1 <Plug>AirlineSelectTab1
+nmap <Leader>2 <Plug>AirlineSelectTab2
+nmap <Leader>3 <Plug>AirlineSelectTab3
+nmap <Leader>4 <Plug>AirlineSelectTab4
+nmap <Leader>5 <Plug>AirlineSelectTab5
+nmap <Leader>6 <Plug>AirlineSelectTab6
+nmap <Leader>7 <Plug>AirlineSelectTab7
+nmap <Leader>8 <Plug>AirlineSelectTab8
+nmap <Leader>9 <Plug>AirlineSelectTab9
+nmap <Leader><Tab> <Plug>AirlineSelectNextTab
+nmap <Leader><S-Tab> <Plug>AirlineSelectPrevTab
+" }}}
+
+" NerdTree {{{
 noremap <Leader><Space> :NERDTreeToggle<CR>
-let g:NERDTreeIgnore = ['^.git$']
+let g:NERDTreeIgnore = ['^\.git$']
 command! NTF NERDTreeFind
+" }}}
+
+" Colorize
+command! CH ColorHighlight
 
 function! ToggleScrollOff999()
-    if &scrolloff == 999 || &scrolloff == 0
-        set scrolloff=3
+    if &scrolloff == 999
+        set scrolloff=4
     else
         set scrolloff=999
     endif
 endfunction
 
 command! Scroll call ToggleScrollOff999()
-call ToggleScrollOff999()  " Sets inital scrolloff value
+set scrolloff=4
 
