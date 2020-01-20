@@ -38,12 +38,12 @@ let s:cterm0E = 141
 let s:cterm0F = 167
 
 let s:N1   = [ s:gui0H, s:gui0D, s:cterm01, s:cterm0B ]
-let s:N2   = [ s:gui0H, s:gui08, s:cterm06, s:cterm02 ]
+let s:N2   = [ s:gui06, s:gui0H, s:cterm06, s:cterm02 ]
 let s:N3   = [ s:gui06, s:gui0H, s:cterm09, s:cterm01 ]
 let g:airline#themes#custom_base16_monokai#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
 
 let s:I1   = [ s:gui01, s:gui0B, s:cterm01, s:cterm0D ]
-let s:I2   = [ s:gui0H, s:gui08, s:cterm06, s:cterm02 ]
+let s:I2   = [ s:gui06, s:gui0H, s:cterm06, s:cterm02 ]
 let s:I3   = [ s:gui06, s:gui0H, s:cterm09, s:cterm01 ]
 let g:airline#themes#custom_base16_monokai#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
 
