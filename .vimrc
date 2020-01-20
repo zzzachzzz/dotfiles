@@ -7,6 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'natebosch/vim-lsc'
 Plug 'ajh17/VimCompletesMe'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-obsession'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chrisbra/Colorizer'
@@ -134,7 +135,7 @@ let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme = 'custom_base16_monokai'
-let g:airline_section_y = '' "Get rid of the file encoding
+let g:airline_section_y = '%{ObsessionStatus()}'
 let g:airline_section_z = '%l:%c'
 " Truncate the status mode to one capital letter
 let g:airline_mode_map = {
@@ -202,6 +203,9 @@ let g:lsc_auto_map = {
 
 " Colorize
 command! CH ColorHighlight
+
+" Vim-Obsession
+nnoremap <Leader>o :Obsess<Space>~/.vim/sessions/
 
 function! ToggleScrollOff999()
     if &scrolloff == 999

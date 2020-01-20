@@ -88,6 +88,7 @@ export FZF_DEFAULT_COMMAND='rg --hidden --ignore-file ~/.ignore --files-with-mat
 export EDITOR="vim"
 alias python=python3
 alias mktags="ctags -R --exclude=@$HOME/.ignore --options=$HOME/.ctagsrc ."
+alias vimS="vim -S ~/.vim/sessions/"
 # }}}
 
 # WSL specific profile
