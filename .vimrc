@@ -4,6 +4,8 @@ Plug 'talek/obvious-resize'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'natebosch/vim-lsc'
+Plug 'ajh17/VimCompletesMe'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -95,8 +97,6 @@ noremap <silent> <S-Left> :<C-U>ObviousResizeLeft 5<CR>
 noremap <silent> <S-Right> :<C-U>ObviousResizeRight 5<CR>
 
 noremap <Leader>t :tabedit<Space>
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprev<CR>
 
 " FZF {{{
 noremap <C-p> :Files<CR>
@@ -159,14 +159,45 @@ nmap <Leader>6 <Plug>AirlineSelectTab6
 nmap <Leader>7 <Plug>AirlineSelectTab7
 nmap <Leader>8 <Plug>AirlineSelectTab8
 nmap <Leader>9 <Plug>AirlineSelectTab9
-nmap <Leader><Tab> <Plug>AirlineSelectNextTab
-nmap <Leader><S-Tab> <Plug>AirlineSelectPrevTab
+nmap <Tab> <Plug>AirlineSelectNextTab
+nmap <S-Tab> <Plug>AirlineSelectPrevTab
 " }}}
 
 " NerdTree {{{
 noremap <Leader><Space> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['^\.git$']
 command! NTF NERDTreeFind
+" }}}
+
+set completeopt=menu,menuone,noinsert,noselect
+" Vim Language Server Client (vim-lsc) {{{
+let g:lsc_server_commands = {
+\  'python': {
+\    'command': 'pyls',
+\    'log_level': -1,
+\    'suppress_stderr': v:true,
+\  },
+\  'javascript': {
+\    'command': 'typescript-language-server --stdio',
+\    'log_level': -1,
+\    'suppress_stderr': v:true,
+\  }
+\}
+let g:lsc_auto_map = {
+\  'GoToDefinition': '<C-]>',
+\  'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
+\  'FindReferences': 'gr',
+\  'NextReference': '<C-n>',
+\  'PreviousReference': '<C-p>',
+\  'FindImplementations': 'gI',
+\  'FindCodeActions': 'ga',
+\  'Rename': 'gR',
+\  'ShowHover': v:true,
+\  'DocumentSymbol': 'go',
+\  'WorkspaceSymbol': 'gS',
+\  'SignatureHelp': 'gm',
+\  'Completion': 'completefunc',
+\}
 " }}}
 
 " Colorize
