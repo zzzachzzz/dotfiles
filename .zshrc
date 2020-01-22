@@ -1,5 +1,5 @@
 # Path {{{
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:$HOME/.local/bin:$PATH"
 if uname -s | grep -q "Linux"; then
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi

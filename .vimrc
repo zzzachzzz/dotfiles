@@ -100,7 +100,6 @@ noremap <silent> <S-Right> :<C-U>ObviousResizeRight 5<CR>
 noremap <Leader>t :tabedit<Space>
 
 " FZF {{{
-noremap <C-p> :Files<CR>
 noremap <Leader>f :Files<CR>
 noremap <Leader>b :Buffers<CR>
 noremap <Leader>F :Rg<Space>
@@ -193,7 +192,7 @@ let g:lsc_auto_map = {
 \  'FindImplementations': 'gI',
 \  'FindCodeActions': 'ga',
 \  'Rename': 'gR',
-\  'ShowHover': v:true,
+\  'ShowHover': 'gh',
 \  'DocumentSymbol': 'go',
 \  'WorkspaceSymbol': 'gS',
 \  'SignatureHelp': 'gm',
