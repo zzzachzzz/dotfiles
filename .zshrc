@@ -37,11 +37,9 @@ bindkey '^n' autosuggest-accept
 # Misc. Files to Download if Missing {{{
 files=(
   ~/.git-prompt.sh  # For __git_ps1
-  ~/.ctagsrc  # Improved JavaScript tag patterns
 )
 urls=(
   https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-  https://raw.githubusercontent.com/romainl/ctags-patterns-for-javascript/master/ctagsrc
 )
 for i in {1..$#files}; do
   if [ ! -f $files[$i] ]; then
@@ -87,7 +85,7 @@ export FZF_DEFAULT_COMMAND='rg --hidden --ignore-file ~/.ignore --files-with-mat
 # Other {{{
 export EDITOR="vim"
 alias python=python3
-alias mktags="ctags -R --exclude=@$HOME/.ignore --options=$HOME/.ctagsrc ."
+alias mktags="ctags -R --exclude=@$HOME/.ignore ."
 alias vimS="vim -S ~/.vim/sessions/"
 # }}}
 

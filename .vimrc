@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'talek/obvious-resize'
 Plug 'preservim/nerdtree'
+Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'natebosch/vim-lsc'
@@ -168,6 +169,9 @@ noremap <Leader><Space> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['^\.git$']
 command! NTF NERDTreeFind
 " }}}
+
+" Tagbar
+noremap <Leader>l :TagbarToggle<CR>
 
 set completeopt=menu,menuone,noinsert,noselect
 " Vim Language Server Client (vim-lsc) {{{
