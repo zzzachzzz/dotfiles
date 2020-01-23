@@ -85,7 +85,7 @@ export FZF_DEFAULT_COMMAND='rg --hidden --ignore-file ~/.ignore --files-with-mat
 # Other {{{
 export EDITOR="vim"
 alias python=python3
-alias mktags="ctags -R --exclude=@$HOME/.ignore ."
+alias mktags="ctags -R --exclude=@$HOME/.ignore --exclude='*.json' --exclude='*.yaml' ."
 alias vimS="vim -S ~/.vim/sessions/"
 # }}}
 

@@ -3,6 +3,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'talek/obvious-resize'
 Plug 'preservim/nerdtree'
 Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'natebosch/vim-lsc'
@@ -104,6 +105,7 @@ noremap <Leader>t :tabedit<Space>
 noremap <Leader>f :Files<CR>
 noremap <Leader>b :Buffers<CR>
 noremap <Leader>F :Rg<Space>
+noremap <Leader>r :BTags<CR>
 
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -173,6 +175,9 @@ command! NTF NERDTreeFind
 
 " Tagbar
 noremap <Leader>l :TagbarToggle<CR>
+
+" Gutentags
+let g:gutentags_file_list_command = "rg --files --ignore-file $HOME/.ignore --glob '!*.json' --glob !'*.yaml'"
 
 set completeopt=menu,menuone,noinsert,noselect
 " Vim Language Server Client (vim-lsc) {{{
