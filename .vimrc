@@ -191,7 +191,22 @@ let g:lsc_server_commands = {
 \    'command': 'typescript-language-server --stdio',
 \    'log_level': -1,
 \    'suppress_stderr': v:true,
-\  }
+\  },
+\  'javascriptreact': {
+\    'command': 'typescript-language-server --stdio',
+\    'log_level': -1,
+\    'suppress_stderr': v:true,
+\  },
+\  'typescript': {
+\    'command': 'typescript-language-server --stdio',
+\    'log_level': -1,
+\    'suppress_stderr': v:true,
+\  },
+\  'typescriptreact': {
+\    'command': 'typescript-language-server --stdio',
+\    'log_level': -1,
+\    'suppress_stderr': v:true,
+\  },
 \}
 let g:lsc_auto_map = {
 \  'GoToDefinition': '<C-]>',
@@ -227,4 +242,12 @@ endfunction
 
 command! Scroll call ToggleScrollOff999()
 set scrolloff=4
+
+function! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+command! Trim call TrimWhitespace()
 
