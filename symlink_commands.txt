@@ -5,8 +5,9 @@ ln -s ~/github/dotfiles/.vimrc ~/.vimrc
 ln -s ~/github/dotfiles/.vim/ ~/.vim
 ln -s ~/github/dotfiles/.ignore ~/.ignore
 ln -s ~/github/dotfiles/.gitignore_global ~/.gitignore_global
-ln -s ~/github/dotfiles/.vimrc ~/github/dotfiles/sublime/.neovintageousrc
 ln -s ~/github/dotfiles/sublime/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+ln -s ~/github/dotfiles/.vimrc_ide ~/github/dotfiles/sublime/.neovintageousrc
+ln -s ~/github/dotfiles/.vimrc_ide ~/.vimrc_ide
 # }}}
 
 # WSL {{{
@@ -21,7 +22,8 @@ ln -s ~/_/github/dotfiles/.gitignore_global ~/.gitignore_global
 
 # Windows symlinks (from cmd)
 mklink /D "%UserProfile%\AppData\Roaming\Sublime Text 3\Packages\User" "%UserProfile%\_\github\dotfiles\sublime"
-mklink "%UserProfile%\AppData\Roaming\Sublime Text 3\Packages\User\.neovintageousrc" "%UserProfile%\_\github\dotfiles\.vimrc"
-mklink "%UserProfile%\.ideavimrc "%UserProfile%\_\github\dotfiles\.vimrc"
+mklink "%UserProfile%\AppData\Roaming\Sublime Text 3\Packages\User\.neovintageousrc" "%UserProfile%\_\github\dotfiles\.vimrc_ide"
+mklink "%UserProfile%\.vimrc_ide" "%UserProfile%\_\github\dotfiles\.vimrc_ide"
+mklink "%UserProfile%\.ideavimrc "%UserProfile%\_\github\dotfiles\.vimrc_ide"
 # }}}
 

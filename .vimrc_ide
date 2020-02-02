@@ -1,0 +1,34 @@
+imap jj <Esc>
+noremap J 5j
+noremap K 5k
+noremap W 5w
+noremap B 5b
+noremap M J
+noremap 0 ^
+noremap ) 0
+noremap ; :
+" g_ goes to end of line without newline character
+noremap $ g_
+noremap m `
+noremap ` m
+noremap ' "
+" Below is: noremap < ,
+noremap <lt> ,
+noremap , ;
+noremap <C-s> :w<CR>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
+let mapleader="<Space>"
+
+" Yank and paste using system clipboard.
+noremap <Leader>y "+y
+noremap <Leader>Y "+Y
+noremap <Leader>p "+p
+noremap <Leader>P "+P
+noremap <Leader>d "+d
+noremap <Leader>D "+D
+
+cnoremap <C-r><Leader> <C-r>+
+nnoremap <Leader>a ggVG
+

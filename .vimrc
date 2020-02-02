@@ -56,19 +56,7 @@ noremap <C-s> :w<CR>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
-" .neovintageousrc needs <Space>
-let mapleader="<Space>"
-" No effect in Neovintageous
-if 1
-    let mapleader = " "
-" Neovintageous specific (can't indent)
-else
-noremap <Leader><Tab> :NextViewInStack<CR>
-noremap <Leader>j :PrevView<CR>
-noremap <Leader>k :NextView<CR>
-noremap <Leader>h :FocusGroup group=0<CR>
-noremap <Leader>l :FocusGroup group=1<CR>
-endif
+let mapleader = " "
 
 " Yank and paste using system clipboard.
 noremap <Leader>y "+y
@@ -79,7 +67,6 @@ noremap <Leader>d "+d
 noremap <Leader>D "+D
 
 cnoremap <C-r><Leader> <C-r>+
-
 nnoremap <Leader>a ggVG
 
 " Windows & Tabs & Buffers
