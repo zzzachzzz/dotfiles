@@ -19,4 +19,8 @@ sublime/*
 !sublime/*.sublime-color-scheme
 !sublime/*.sublime-build
 
+vscode/*
+!vscode/keybindings.json
+!vscode/settings.json
+
 .DS_Store

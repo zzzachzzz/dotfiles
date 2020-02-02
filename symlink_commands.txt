@@ -8,6 +8,7 @@ ln -s ~/github/dotfiles/.gitignore_global ~/.gitignore_global
 ln -s ~/github/dotfiles/sublime/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 ln -s ~/github/dotfiles/.vimrc_ide ~/github/dotfiles/sublime/.neovintageousrc
 ln -s ~/github/dotfiles/.vimrc_ide ~/.vimrc_ide
+ln -s ~/github/dotfiles/vscode/ ~/Library/Application\ Support/Code/User
 # }}}
 
 # WSL {{{
@@ -25,5 +26,6 @@ mklink /D "%UserProfile%\AppData\Roaming\Sublime Text 3\Packages\User" "%UserPro
 mklink "%UserProfile%\AppData\Roaming\Sublime Text 3\Packages\User\.neovintageousrc" "%UserProfile%\_\github\dotfiles\.vimrc_ide"
 mklink "%UserProfile%\.vimrc_ide" "%UserProfile%\_\github\dotfiles\.vimrc_ide"
 mklink "%UserProfile%\.ideavimrc "%UserProfile%\_\github\dotfiles\.vimrc_ide"
+mklink /D "%UserProfile%\AppData\Roaming\Code\User" "%UserProfile%\_\github\dotfiles\vscode"
 # }}}
 

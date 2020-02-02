@@ -1,0 +1,14 @@
+{
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
+    "editor.fontSize": 16,
+    "editor.tabSize": 2,
+    "files.exclude": {
+        "node_modules": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Monokai",
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "~/.vimrc_ide"
+}
