@@ -57,8 +57,8 @@ let s:V2   = [ s:gui06, s:gui0H, s:cterm06, s:cterm02 ]
 let s:V3   = [ s:gui06, s:gui0H, s:cterm09, s:cterm01 ]
 let g:airline#themes#custom_base16_monokai#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
 
-let s:IA1   = [ s:gui05, s:gui01, s:cterm05, s:cterm01 ]
-let s:IA2   = [ s:gui05, s:gui01, s:cterm05, s:cterm01 ]
+let s:IA1   = [ s:gui05, s:gui0H, s:cterm05, s:cterm01 ]
+let s:IA2   = [ s:gui05, s:gui0H, s:cterm05, s:cterm01 ]
 let s:IA3   = [ s:gui05, s:gui0H, s:cterm05, s:cterm01 ]
 let g:airline#themes#custom_base16_monokai#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
 
