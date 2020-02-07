@@ -71,6 +71,9 @@ cnoremap <C-r><Leader> <C-r>+
 nnoremap <Leader>a ggVG
 nnoremap <Leader>% :let @+ = expand("%:p")
 
+" Close buffer without closing window
+command! -bang Bd bp|bd<bang> #
+
 " Enable native syntax highlight for .md files
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
@@ -162,7 +165,7 @@ nmap <S-Tab> <Plug>AirlineSelectPrevTab
 " NerdTree {{{
 noremap <Leader><Space> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['^\.git$', '^node_modules$']
-command! NTF NERDTreeFind
+command NTF NERDTreeFind
 " }}}
 
 " Tagbar
@@ -218,7 +221,7 @@ let g:lsc_auto_map = {
 " }}}
 
 " Colorize
-command! CH ColorHighlight
+command CH ColorHighlight
 
 " Vim-Obsession & session loading
 nnoremap <Leader>o :Obsess<Space>~/.vim/sessions/
@@ -232,7 +235,7 @@ function! ToggleScrollOff999()
     endif
 endfunction
 
-command! Scroll call ToggleScrollOff999()
+command Scroll call ToggleScrollOff999()
 set scrolloff=4
 
 function! TrimWhitespace()
@@ -241,5 +244,5 @@ function! TrimWhitespace()
     call winrestview(l:save)
 endfun
 
-command! Trim call TrimWhitespace()
+command Trim call TrimWhitespace()
 
