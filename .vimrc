@@ -69,6 +69,10 @@ noremap <Leader>D "+D
 
 cnoremap <C-r><Leader> <C-r>+
 nnoremap <Leader>a ggVG
+nnoremap <Leader>% :let @+ = expand("%:p")
+
+" Enable native syntax highlight for .md files
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 " Windows & Tabs & Buffers
 noremap <Leader>s :split<CR><C-w>J
