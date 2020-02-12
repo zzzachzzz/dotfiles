@@ -1,5 +1,7 @@
 .vim/*
 !.vim/colors/
+!.vim/snippets/
+
 .vim/plugged/*
 !.vim/plugged/
 .vim/plugged/vim-airline-themes/*

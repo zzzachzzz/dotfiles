@@ -67,9 +67,20 @@ noremap <Leader>P "+P
 noremap <Leader>d "+d
 noremap <Leader>D "+D
 
+noremap <Leader>t :tabedit<Space>
 cnoremap <C-r><Leader> <C-r>+
 nnoremap <Leader>a ggVG
 nnoremap <Leader>% :let @+ = expand("%:p")
+
+" Snippets {{{
+command ReactComponent call ReactComponentSnippet()
+function! ReactComponentSnippet()
+    -1read $HOME/.vim/snippets/ReactComponent.jsx
+    normal! 2j
+    " Replace '__component__' with the file name, without the file extension
+    s/__component__/\=substitute(expand('%:t'), '\..*', '', '')
+endfun
+" }}}
 
 " Close buffer without closing window
 command! -bang Bd bp|bd<bang> #
@@ -93,8 +104,6 @@ noremap <silent> <S-Up> :<C-U>ObviousResizeUp 5<CR>
 noremap <silent> <S-Down> :<C-U>ObviousResizeDown 5<CR>
 noremap <silent> <S-Left> :<C-U>ObviousResizeLeft 5<CR>
 noremap <silent> <S-Right> :<C-U>ObviousResizeRight 5<CR>
-
-noremap <Leader>t :tabedit<Space>
 
 " FZF {{{
 noremap <Leader>f :Files<CR>
