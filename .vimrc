@@ -75,10 +75,18 @@ nnoremap <Leader>% :let @+ = expand("%:p")
 " Snippets {{{
 command ReactComponent call ReactComponentSnippet()
 function! ReactComponentSnippet()
-    -1read $HOME/.vim/snippets/ReactComponent.jsx
+    -1read ~/.vim/snippets/ReactComponent.jsx
     normal! 2j
     " Replace '__component__' with the file name, without the file extension
     s/__component__/\=substitute(expand('%:t'), '\..*', '', '')
+endfun
+
+command -nargs=1 ReactState call ReactStateSnippet(<q-args>)
+function! ReactStateSnippet(stateVar)
+    -1read ~/.vim/snippets/ReactState.jsx
+    s/__state__/\=a:stateVar
+    s/__state__/\=toupper(a:stateVar[0]) . a:stateVar[1:]
+    normal! f)
 endfun
 " }}}
 
