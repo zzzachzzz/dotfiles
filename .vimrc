@@ -15,6 +15,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'chrisbra/Colorizer'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'hail2u/vim-css3-syntax'
 call plug#end()
 
 set nocompatible
@@ -190,6 +192,9 @@ noremap <Leader>l :TagbarToggle<CR>
 
 " Gutentags
 let g:gutentags_file_list_command = "rg --files --ignore-file $HOME/.ignore --glob '!*.json' --glob !'*.yaml'"
+
+" VimCompletesMe
+autocmd FileType css,scss let b:vcm_tab_complete = 'omni'
 
 set completeopt=menu,menuone,noinsert,noselect
 " Vim Language Server Client (vim-lsc) {{{
