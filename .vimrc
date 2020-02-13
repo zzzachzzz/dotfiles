@@ -75,6 +75,9 @@ nnoremap <Leader>a ggVG
 nnoremap <Leader>% :let @+ = expand("%:p")
 
 " Snippets {{{
+" React {{{
+command React echo 'React dummy command for tab completion'
+
 command ReactComponent call ReactComponentSnippet()
 function! ReactComponentSnippet()
     -1read ~/.vim/snippets/ReactComponent.jsx
@@ -90,6 +93,16 @@ function! ReactStateSnippet(stateVar)
     s/__state__/\=toupper(a:stateVar[0]) . a:stateVar[1:]
     normal! f)
 endfun
+
+command -nargs=1 ReactStyled call ReactStyledSnippet(<q-args>, 'ReactStyled.jsx')
+command -nargs=1 ReactStyledAttrs call ReactStyledSnippet(<q-args>, 'ReactStyledAttrs.jsx')
+function! ReactStyledSnippet(elementType, fileName)
+    execute('-1read ~/.vim/snippets/' . a:fileName)
+    s/__element__/\=toupper(a:elementType[0]) . a:elementType[1:]
+    s/__element__/\=a:elementType
+    normal! j
+endfun
+" }}}
 " }}}
 
 " Close buffer without closing window
