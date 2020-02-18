@@ -74,6 +74,7 @@ noremap <Leader>t :tabedit<Space>
 cnoremap <C-r><Leader> <C-r>+
 nnoremap <Leader>a ggVG
 nnoremap <Leader>% :let @+ = expand("%:p")
+nnoremap <silent> <Leader><Tab> :b #<CR>
 
 " Snippets {{{
 " React {{{
