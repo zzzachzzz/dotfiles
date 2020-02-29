@@ -20,6 +20,7 @@ ln -s ~/_/github/dotfiles/.vimrc ~/.vimrc
 ln -s ~/_/github/dotfiles/.vim/ ~/.vim
 ln -s ~/_/github/dotfiles/.ignore ~/.ignore
 ln -s ~/_/github/dotfiles/.gitignore_global ~/.gitignore_global
+ln -s ~/_/github/dotfiles/tmuxLayout.sh ~/.local/bin/tmuxLayout
 
 # Windows symlinks (from cmd)
 mklink /D "%UserProfile%\AppData\Roaming\Sublime Text 3\Packages\User" "%UserProfile%\_\github\dotfiles\sublime"
