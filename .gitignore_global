@@ -1,5 +1,6 @@
 # Ctags File for Vim
 tags
+tags.lock
 .notags
 *.swp
 *.swo
