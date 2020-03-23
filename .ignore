@@ -1,7 +1,6 @@
 .git
 tags
 node_modules
-*.svg
 [Bb]in
 [Bb]uild
 [Dd]ebug
