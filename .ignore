@@ -1,4 +1,5 @@
 .git
+.svn
 tags
 node_modules
 [Bb]in
