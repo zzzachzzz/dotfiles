@@ -16,8 +16,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'chrisbra/Colorizer'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'hail2u/vim-css3-syntax'
 call plug#end()
 
 set nocompatible
