@@ -36,6 +36,7 @@ set hidden
 set encoding=utf8
 set backspace=indent,eol,start
 au BufEnter * set fo-=c fo-=r fo-=o
+set history=1000
 
 imap jj <Esc>
 noremap J 5j
@@ -143,8 +144,12 @@ let g:fzf_action = {
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " . <q-args>, 1, <bang>0)
 " }}}
 
+" Vim-Commentary {{{
 " Comment lines with '/' (registers as '_')
 noremap <C-_> :Commentary<CR>
+" Use '//' instead of multi-line '/* */' for C++ comments
+autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+" }}}
 
 " Vim-Airline {{{
 let g:airline_powerline_fonts = 0
@@ -234,6 +239,11 @@ let g:lsc_server_commands = {
 \  },
 \  'typescriptreact': {
 \    'command': 'typescript-language-server --stdio',
+\    'log_level': -1,
+\    'suppress_stderr': v:true,
+\  },
+\  'cpp': {
+\    'command': 'clangd',
 \    'log_level': -1,
 \    'suppress_stderr': v:true,
 \  },
