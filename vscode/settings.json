@@ -1,14 +1,31 @@
 {
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "block",
-    "editor.fontSize": 16,
+    "editor.fontSize": 20,
     "editor.tabSize": 2,
     "files.exclude": {
         "node_modules": true
     },
     "files.trimTrailingWhitespace": true,
     "editor.minimap.enabled": false,
+	  "workbench.editor.enablePreview": false,
+	  "explorer.openEditors.visible": 0,
     "workbench.colorTheme": "Monokai",
     "vim.vimrc.enable": true,
-    "vim.vimrc.path": "~/.vimrc_ide"
+    "vim.vimrc.path": "~/.vimrc_ide",
+    "vim.leader": "<Space>",
+    "vim.handleKeys": {
+        "<C-w>": false
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<Leader>", "F"],
+            "commands": ["workbench.view.search"]
+        },
+        {
+            "before": ["<Leader>", "<Space>"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        }
+    ],
+    "extensions.ignoreRecommendations": false
 }

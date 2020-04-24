@@ -1,19 +1,70 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
-  {
-    "key": "cmd+k cmd+k",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "cmd+b",
-    "command": "-workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "cmd+r",
-    "command": "workbench.action.gotoSymbol"
-  },
-  {
-    "key": "shift+cmd+o",
-    "command": "-workbench.action.gotoSymbol"
-  }
+    {
+        "key": "Tab",
+        "command": "editor.action.indentLines",
+        "when": "editorTextFocus && vim.mode == 'VisualLine'"
+    },
+    {
+        "key": "Shift+Tab",
+        "command": "editor.action.outdentLines",
+        "when": "editorTextFocus && vim.mode == 'VisualLine'"
+    },
+    {
+        "key": "Tab",
+        "command": "workbench.action.nextEditor",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "Shift+Tab",
+        "command": "workbench.action.previousEditor",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+    },
+    {  // Removal rule
+        "key": "Ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "j",
+        "command": "workbench.action.interactivePlayground.arrowDown",
+        "when": "interactivePlaygroundFocus && !editorTextFocus"
+    },
+    {
+        "key": "k",
+        "command": "workbench.action.interactivePlayground.arrowUp",
+        "when": "interactivePlaygroundFocus && !editorTextFocus"
+    },
+    {
+        "key": "Ctrl+0",
+        "command": "-workbench.action.focusSideBar"
+    },
+    {
+        "key": "Ctrl+Space",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "Ctrl+Space",
+        "command": "workbench.action.focusSideBar",
+        "when": "!sideBarFocus"
+    },
+    {
+        "key": "Ctrl+j",
+        "command": "workbench.action.focusBelowGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "Ctrl+k",
+        "command": "workbench.action.focusAboveGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "Ctrl+h",
+        "command": "workbench.action.focusLeftGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "Ctrl+l",
+        "command": "workbench.action.focusRightGroup",
+        "when": "editorTextFocus"
+    },
 ]
