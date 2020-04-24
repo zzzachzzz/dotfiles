@@ -291,3 +291,5 @@ endfun
 
 command Trim call TrimWhitespace()
 
+nnoremap <F5> :make %<<CR>
+
