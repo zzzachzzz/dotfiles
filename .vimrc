@@ -47,6 +47,7 @@ noremap M J
 noremap 0 ^
 noremap ) 0
 noremap ; :
+noremap q; q:
 " g_ goes to end of line without newline character
 noremap $ g_
 noremap m `
@@ -74,6 +75,13 @@ cnoremap <C-r><Leader> <C-r>+
 nnoremap <Leader>a ggVG
 nnoremap <Leader>% :let @+ = expand("%:p")
 nnoremap <silent> <Leader><Tab> :b #<CR>
+
+nnoremap <F5> :make %<<CR>
+
+" Replace operation on files in quickfix list, used after :Rg
+nnoremap <Leader>R
+  \ :cfdo %s//g \| update
+  \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
 " Snippets {{{
 " React {{{
@@ -290,6 +298,4 @@ function! TrimWhitespace()
 endfun
 
 command Trim call TrimWhitespace()
-
-nnoremap <F5> :make %<<CR>
 
