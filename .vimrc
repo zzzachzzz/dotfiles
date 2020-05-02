@@ -224,38 +224,49 @@ autocmd FileType css,scss let b:vcm_tab_complete = 'omni'
 
 set completeopt=menu,menuone,noinsert,noselect
 " Vim Language Server Client (vim-lsc) {{{
-let g:lsc_server_commands = {
-\  'python': {
-\    'command': 'pyls',
-\    'log_level': -1,
-\    'suppress_stderr': v:true,
-\  },
-\  'javascript': {
-\    'command': 'typescript-language-server --stdio',
-\    'log_level': -1,
-\    'suppress_stderr': v:true,
-\  },
-\  'javascriptreact': {
-\    'command': 'typescript-language-server --stdio',
-\    'log_level': -1,
-\    'suppress_stderr': v:true,
-\  },
-\  'typescript': {
-\    'command': 'typescript-language-server --stdio',
-\    'log_level': -1,
-\    'suppress_stderr': v:true,
-\  },
-\  'typescriptreact': {
-\    'command': 'typescript-language-server --stdio',
-\    'log_level': -1,
-\    'suppress_stderr': v:true,
-\  },
-\  'cpp': {
-\    'command': 'clangd',
-\    'log_level': -1,
-\    'suppress_stderr': v:true,
-\  },
-\}
+let g:lsc_server_commands = {}
+if executable('pyls')
+  call extend(g:lsc_server_commands, {
+  \  'python': {
+  \    'command': 'pyls',
+  \    'log_level': -1,
+  \    'suppress_stderr': v:true,
+  \  },
+  \})
+endif
+if executable('typescript-language-server')
+  call extend(g:lsc_server_commands, {
+  \  'javascript': {
+  \    'command': 'typescript-language-server --stdio',
+  \    'log_level': -1,
+  \    'suppress_stderr': v:true,
+  \  },
+  \  'javascriptreact': {
+  \    'command': 'typescript-language-server --stdio',
+  \    'log_level': -1,
+  \    'suppress_stderr': v:true,
+  \  },
+  \  'typescript': {
+  \    'command': 'typescript-language-server --stdio',
+  \    'log_level': -1,
+  \    'suppress_stderr': v:true,
+  \  },
+  \  'typescriptreact': {
+  \    'command': 'typescript-language-server --stdio',
+  \    'log_level': -1,
+  \    'suppress_stderr': v:true,
+  \  },
+  \})
+endif
+if executable('clangd')
+  call extend(g:lsc_server_commands, {
+  \  'cpp': {
+  \    'command': 'clangd',
+  \    'log_level': -1,
+  \    'suppress_stderr': v:true,
+  \  },
+  \})
+endif
 let g:lsc_auto_map = {
 \  'GoToDefinition': '<C-]>',
 \  'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
