@@ -31,7 +31,7 @@ zplug load
 # }}}
 
 # Zsh Plugin Keybinds {{{
-bindkey '^n' autosuggest-accept
+bindkey '^^' autosuggest-accept  # Ctrl + Enter
 # }}}
 
 # Misc. Files to Download if Missing {{{
