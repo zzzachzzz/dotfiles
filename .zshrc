@@ -82,6 +82,9 @@ export TERM="xterm-256color"
 # FZF include hidden files
 export FZF_DEFAULT_COMMAND='rg --hidden --ignore-file ~/.ignore --files-with-matches ""'
 
+# fd use ignore file
+alias fd='fd --ignore-file ~/.ignore'
+
 # Other {{{
 export EDITOR="vim"
 alias python=python3
