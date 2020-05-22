@@ -75,6 +75,8 @@ cnoremap <C-r><Leader> <C-r>+
 nnoremap <Leader>a ggVG
 nnoremap <Leader>% :let @+ = expand("%:p")
 nnoremap <silent> <Leader><Tab> :b #<CR>
+nnoremap <silent> <C-n> :cn<CR>
+nnoremap <silent> <C-p> :cp<CR>
 
 nnoremap <F5> :make %<<CR>
 
@@ -271,8 +273,6 @@ let g:lsc_auto_map = {
 \  'GoToDefinition': '<C-]>',
 \  'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
 \  'FindReferences': 'gr',
-\  'NextReference': '<C-n>',
-\  'PreviousReference': '<C-p>',
 \  'FindImplementations': 'gI',
 \  'FindCodeActions': 'ga',
 \  'Rename': 'gR',
