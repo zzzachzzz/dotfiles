@@ -122,12 +122,11 @@ command! -bang Bd bp|bd<bang> #
 " Enable native syntax highlight for .md files
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
-" Windows & Tabs & Buffers
+" Window Splitting & Moving
 noremap <Leader>s :split<CR><C-w>J
 noremap <Leader>v :vsplit<CR><C-w>L
 noremap <Leader>ns :new<CR><C-w>J
 noremap <Leader>nv :vnew<CR><C-w>L
-noremap <Leader>w <C-w>w
 noremap <Leader>J <C-w>J
 noremap <Leader>K <C-w>K
 noremap <Leader>H <C-w>H
@@ -223,8 +222,8 @@ let g:gutentags_file_list_command = "rg --files --ignore-file $HOME/.ignore --gl
 
 " VimCompletesMe
 autocmd FileType css,scss let b:vcm_tab_complete = 'omni'
-
 set completeopt=menu,menuone,noinsert,noselect
+
 " Vim Language Server Client (vim-lsc) {{{
 let g:lsc_server_commands = {}
 if executable('pyls')
@@ -271,7 +270,7 @@ if executable('clangd')
 endif
 let g:lsc_auto_map = {
 \  'GoToDefinition': '<C-]>',
-\  'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
+\  'GoToDefinitionSplit': ['<C-w>]', '<C-w><C-]>'],
 \  'FindReferences': 'gr',
 \  'FindImplementations': 'gI',
 \  'FindCodeActions': 'ga',
