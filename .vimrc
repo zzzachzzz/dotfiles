@@ -29,6 +29,7 @@ set ignorecase
 set expandtab
 set tabstop=2
 set shiftwidth=2
+set exrc
 set laststatus=2
 set shortmess+=F
 set wildmenu

@@ -1,7 +1,11 @@
-# Ctags File for Vim
+# Ctags files for Vim
 tags
 tags.lock
 .notags
+
+# Project-specific settings
+.vimrc
+
 *.swp
 *.swo
 *.swn
