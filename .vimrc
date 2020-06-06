@@ -30,6 +30,8 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set exrc
+set splitbelow
+set splitright
 set laststatus=2
 set shortmess+=F
 set wildmenu
@@ -57,7 +59,6 @@ noremap ' "
 " Below is: noremap < ,
 noremap <lt> ,
 noremap , ;
-noremap <C-s> :w<CR>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
@@ -72,7 +73,10 @@ noremap <Leader>d "+d
 noremap <Leader>D "+D
 
 noremap <Leader>t :tabedit<Space>
-cnoremap <C-r><Leader> <C-r>+
+" Paste in insert and command line modes
+noremap! <C-r><Leader> <C-r>+
+" Alternative for jumplist since <C-i> / <Tab> is mapped to AirlineSelectNextTab
+nnoremap <Leader>i <C-i>
 nnoremap <Leader>a ggVG
 nnoremap <Leader>% :let @+ = expand("%:p")
 nnoremap <silent> <Leader><Tab> :b #<CR>
@@ -124,10 +128,10 @@ command! -bang Bd bp|bd<bang> #
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 " Window Splitting & Moving
-noremap <Leader>s :split<CR><C-w>J
-noremap <Leader>v :vsplit<CR><C-w>L
-noremap <Leader>ns :new<CR><C-w>J
-noremap <Leader>nv :vnew<CR><C-w>L
+noremap <Leader>s :split<CR>
+noremap <Leader>v :vsplit<CR>
+noremap <Leader>ns :new<CR>
+noremap <Leader>nv :vnew<CR>
 noremap <Leader>J <C-w>J
 noremap <Leader>K <C-w>K
 noremap <Leader>H <C-w>H
