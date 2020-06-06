@@ -4,7 +4,7 @@ tags.lock
 .notags
 
 # Project-specific settings
-.vimrc
+_vimrc
 
 *.swp
 *.swo

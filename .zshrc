@@ -91,6 +91,7 @@ alias python=python3
 alias mktags="ctags -R --exclude=@$HOME/.ignore --exclude='*.json' --exclude='*.yaml' ."
 alias vimS="vim -S ~/.vim/sessions/"
 export CXXFLAGS="-std=c++14"
+export LS_COLORS='ow=1;90;107'
 # }}}
 
 # WSL specific profile
