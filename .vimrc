@@ -75,6 +75,7 @@ noremap <Leader>D "+D
 noremap <Leader>t :tabedit<Space>
 " Paste in insert and command line modes
 noremap! <C-r><Leader> <C-r>+
+noremap! <C-r>' <C-r>"
 " Alternative for jumplist since <C-i> / <Tab> is mapped to AirlineSelectNextTab
 nnoremap <Leader>i <C-i>
 nnoremap <Leader>a ggVG
