@@ -9,17 +9,11 @@
 	],
 	"installed_packages":
 	[
-		"Babel",
-		"Jedi - Python autocompletion",
 		"NeoVintageous",
-		"OmniSharp",
 		"Package Control",
 		"PackageResourceViewer",
-		"PowerShell",
 		"Pretty JSON",
-		"SCSS",
 		"SideBarEnhancements",
-		"Theme - Gravity",
-		"TypeScript"
+		"Theme - Gravity"
 	]
 }
