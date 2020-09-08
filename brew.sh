@@ -9,7 +9,6 @@ brew install tmux
 brew install zsh
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 brew install llvm
-brew install cling
 # In order to ensure +clipboard for Vim
 if ! brew list | grep -q "vim"; then
   echo "Before installing vim, install dependencies from './apt.sh' (if on Linux),

@@ -79,7 +79,7 @@ noremap! <C-r>' <C-r>"
 " Alternative for jumplist since <C-i> / <Tab> is mapped to AirlineSelectNextTab
 nnoremap <Leader>i <C-i>
 nnoremap <Leader>a ggVG
-nnoremap <Leader>% :let @+ = expand("%:p")
+nnoremap <Leader>% :let @+ = expand("%:f")
 nnoremap <silent> <Leader><Tab> :b #<CR>
 nnoremap <silent> <C-n> :cn<CR>
 nnoremap <silent> <C-p> :cp<CR>

@@ -62,6 +62,7 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt autocd
+setopt ignoreeof
 autoload -Uz compinit
 compinit
 # }}}
@@ -92,6 +93,7 @@ alias mktags="ctags -R --exclude=@$HOME/.ignore --exclude='*.json' --exclude='*.
 alias vimS="vim -S ~/.vim/sessions/"
 export CXXFLAGS="-std=c++14"
 export LS_COLORS='ow=1;90;107'
+export IGNOREEOF=4
 # }}}
 
 # WSL specific profile

@@ -29,7 +29,7 @@ ln -s ~/_/github/dotfiles/.pdbrc.py ~/.pdbrc.py
 mklink /D "%UserProfile%\AppData\Roaming\Sublime Text 3\Packages\User" "%UserProfile%\_\github\dotfiles\sublime"
 mklink "%UserProfile%\AppData\Roaming\Sublime Text 3\Packages\User\.neovintageousrc" "%UserProfile%\_\github\dotfiles\.vimrc_ide"
 mklink "%UserProfile%\.vimrc_ide" "%UserProfile%\_\github\dotfiles\.vimrc_ide"
-mklink "%UserProfile%\.ideavimrc "%UserProfile%\_\github\dotfiles\.vimrc_ide"
+mklink "%UserProfile%\.ideavimrc" "%UserProfile%\_\github\dotfiles\.vimrc_ide"
 mklink /D "%UserProfile%\AppData\Roaming\Code\User" "%UserProfile%\_\github\dotfiles\vscode"
 # }}}
 
