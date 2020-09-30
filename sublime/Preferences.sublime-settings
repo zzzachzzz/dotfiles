@@ -40,7 +40,7 @@
 	],
 	"bold_folder_labels": true,
 	"caret_style": "solid",
-	"color_scheme": "Packages/Theme - Gravity/Monokai Gravity v2.sublime-color-scheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 	"completion_timeout": 3,
 	"default_line_ending": "unix",
 	"dpi_scale": 1.0,
