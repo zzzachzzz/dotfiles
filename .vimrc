@@ -292,9 +292,9 @@ let g:lsc_auto_map = {
 " Colorize
 command CH ColorHighlight
 
-" Vim-Obsession & session loading
-nnoremap <Leader>o :Obsess<Space>~/.vim/sessions/
-nnoremap <Leader>O :so<Space>~/.vim/sessions/
+" Vim-Obsession session saving & session loading
+nnoremap <Leader>O :Obsess<Space>~/.vim/sessions/
+nnoremap <Leader>o :so<Space>~/.vim/sessions/
 
 function! ToggleScrollOff999()
     if &scrolloff == 999
