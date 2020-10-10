@@ -40,7 +40,7 @@
 	],
 	"bold_folder_labels": true,
 	"caret_style": "solid",
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+	"color_scheme": "Packages/Theme - Gravity/Monokai Gravity.sublime-color-scheme",
 	"completion_timeout": 3,
 	"default_line_ending": "unix",
 	"dpi_scale": 1.0,
@@ -57,7 +57,7 @@
 		"wp-content/cache"
 	],
 	"follow_imports": false,
-	"font_size": 14,
+	"font_size": 20,
 	"highlight_line": true,
 	"ignored_packages":
 	[
