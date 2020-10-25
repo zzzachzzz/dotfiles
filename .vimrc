@@ -91,7 +91,19 @@ nnoremap <Leader>R
   \ :cfdo %s//g \| update
   \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
+" Abbreviations {{{
+cabbrev af ArrowFunction
+" }}}
+
 " Snippets {{{
+command ArrowFunction call ArrowFunctionSnippet()
+function! ArrowFunctionSnippet()
+  read ~/.vim/snippets/ArrowFunction.js
+  normal! k$Jx
+  call search('__body__')
+  normal! di{
+endfun
+
 " React {{{
 command React echo 'React dummy command for tab completion'
 
@@ -227,7 +239,6 @@ noremap <Leader>l :TagbarToggle<CR>
 let g:gutentags_file_list_command = "rg --files --ignore-file $HOME/.ignore --glob '!*.json' --glob !'*.yaml'"
 
 " VimCompletesMe
-autocmd FileType css,scss let b:vcm_tab_complete = 'omni'
 set completeopt=menu,menuone,noinsert,noselect
 
 " Vim Language Server Client (vim-lsc) {{{
