@@ -63,6 +63,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt autocd
 setopt ignoreeof
+setopt extended_glob
 autoload -Uz compinit
 compinit
 # }}}
