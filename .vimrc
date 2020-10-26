@@ -86,10 +86,10 @@ nnoremap <silent> <C-p> :cp<CR>
 
 nnoremap <F5> :make %<<CR>
 
-" Replace operation on files in quickfix list, used after :Rg
+" Replace operation on entries in quickfix list, used after :Rg
 nnoremap <Leader>R
-  \ :cfdo %s//g \| update
-  \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+  \ :cdo s// \| update
+  \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
 " Abbreviations {{{
 cabbrev af ArrowFunction
