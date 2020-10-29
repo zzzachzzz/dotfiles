@@ -140,6 +140,9 @@ command! -bang Bd bp|bd<bang> #
 " Enable native syntax highlight for .md files
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
+" Syntax highlighting for Dockerfiles with varying filenames
+autocmd BufNewFile,BufFilePre,BufRead Dockerfile* set filetype=dockerfile
+
 " Window Splitting & Moving
 noremap <Leader>s :split<CR>
 noremap <Leader>v :vsplit<CR>
