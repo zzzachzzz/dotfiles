@@ -16,6 +16,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'chrisbra/Colorizer'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 set nocompatible
@@ -171,7 +172,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " Override default Rg command to behave like command line ripgrep & accept options
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case " . <q-args>, 1, <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --type-add 'js:*.{js,ts,jsx,tsx}' " . <q-args>, 1, <bang>0)
 " }}}
 
 " Vim-Commentary {{{
