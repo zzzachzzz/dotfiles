@@ -5,6 +5,11 @@ if uname -s | grep -q "Linux"; then
 fi
 # }}}
 
+# WSL specific profile
+if uname -r | grep -iq "microsoft"; then
+    [ -f ~/.wsl_profile ] && . ~/.wsl_profile
+fi
+
 # Oh-My-Zsh {{{
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
@@ -96,9 +101,4 @@ export CXXFLAGS="-std=c++14"
 export LS_COLORS='ow=1;90;107'
 export IGNOREEOF=4
 # }}}
-
-# WSL specific profile
-if uname -r | grep -q "Microsoft"; then
-    [ -f ~/.wsl_profile ] && . ~/.wsl_profile
-fi
 
