@@ -40,7 +40,8 @@ set hidden
 set encoding=utf8
 set backspace=indent,eol,start
 au BufEnter * set fo-=c fo-=r fo-=o
-set history=1000
+set nohlsearch
+set history=10000
 
 imap jj <Esc>
 noremap J 5j

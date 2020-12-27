@@ -101,9 +101,10 @@ export FZF_DEFAULT_COMMAND='rg --hidden --ignore-file ~/.ignore --files-with-mat
 alias fd='fd --ignore-file ~/.ignore'
 
 # Other {{{
-export EDITOR="vim"
+export EDITOR="nvim"
 alias python=python3
 alias mktags="ctags -R --exclude=@$HOME/.ignore --exclude='*.json' --exclude='*.yaml' ."
+alias vim="nvim"
 alias vimS="vim -S ~/.vim/sessions/"
 export CXXFLAGS="-std=c++14"
 export LS_COLORS='ow=1;90;107'

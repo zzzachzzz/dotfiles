@@ -1,3 +1,5 @@
+set nohlsearch
+
 imap jj <Esc>
 noremap J 5j
 noremap K 5k
@@ -19,7 +21,7 @@ noremap <C-s> :w<CR>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
-let mapleader="<Space>"
+let mapleader=" "
 
 " Yank and paste using system clipboard.
 noremap <Leader>y "+y
@@ -31,4 +33,7 @@ noremap <Leader>D "+D
 
 cnoremap <C-r><Leader> <C-r>+
 nnoremap <Leader>a ggVG
+
+noremap! <C-r><Leader> <C-r>+
+noremap! <C-r>' <C-r>"
 

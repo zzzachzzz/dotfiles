@@ -2,6 +2,7 @@ ln -s ~/github/dotfiles/.zshrc ~/.zshrc
 ln -s ~/github/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/github/dotfiles/.vimrc ~/.vimrc
 ln -s ~/github/dotfiles/.vim/ ~/.vim
+ln -s ~/github/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
 ln -s ~/github/dotfiles/.ignore ~/.ignore
 ln -s ~/github/dotfiles/.gitignore_global ~/.gitignore_global
 ln -s ~/github/dotfiles/.pdbrc.py ~/.pdbrc.py
