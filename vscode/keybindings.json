@@ -1,41 +1,38 @@
 [
     {
-        "key": "Tab",
-        "command": "editor.action.indentLines",
-        "when": "editorTextFocus && vim.mode == 'VisualLine'"
-    },
-    {
-        "key": "Shift+Tab",
-        "command": "editor.action.outdentLines",
-        "when": "editorTextFocus && vim.mode == 'VisualLine'"
+        "command": "vscode-neovim.compositeEscape1",
+        "key": "j",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "j"
     },
     {
         "key": "Tab",
         "command": "workbench.action.nextEditor",
-        "when": "editorTextFocus && vim.mode == 'Normal'"
+        "when": "neovim.mode == normal && editorTextFocus"
     },
     {
         "key": "Shift+Tab",
         "command": "workbench.action.previousEditor",
-        "when": "editorTextFocus && vim.mode == 'Normal'"
-    },
-    {  // Removal rule
-        "key": "Ctrl+j",
-        "command": "-workbench.action.togglePanel"
+        "when": "neovim.mode == normal && editorTextFocus"
     },
     {
         "key": "j",
-        "command": "workbench.action.interactivePlayground.arrowDown",
-        "when": "interactivePlaygroundFocus && !editorTextFocus"
+        "command": "list.focusDown",
+        "when": "listFocus && !inputFocus"
     },
     {
         "key": "k",
-        "command": "workbench.action.interactivePlayground.arrowUp",
-        "when": "interactivePlaygroundFocus && !editorTextFocus"
+        "command": "list.focusUp",
+        "when": "listFocus && !inputFocus"
     },
     {
-        "key": "Ctrl+0",
-        "command": "-workbench.action.focusSideBar"
+        "key": "Ctrl+`",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "Ctrl+`",
+        "command": "workbench.action.terminal.focus",
+        "when": "!terminalFocus"
     },
     {
         "key": "Ctrl+Space",
@@ -49,22 +46,18 @@
     },
     {
         "key": "Ctrl+j",
-        "command": "workbench.action.focusBelowGroup",
-        "when": "editorTextFocus"
+        "command": "workbench.action.navigateDown"
     },
     {
         "key": "Ctrl+k",
-        "command": "workbench.action.focusAboveGroup",
-        "when": "editorTextFocus"
+        "command": "workbench.action.navigateUp"
     },
     {
         "key": "Ctrl+h",
-        "command": "workbench.action.focusLeftGroup",
-        "when": "editorTextFocus"
+        "command": "workbench.action.navigateLeft"
     },
     {
         "key": "Ctrl+l",
-        "command": "workbench.action.focusRightGroup",
-        "when": "editorTextFocus"
-    },
+        "command": "workbench.action.navigateRight"
+    }
 ]

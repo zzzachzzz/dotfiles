@@ -1,31 +1,27 @@
 {
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "block",
-    "editor.fontSize": 20,
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 16,
+    "editor.fontFamily": "'Roboto Mono'",
+    "terminal.integrated.fontFamily": "'Roboto Mono'",
     "editor.tabSize": 2,
     "files.exclude": {
         "node_modules": true
     },
     "files.trimTrailingWhitespace": true,
-    "editor.minimap.enabled": false,
-	  "workbench.editor.enablePreview": false,
-	  "explorer.openEditors.visible": 0,
+    "files.trimFinalNewlines": true,
+    "workbench.editor.enablePreview": false,
+    "explorer.openEditors.visible": 0,
     "workbench.colorTheme": "Monokai",
-    "vim.vimrc.enable": true,
-    "vim.vimrc.path": "~/.vimrc_ide",
-    "vim.leader": "<Space>",
-    "vim.handleKeys": {
-        "<C-w>": false
-    },
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": ["<Leader>", "F"],
-            "commands": ["workbench.view.search"]
-        },
-        {
-            "before": ["<Leader>", "<Space>"],
-            "commands": ["workbench.action.toggleSidebarVisibility"]
-        }
-    ],
-    "extensions.ignoreRecommendations": false
+    "extensions.ignoreRecommendations": false,
+    "editor.minimap.enabled": false,
+    "editor.codeLens": false,
+    "workbench.activityBar.visible": true,
+    "workbench.startupEditor": "none",
+    "workbench.list.automaticKeyboardNavigation": false,
+    "editor.renderControlCharacters": false,
+    "editor.renderIndentGuides": false,
+    "editor.matchBrackets": false
 }

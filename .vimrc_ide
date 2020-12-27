@@ -1,4 +1,5 @@
 set nohlsearch
+set ignorecase
 
 imap jj <Esc>
 noremap J 5j
@@ -31,9 +32,11 @@ noremap <Leader>P "+P
 noremap <Leader>d "+d
 noremap <Leader>D "+D
 
-cnoremap <C-r><Leader> <C-r>+
-nnoremap <Leader>a ggVG
-
 noremap! <C-r><Leader> <C-r>+
 noremap! <C-r>' <C-r>"
+
+nnoremap <Leader>a ggVG
+
+nnoremap <silent> <Leader><Space> <Cmd>call VSCodeCall('workbench.action.toggleSidebarVisibility')<CR>
+command! ToggleActivityBar call VSCodeCall('workbench.action.toggleActivityBarVisibility')<CR>
 
