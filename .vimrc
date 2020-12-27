@@ -87,24 +87,7 @@ nnoremap <silent> <C-p> :cp<CR>
 
 nnoremap <F5> :make %<<CR>
 
-" Replace operation on entries in quickfix list, used after :Rg
-nnoremap <Leader>R
-  \ :cdo s// \| update
-  \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
-
-" Abbreviations {{{
-cabbrev af ArrowFunction
-" }}}
-
 " Snippets {{{
-command ArrowFunction call ArrowFunctionSnippet()
-function! ArrowFunctionSnippet()
-  read ~/.vim/snippets/ArrowFunction.js
-  normal! k$Jx
-  call search('__body__')
-  normal! di{
-endfun
-
 " React {{{
 command React echo 'React dummy command for tab completion'
 
@@ -127,10 +110,10 @@ endfun
 command -nargs=1 ReactStyled call ReactStyledSnippet(<q-args>, 'ReactStyled.jsx')
 command -nargs=1 ReactStyledAttrs call ReactStyledSnippet(<q-args>, 'ReactStyledAttrs.jsx')
 function! ReactStyledSnippet(elementType, fileName)
-    execute('-1read ~/.vim/snippets/' . a:fileName)
-    s/__element__/\=toupper(a:elementType[0]) . a:elementType[1:]
-    s/__element__/\=a:elementType
-    normal! j
+  execute('-1read ~/.vim/snippets/' . a:fileName)
+  s/__element__/\=toupper(a:elementType[0]) . a:elementType[1:]
+  s/__element__/\=a:elementType
+  normal! j
 endfun
 " }}}
 " }}}
@@ -173,6 +156,11 @@ let g:fzf_action = {
 
 " Override default Rg command to behave like command line ripgrep & accept options
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --type-add 'js:*.{js,ts,jsx,tsx}' " . <q-args>, 1, <bang>0)
+
+  " Replace operation on entries in quickfix list, used after :Rg
+  nnoremap <Leader>R
+    \ :cdo s// \| update
+    \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 " }}}
 
 " Vim-Commentary {{{
@@ -280,15 +268,6 @@ if executable('typescript-language-server')
   \  },
   \})
 endif
-if executable('clangd')
-  call extend(g:lsc_server_commands, {
-  \  'cpp': {
-  \    'command': 'clangd',
-  \    'log_level': -1,
-  \    'suppress_stderr': v:true,
-  \  },
-  \})
-endif
 let g:lsc_auto_map = {
 \  'GoToDefinition': '<C-]>',
 \  'GoToDefinitionSplit': ['<C-w>]', '<C-w><C-]>'],
@@ -312,20 +291,20 @@ nnoremap <Leader>O :Obsess<Space>~/.vim/sessions/
 nnoremap <Leader>o :so<Space>~/.vim/sessions/
 
 function! ToggleScrollOff999()
-    if &scrolloff == 999
-        set scrolloff=4
-    else
-        set scrolloff=999
-    endif
+  if &scrolloff == 999
+    set scrolloff=4
+  else
+    set scrolloff=999
+  endif
 endfunction
 
 command Scroll call ToggleScrollOff999()
 set scrolloff=4
 
 function! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
 endfun
 
 command Trim call TrimWhitespace()
