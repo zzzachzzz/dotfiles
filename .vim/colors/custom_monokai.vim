@@ -68,8 +68,6 @@ endfunction
 
 " Palettes
 " --------
-let s:trueblack       = { "gui": "#000000", "cterm": "0" }
-
 let s:white       = { "gui": "#E8E8E3", "cterm": "252" }
 let s:white2      = { "gui": "#d8d8d3", "cterm": "250" }
 let s:black       = { "gui": "#272822", "cterm": "234" }
@@ -110,14 +108,14 @@ let s:br_white    = { "gui": "#FFFFFF" }
 " ------------
 
 " editor
-call s:h("Normal",        { "fg": s:white,      "bg": s:trueblack })
+call s:h("Normal",        { "fg": s:white })
 call s:h("ColorColumn",   {                     "bg": s:lightblack })
 call s:h("Cursor",        { "fg": s:black,      "bg": s:white })
 call s:h("CursorColumn",  {                     "bg": s:lightblack2 })
-call s:h("CursorLine",    {                     "bg": s:trueblack })
+call s:h("CursorLine",    { })
 call s:h("NonText",       { "fg": s:lightgrey })
-call s:h("StatusLine",    { "fg": s:trueblack,   "bg": s:purple,        "format": "reverse" })
-call s:h("StatusLineNC",  { "fg": s:trueblack,   "bg": s:white,     "format": "reverse" })
+call s:h("StatusLine",    {                     "bg": s:purple,       "format": "reverse" })
+call s:h("StatusLineNC",  {                     "bg": s:white,        "format": "reverse" })
 call s:h("TabLine",       { "fg": s:white,      "bg": s:darkblack,    "format": "reverse" })
 call s:h("Visual",        {                     "bg": s:lightgrey })
 call s:h("Search",        { "fg": s:black,      "bg": s:yellow })
@@ -127,9 +125,9 @@ call s:h("ModeMsg",       { "fg": s:yellow })
 call s:h("MoreMsg",       { "fg": s:yellow })
 call s:h("ErrorMsg",      { "fg": s:black,      "bg": s:red,          "format": "standout" })
 call s:h("WarningMsg",    { "fg": s:red })
-call s:h("VertSplit",     { "fg": s:darkgrey,   "bg": s:trueblack })
-call s:h("LineNr",        { "fg": s:grey,       "bg": s:trueblack })
-call s:h("CursorLineNr",  { "fg": s:orange,     "bg": s:trueblack })
+call s:h("VertSplit",     { "fg": s:darkgrey })
+call s:h("LineNr",        { "fg": s:grey })
+call s:h("CursorLineNr",  { "fg": s:orange })
 call s:h("SignColumn",    {                     "bg": s:lightblack })
 
 " spell

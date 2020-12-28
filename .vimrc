@@ -24,6 +24,7 @@ set noshowmode
 set termguicolors
 set number
 syntax on
+let g:monokai_gui_italic = 0
 colo custom_monokai
 set cursorline
 set ignorecase
