@@ -91,7 +91,7 @@ bindkey '^e' edit-command-line
 
 # Tmux & auto attach to session {{{
 export TERM="xterm-256color"
-[ -z "$TMUX" ] && tmux new-session -A -s main
+alias atmux="tmux new-session -A -s main"
 # }}}
 
 # FZF include hidden files
