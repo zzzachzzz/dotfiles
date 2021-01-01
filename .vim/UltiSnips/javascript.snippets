@@ -1,0 +1,39 @@
+snippet afo "Arrow Func One Line" w
+($1) => $0
+endsnippet
+
+snippet afm "Arrow Func Multi Line" w
+($1) => {
+	$0
+}${2:;}
+endsnippet
+
+snippet r "import React" wb
+import * as React from 'react';
+endsnippet
+
+snippet r.c "React Component default export" wb
+import * as React from 'react';
+
+const `!p snip.rv = snip.basename` = (${1:props}) => {
+	$0
+};
+
+export default `!p snip.rv = snip.basename` ;
+endsnippet
+
+snippet r.us "React.useState" wb
+const [$1, set${1/\w+/\u$0/}] = React.useState(${3:''});$0
+endsnippet
+
+snippet r.ue "React.useEffect" wb
+useEffect(() => {
+  $0
+}, []);
+endsnippet
+
+snippet r.sty "Styled Component" wb
+const ${2:${1/^[(.]([\w.]+)\)?$/\u$1/}} = styled${1:.div}\`
+	$0
+\`;
+endsnippet

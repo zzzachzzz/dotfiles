@@ -6,21 +6,22 @@ Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'natebosch/vim-lsc'
-Plug 'ajh17/VimCompletesMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chrisbra/Colorizer'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'tpope/vim-surround'
 call plug#end()
 
 set nocompatible
 set noshowmode
+set noshowcmd
 set termguicolors
 set number
 syntax on
@@ -62,8 +63,8 @@ noremap ' "
 " Below is: noremap < ,
 noremap <lt> ,
 noremap , ;
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
+xnoremap <Tab> >gv
+xnoremap <S-Tab> <gv
 
 let mapleader = " "
 
@@ -79,8 +80,8 @@ noremap <Leader>t :tabedit<Space>
 " Paste in insert and command line modes
 noremap! <C-r><Leader> <C-r>+
 noremap! <C-r>' <C-r>"
-" Alternative for jumplist since <C-i> / <Tab> is mapped to AirlineSelectNextTab
-nnoremap <Leader>i <C-i>
+" Alternative for jumplist since <Tab> is mapped to AirlineSelectNextTab
+nnoremap <Leader>i <Tab>
 nnoremap <Leader>a ggVG
 nnoremap <Leader>% :let @+ = expand("%:f")
 nnoremap <silent> <Leader><Tab> :b #<CR>
@@ -88,37 +89,6 @@ nnoremap <silent> <C-n> :cn<CR>
 nnoremap <silent> <C-p> :cp<CR>
 
 nnoremap <F5> :make %<<CR>
-
-" Snippets {{{
-" React {{{
-command React echo 'React dummy command for tab completion'
-
-command ReactComponent call ReactComponentSnippet()
-function! ReactComponentSnippet()
-    -1read ~/.vim/snippets/ReactComponent.jsx
-    normal! 2j
-    " Replace '__component__' with the file name, without the file extension
-    s/__component__/\=substitute(expand('%:t'), '\..*', '', '')
-endfun
-
-command -nargs=1 ReactState call ReactStateSnippet(<q-args>)
-function! ReactStateSnippet(stateVar)
-    -1read ~/.vim/snippets/ReactState.jsx
-    s/__state__/\=a:stateVar
-    s/__state__/\=toupper(a:stateVar[0]) . a:stateVar[1:]
-    normal! f)
-endfun
-
-command -nargs=1 ReactStyled call ReactStyledSnippet(<q-args>, 'ReactStyled.jsx')
-command -nargs=1 ReactStyledAttrs call ReactStyledSnippet(<q-args>, 'ReactStyledAttrs.jsx')
-function! ReactStyledSnippet(elementType, fileName)
-  execute('-1read ~/.vim/snippets/' . a:fileName)
-  s/__element__/\=toupper(a:elementType[0]) . a:elementType[1:]
-  s/__element__/\=a:elementType
-  normal! j
-endfun
-" }}}
-" }}}
 
 " Close buffer without closing window
 command! -bang Bd bp|bd<bang> #
@@ -232,57 +202,84 @@ noremap <Leader>l :TagbarToggle<CR>
 " Gutentags
 let g:gutentags_file_list_command = "rg --files --ignore-file $HOME/.ignore --glob '!*.json' --glob !'*.yaml'"
 
-" VimCompletesMe
-set completeopt=menu,menuone,noinsert,noselect
+" UltiSnips {{{
+let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips/']
+let g:UltiSnipsExpandTrigger = '<C-y>'
+let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+autocmd FileType typescript,javascriptreact,typescriptreact
+  \ UltiSnipsAddFiletypes javascript
+" }}}
 
-" Vim Language Server Client (vim-lsc) {{{
-let g:lsc_server_commands = {}
-if executable('pyls')
-  call extend(g:lsc_server_commands, {
-  \  'python': {
-  \    'command': 'pyls',
-  \    'log_level': -1,
-  \    'suppress_stderr': v:true,
-  \  },
+" coc-nvim {{{
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-tsserver'
+  \]
+
+set nobackup
+set nowritebackup
+set updatetime=300
+set shortmess+=c
+set signcolumn=number
+
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+call coc#config('suggest', {
+  \ 'autoTrigger': 'none'
   \})
-endif
-if executable('typescript-language-server')
-  call extend(g:lsc_server_commands, {
-  \  'javascript': {
-  \    'command': 'typescript-language-server --stdio',
-  \    'log_level': -1,
-  \    'suppress_stderr': v:true,
-  \  },
-  \  'javascriptreact': {
-  \    'command': 'typescript-language-server --stdio',
-  \    'log_level': -1,
-  \    'suppress_stderr': v:true,
-  \  },
-  \  'typescript': {
-  \    'command': 'typescript-language-server --stdio',
-  \    'log_level': -1,
-  \    'suppress_stderr': v:true,
-  \  },
-  \  'typescriptreact': {
-  \    'command': 'typescript-language-server --stdio',
-  \    'log_level': -1,
-  \    'suppress_stderr': v:true,
-  \  },
+call coc#config('snippets.extends', {
+  \ 'typescript': ['javascript'],
+  \ 'typescriptreact': ['javascript'],
+  \ 'javascriptreact': ['javascript'],
   \})
-endif
-let g:lsc_auto_map = {
-\  'GoToDefinition': '<C-]>',
-\  'GoToDefinitionSplit': ['<C-w>]', '<C-w><C-]>'],
-\  'FindReferences': 'gr',
-\  'FindImplementations': 'gI',
-\  'FindCodeActions': 'ga',
-\  'Rename': 'gR',
-\  'ShowHover': 'gh',
-\  'DocumentSymbol': 'go',
-\  'WorkspaceSymbol': 'gS',
-\  'SignatureHelp': 'gm',
-\  'Completion': 'completefunc',
-\}
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gh :call <SID>show_documentation()<CR>
+nmap <silent> gtd <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap gR <Plug>(coc-rename)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap gac <Plug>(coc-codeaction)
+nmap gqf <Plug>(coc-fix-current)
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+command! OrganizeImports :call CocAction('runCommand', 'editor.action.organizeImport')
 " }}}
 
 " Colorize

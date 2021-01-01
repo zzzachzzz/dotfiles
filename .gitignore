@@ -1,6 +1,6 @@
 .vim/*
 !.vim/colors/
-!.vim/snippets/
+!.vim/UltiSnips/
 
 .vim/plugged/*
 !.vim/plugged/
