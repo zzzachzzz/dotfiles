@@ -22,7 +22,11 @@ noremap <C-s> :w<CR>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
-let mapleader=" "
+" NeoVintageous understands "<Space>", VSCode understands " "
+let mapleader = "<Space>"
+if exists('g:vscode')
+  let mapleader = " "
+endif
 
 " Yank and paste using system clipboard.
 noremap <Leader>y "+y
@@ -37,6 +41,9 @@ noremap! <C-r>' <C-r>"
 
 nnoremap <Leader>a ggVG
 
-nnoremap <silent> <Leader><Space> <Cmd>call VSCodeCall('workbench.action.toggleSidebarVisibility')<CR>
-command! ToggleActivityBar call VSCodeCall('workbench.action.toggleActivityBarVisibility')<CR>
-
+if exists('g:vscode')
+  nnoremap <silent> <Leader><Space> <Cmd>call VSCodeCall('workbench.action.toggleSidebarVisibility')<CR>
+  command! ToggleActivityBar call VSCodeCall('workbench.action.toggleActivityBarVisibility')<CR>
+  nnoremap <silent> <Leader>f <Cmd>call VSCodeCall('workbench.action.quickOpen')<CR>
+  nnoremap <silent> <Leader>F <Cmd>call VSCodeCall('workbench.action.terminal.searchWorkspace')<CR>
+endif
