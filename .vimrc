@@ -93,6 +93,10 @@ nnoremap <F5> :make %<<CR>
 " Close buffer without closing window
 command! -bang Bd bp|bd<bang> #
 
+" Spell check & file of added words
+autocmd FileType markdown,gitcommit setlocal spell
+set spellfile=~/.vim/spell.utf-8.add
+
 " Enable native syntax highlight for .md files
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 

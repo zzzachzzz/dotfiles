@@ -1,6 +1,7 @@
 .vim/*
 !.vim/colors/
 !.vim/UltiSnips/
+!.vim/spell.utf-8.add
 
 .vim/plugged/*
 !.vim/plugged/
