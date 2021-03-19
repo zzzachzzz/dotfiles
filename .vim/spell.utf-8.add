@@ -77,3 +77,5 @@ UI
 lifecycle
 memoize
 memoized
+UI
+WASM

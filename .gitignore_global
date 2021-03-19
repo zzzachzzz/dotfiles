@@ -1,6 +1,7 @@
 # Ctags files for Vim
 tags
 tags.lock
+tags.temp
 .notags
 
 # Project-specific settings
