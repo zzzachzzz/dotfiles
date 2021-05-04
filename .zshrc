@@ -106,6 +106,9 @@ alias python=python3
 alias mktags="ctags -R --exclude=@$HOME/.ignore --exclude='*.json' --exclude='*.yaml' ."
 alias vim="nvim"
 alias vimS="vim -S ~/.vim/sessions/"
+alias gs="git status"
+alias gd="git diff"
+alias gdc="git diff --cached"
 export CXXFLAGS="-std=c++14"
 export LS_COLORS='ow=1;90;107'
 export IGNOREEOF=4
