@@ -233,6 +233,7 @@ inoremap <silent><expr> <TAB>
   \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <C-a> coc#refresh()
+inoremap <silent> <C-h> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<CR>
 nnoremap <silent><nowait><expr> <C-f> coc#float#has_float() ? coc#float#scroll(1) : "\<C-f>"
 nnoremap <silent><nowait><expr> <C-b> coc#float#has_float() ? coc#float#scroll(0) : "\<C-b>"
 
