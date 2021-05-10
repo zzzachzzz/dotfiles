@@ -105,6 +105,14 @@ export EDITOR="nvim"
 alias python=python3
 alias mktags="ctags -R --exclude=@$HOME/.ignore --exclude='*.json' --exclude='*.yaml' ."
 alias vim="nvim"
+function vims() {
+  local filepath="$HOME/.vim/sessions/${PWD##*/}.vim"
+  if [ -f $filepath ]; then
+    vim -S $filepath
+  else
+    vim -c "Obsess $filepath"
+  fi
+}
 alias vimS="vim -S ~/.vim/sessions/"
 alias gs="git status"
 alias gd="git diff"
