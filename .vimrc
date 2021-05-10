@@ -197,7 +197,7 @@ nmap <S-Tab> <Plug>AirlineSelectPrevTab
 " NerdTree {{{
 noremap <Leader><Space> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['^\.git$', '^node_modules$', '^.*\.pyc$', '^__pycache__$']
-command NTF NERDTreeFind
+command! NTF NERDTreeFind
 " }}}
 
 " Tagbar
@@ -290,7 +290,7 @@ command! OrganizeImports :call CocAction('runCommand', 'editor.action.organizeIm
 " }}}
 
 " Colorize
-command CH ColorHighlight
+command! CH ColorHighlight
 
 " Vim-Obsession session saving & session loading
 nnoremap <Leader>O :Obsess<Space>~/.vim/sessions/
@@ -304,7 +304,7 @@ function! ToggleScrollOff999()
   endif
 endfunction
 
-command Scroll call ToggleScrollOff999()
+command! Scroll call ToggleScrollOff999()
 set scrolloff=4
 
 function! TrimWhitespace()
@@ -313,5 +313,5 @@ function! TrimWhitespace()
   call winrestview(l:save)
 endfun
 
-command Trim call TrimWhitespace()
+command! Trim call TrimWhitespace()
 
