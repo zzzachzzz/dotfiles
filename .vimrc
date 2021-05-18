@@ -88,8 +88,6 @@ nnoremap <silent> <Leader><Tab> :b #<CR>
 nnoremap <silent> <C-n> :cn<CR>
 nnoremap <silent> <C-p> :cp<CR>
 
-nnoremap <F5> :make %<<CR>
-
 " Close buffer without closing window
 command! -bang Bd bp|bd<bang> #
 
@@ -315,4 +313,20 @@ function! TrimWhitespace()
 endfun
 
 command! Trim call TrimWhitespace()
+
+function! GetCmdForFiletype()
+  let l:ft_runcmd = {
+  \ 'javascript': 'node',
+  \ 'typescript': 'node',
+  \ 'python': 'python3',
+  \ 'cs': 'dotnet-script',
+  \ }
+  if has_key(l:ft_runcmd, &ft)
+    return ":!" . l:ft_runcmd[&ft] . " %"
+  else
+    echoerr "No run cmd found for filetype: " . &ft
+  endif
+endfunction
+
+nnoremap <expr> <Leader>B GetCmdForFiletype()
 
