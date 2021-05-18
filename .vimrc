@@ -340,3 +340,7 @@ endfunction
 
 nnoremap <expr> <Leader>B GetCmdForFiletype()
 
+if !empty(glob("~/_vimrc"))
+  source ~/_vimrc
+endif
+
