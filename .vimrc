@@ -314,6 +314,16 @@ endfun
 
 command! Trim call TrimWhitespace()
 
+function! ConvertIndentation(from, to)
+  execute 'set ts=' . a:from . ' noet'
+  retab!
+  execute 'set et ts=' . a:to
+  retab
+endfun
+
+command! Convert4to2Spaces call ConvertIndentation(4, 2)
+command! Convert2to4Spaces call ConvertIndentation(2, 4)
+
 function! GetCmdForFiletype()
   let l:ft_runcmd = {
   \ 'javascript': 'node',
