@@ -6,6 +6,7 @@ tags.temp
 
 # Project-specific settings
 _vimrc
+.ignore
 
 *.swp
 *.swo
