@@ -344,3 +344,8 @@ if !empty(glob("~/_vimrc"))
   source ~/_vimrc
 endif
 
+" exrc with the file name I want :)
+if !empty(glob("_vimrc"))
+  source _vimrc
+endif
+
