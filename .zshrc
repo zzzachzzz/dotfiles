@@ -121,5 +121,25 @@ alias gl="git log"
 export CXXFLAGS="-std=c++14"
 export LS_COLORS='ow=1;90;107'
 export IGNOREEOF=4
+
+# Helper function for curl
+function curls() {
+  response_code_and_method=$(curl \
+    --silent \
+    --write-out "%{response_code} %{method}" \
+    --output /tmp/curls_body \
+    ${CURL_OPTIONS[@]} \
+    $CURL_BASE_URL/$@
+  )
+
+  pretty_json=$(jq --color-output '.' /tmp/curls_body 2> /dev/null)
+  if [ $? -eq 0 ]; then
+    echo $pretty_json
+  else
+    cat /tmp/curls_body
+    echo ""
+  fi
+  echo "\n$response_code_and_method"
+}
 # }}}
 
