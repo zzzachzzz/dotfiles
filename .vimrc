@@ -193,7 +193,7 @@ nmap <S-Tab> <Plug>AirlineSelectPrevTab
 " }}}
 
 " NerdTree {{{
-noremap <Leader><Space> :NERDTreeToggle<CR>
+noremap <silent> <Leader><Space> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['^\.git$', '^node_modules$', '^.*\.pyc$', '^__pycache__$']
 command! NTF NERDTreeFind
 " }}}
