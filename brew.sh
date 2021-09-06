@@ -4,6 +4,7 @@ brew install grip
 brew install tree
 brew install ripgrep
 brew install fd
+brew install curl
 brew install jq
 brew install tmux
 brew install zsh

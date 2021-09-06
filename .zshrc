@@ -124,22 +124,27 @@ export IGNOREEOF=4
 
 # Helper function for curl
 function curls() {
+  local response_code_and_method
   response_code_and_method=$(curl \
-    --silent \
+    --no-progress-meter \
     --write-out "%{response_code} %{method}" \
     --output /tmp/curls_body \
-    ${CURL_OPTIONS[@]} \
+    --header "Content-Type: application/json" \
+    ${$(get_curl_options)[@]} \
     $CURL_BASE_URL/$@
   )
 
-  pretty_json=$(jq --color-output '.' /tmp/curls_body 2> /dev/null)
   if [ $? -eq 0 ]; then
-    echo $pretty_json
-  else
-    cat /tmp/curls_body
-    echo ""
+    local pretty_json
+    pretty_json=$(jq --color-output '.' /tmp/curls_body 2> /dev/null)
+    if [ $? -eq 0 ]; then
+      echo $pretty_json
+    else
+      cat /tmp/curls_body
+      echo ""
+    fi
+    echo "\n$response_code_and_method"
   fi
-  echo "\n$response_code_and_method"
 }
 # }}}
 
