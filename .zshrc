@@ -130,7 +130,7 @@ function curls() {
     --write-out "%{response_code} %{method}" \
     --output /tmp/curls_body \
     --header "Content-Type: application/json" \
-    ${$(get_curl_options)[@]} \
+    ${CURL_OPTIONS[@]} \
     $CURL_BASE_URL/$@
   )
 
