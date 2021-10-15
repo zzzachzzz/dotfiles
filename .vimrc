@@ -45,7 +45,7 @@ au BufEnter * set fo-=c fo-=r fo-=o
 set nohlsearch
 set history=10000
 
-imap jj <Esc>
+imap jk <Esc>
 noremap J 5j
 noremap K 5k
 noremap W 5w
