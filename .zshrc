@@ -67,7 +67,7 @@ unset files urls i
 autoload -U colors && colors
 [ -f ~/.git-prompt.sh ] && source ~/.git-prompt.sh  # Source for __git_ps1
 setopt PROMPT_SUBST;  # Needed for __git_ps1 prompt
-PS1=$'\n%F{14}%~%F{1} // %F{14}$(__git_ps1 "(%s)")\n%B$ %f%b'
+PS1=$'\n%F{81}%~%F{1} %F{197}// %F{81}$(__git_ps1 "%s")%f\n%B%F{135}$ %k%f%b'
 # }}}
 
 # Zsh Settings {{{
