@@ -17,6 +17,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'chrisbra/Colorizer'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set nocompatible
