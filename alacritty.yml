@@ -1,0 +1,53 @@
+import:
+  # If not on Windows, exclude from config location and this will be a noop
+  - ~/AppData/Roaming/alacritty/alacritty-windows.yml
+
+window:
+  title: Alacritty
+  decorations: full
+  startup_mode: Windowed
+  dynamic_title: false
+
+font:
+  size: 16
+  normal:
+    family: Inconsolata NF
+
+background_opacity: 0.8
+
+colors:
+  primary:
+    background: '#000000'
+    foreground: '#C6C6C4'
+
+  normal:
+    black:   '#10100E'
+    red:     '#ff8080'
+    green:   '#009F6B'
+    yellow:  '#FFD700'
+    blue:    '#0087BD'
+    magenta: '#9A4EAE'
+    cyan:    '#20B2AA'
+    white:   '#C6C6C4'
+
+  bright:
+    black:   '#696969'
+    red:     '#ff5458'
+    green:   '#03C03C'
+    yellow:  '#FDFF00'
+    blue:    '#007FFF'
+    magenta: '#FF1493'
+    cyan:    '#00CCCC'
+    white:   '#FFFAFA'
+
+cursor:
+  style:
+    shape: Block
+    blinking: Off
+
+live_config_reload: true
+
+key_bindings:
+  - { key: Space, mods: Control, chars: "\x00" }
+  - { key: Slash, mods: Control, chars: "\x1f" }
+
