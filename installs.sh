@@ -17,5 +17,5 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # tmux-plugin-manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# RobotoMono Font
-curl -L https://github.com/google/fonts/raw/main/apache/robotomono/static/RobotoMono-Regular.ttf -o RobotoMono-Regular.ttf
+# Inconsolata Font
+curl -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Inconsolata.zip -o Inconsolata.zip
