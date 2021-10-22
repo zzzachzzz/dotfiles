@@ -81,7 +81,7 @@ let s:darkgrey    = { "gui": "#64645e", "cterm": "239" }
 let s:warmgrey    = { "gui": "#75715E", "cterm": "59" }
 
 let s:pink        = { "gui": "#F92772", "cterm": "197" }
-let s:green       = { "gui": "#A6E22D", "cterm": "148" }
+let s:green       = { "gui": "#009F6B", "cterm": "72" }
 let s:aqua        = { "gui": "#66d9ef", "cterm": "81" }
 let s:yellow      = { "gui": "#E6DB74", "cterm": "186" }
 let s:orange      = { "gui": "#FD9720", "cterm": "208" }
@@ -97,7 +97,7 @@ let s:changefg    = { "gui": "#d7d7ff", "cterm": "189" }
 let s:changebg    = { "gui": "#5f5f87", "cterm": "60" }
 
 let s:cyan        = { "gui": "#A1EFE4" }
-let s:br_green    = { "gui": "#9EC400" }
+let s:br_green    = { "gui": "#009F6B" }
 let s:br_yellow   = { "gui": "#E7C547" }
 let s:br_blue     = { "gui": "#7AA6DA" }
 let s:br_purple   = { "gui": "#B77EE0" }
