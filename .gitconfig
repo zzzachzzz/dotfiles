@@ -1,0 +1,15 @@
+[user]
+  name = zzzachzzz
+  email = zach1rosen@gmail.com
+
+[core]
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
+  ignorecase = false
+
+[alias]
+  pushF = push --force-with-lease
+
+[commit]
+  cleanup = scissors
+

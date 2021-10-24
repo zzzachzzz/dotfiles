@@ -5,6 +5,7 @@ ln -s ~/github/dotfiles/.vim/ ~/.vim
 ln -s ~/github/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
 ln -s ~/github/dotfiles/.ignore ~/.ignore
 ln -s ~/github/dotfiles/.gitignore_global ~/.gitignore_global
+ln -s ~/github/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/github/dotfiles/.pdbrc.py ~/.pdbrc.py
 ln -s ~/github/dotfiles/.vimrc_ide ~/github/dotfiles/sublime/.neovintageousrc
 
