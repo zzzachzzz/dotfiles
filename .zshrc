@@ -122,6 +122,9 @@ export CXXFLAGS="-std=c++14"
 export LS_COLORS='ow=1;90;107'
 export IGNOREEOF=4
 
+# For programs without man pages
+function manh() { "$@" --help | less }
+
 # Helper function for curl
 function curls() {
   local response_code_and_method
