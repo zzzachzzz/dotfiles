@@ -102,6 +102,8 @@ alias fd='fd --ignore-file ~/.ignore'
 
 # Other {{{
 export EDITOR="nvim"
+alias pm="pacman --color=always"
+alias yay="yay --color=always"
 alias python=python3
 alias mktags="ctags -R --exclude=@$HOME/.ignore --exclude='*.json' --exclude='*.yaml' ."
 alias vim="nvim"
@@ -151,3 +153,4 @@ function curls() {
 }
 # }}}
 
+[ -f ~/.zshrc-local ] && source ~/.zshrc-local
