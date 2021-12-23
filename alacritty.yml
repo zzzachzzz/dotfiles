@@ -11,7 +11,7 @@ window:
 font:
   size: 16
   normal:
-    family: Inconsolata NF
+    family: Inconsolata Nerd Font
 
 background_opacity: 0.8
 
