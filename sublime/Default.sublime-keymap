@@ -1,0 +1,9 @@
+[
+    // Neovintageous
+    {
+        "keys": ["j", "k"],
+        "command": "nv_enter_normal_mode",
+        "args": {"mode": "mode_insert"},
+        "context": [{"key": "vi_insert_mode_aware"}]
+    },
+]

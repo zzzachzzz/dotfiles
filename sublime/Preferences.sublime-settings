@@ -1,83 +1,67 @@
 {
-	"auto_complete_cycle": true,
-	"auto_complete_function_params": "required",
-	"auto_complete_triggers":
-	[
-		{
-			"characters": ".",
-			"selector": "source.python"
-		},
-		{
-			"characters": ".<",
-			"selector": "source.cs"
-		},
-		{
-			"characters": "<",
-			"selector": "text.html"
-		}
-	],
-	"binary_file_patterns":
-	[
-		"*.dds",
-		"*.eot",
-		"*.gif",
-		"*.ico",
-		"*.jar",
-		"*.jpeg",
-		"*.jpg",
-		"*.min.css",
-		"*.min.js",
-		"*.pdf",
-		"*.png",
-		"*.sql",
-		"*.swf",
-		"*.tga",
-		"*.ttf",
-		"*.zip",
-		"package-lock.json",
-		"*.map",
-		"*.css.BAK*"
-	],
-	"bold_folder_labels": true,
-	"caret_style": "solid",
-	"color_scheme": "Packages/Theme - Gravity/Monokai Gravity.sublime-color-scheme",
-	"completion_timeout": 3,
-	"default_line_ending": "unix",
-	"dpi_scale": 1.0,
-	"draw_white_space": "selection",
-	"enable_in_sublime_repl": false,
-	"enable_tooltip": true,
-	"ensure_newline_at_eof_on_save": true,
-	"folder_exclude_patterns":
-	[
-		"__pycache__",
-		".git",
-		".webassets-cache",
-		"node_modules",
-		"wp-content/cache"
-	],
-	"follow_imports": false,
-	"font_size": 20,
-	"highlight_line": true,
-	"ignored_packages":
-	[
-		"Six",
-		"Vintage",
-		"Vintageous"
-	],
-	"neovintageous_build_version": 11100,
-	"python_interpreter": "/usr/bin/python3",
-	"python_virtualenv": "",
-	"show_full_path": true,
-	"show_line_endings": true,
-	"sublime_completions_visibility": "jedi",
-	"sublime_goto_layout": "single-panel",
-	"tab_size": 4,
-	"theme": "Gravity.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-	"vintage_start_in_command_mode": true,
-	"vintageous_use_ctrl_keys": true,
-	"vintageous_use_super_keys": null,
-	"wide_caret": true
+  "auto_complete_cycle": true,
+  "auto_complete_function_params": "required",
+  "binary_file_patterns":
+  [
+
+    "*.dds",
+    "*.eot",
+    "*.gif",
+    "*.ico",
+    "*.jar",
+    "*.jpeg",
+    "*.jpg",
+    "*.min.css",
+    "*.min.js",
+    "*.pdf",
+    "*.png",
+    "*.sql",
+    "*.swf",
+    "*.tga",
+    "*.ttf",
+    "*.zip",
+    "package-lock.json",
+    "*.map",
+    "*.css.BAK*"
+  ],
+  "bold_folder_labels": true,
+  "caret_style": "solid",
+  "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+  "completion_timeout": 3,
+  "default_line_ending": "unix",
+  "dpi_scale": 1.0,
+  "draw_white_space": "selection",
+  "enable_in_sublime_repl": false,
+  "enable_tooltip": true,
+  "ensure_newline_at_eof_on_save": true,
+  "folder_exclude_patterns":
+  [
+    "__pycache__",
+    ".git",
+    ".webassets-cache",
+    "node_modules",
+    "wp-content/cache"
+  ],
+  "follow_imports": false,
+  "font_size": 14,
+  "font_face": "Inconsolata Nerd Font",
+  "highlight_line": true,
+  "ignored_packages":
+  [
+    "Six",
+    "Vintage",
+    "Vintageous",
+  ],
+  "show_full_path": true,
+  "show_line_endings": true,
+  "sublime_goto_layout": "single-panel",
+  "tab_size": 2,
+  "theme": "Adaptive.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "vintage_start_in_command_mode": true,
+  "vintageous_use_ctrl_keys": true,
+  "vintageous_use_super_keys": null,
+  "wide_caret": true,
+  "neovintageous_build_version": 11100,
 }
