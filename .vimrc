@@ -284,6 +284,7 @@ augroup mygroup
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  autocmd ColorScheme,VimEnter * highlight CocUnusedHighlight cterm=NONE gui=NONE
 augroup end
 
 command! OrganizeImports :call CocAction('runCommand', 'editor.action.organizeImport')
