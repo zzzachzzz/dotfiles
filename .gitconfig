@@ -13,3 +13,6 @@
 [commit]
   cleanup = scissors
 
+[pager]
+  branch = false
+
