@@ -7,13 +7,12 @@ window:
   decorations: full
   startup_mode: Windowed
   dynamic_title: false
+  opacity: 0.8
 
 font:
   size: 16
   normal:
     family: Inconsolata Nerd Font
-
-background_opacity: 0.8
 
 colors:
   primary:
