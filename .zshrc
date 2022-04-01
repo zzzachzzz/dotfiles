@@ -131,6 +131,8 @@ function manh() { "$@" --help | less }
 function curls() {
   local response_code_and_method
   response_code_and_method=$(curl \
+    --cookie ~/cookiefile \
+    --cookie-jar ~/cookiefile \
     --no-progress-meter \
     --write-out "%{response_code} %{method}" \
     --output /tmp/curls_body \
