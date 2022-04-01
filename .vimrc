@@ -164,7 +164,6 @@ let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme = 'custom_base16_monokai'
 let g:airline_section_x = '%{tagbar#currenttag("%s", "", "")}'
-let g:airline_section_y = '%{ObsessionStatus()}'
 let g:airline_section_z = '%l:%c'
 " Truncate the status mode to one capital letter
 let g:airline_mode_map = {
@@ -296,6 +295,8 @@ command! CH ColorHighlight
 " Vim-Obsession session saving & session loading
 nnoremap <Leader>O :Obsess<Space>~/.vim/sessions/
 nnoremap <Leader>o :so<Space>~/.vim/sessions/
+
+command! SessionEcho :echo v:this_session
 
 function! ToggleScrollOff999()
   if &scrolloff == 999
