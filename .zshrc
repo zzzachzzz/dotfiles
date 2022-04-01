@@ -120,6 +120,9 @@ alias gs="git status"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gl="git log"
+alias clipc="xclip -in -sel clipboard -rmlastnl"
+alias clipp="xclip -out -sel clipboard -rmlastnl"
+
 export CXXFLAGS="-std=c++14"
 export LS_COLORS='ow=1;90;107'
 export IGNOREEOF=4
