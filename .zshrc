@@ -90,7 +90,6 @@ bindkey '^e' edit-command-line
 # }}}
 
 # Tmux & auto attach to session {{{
-export TERM="xterm-256color"
 function atmux() { tmux new-session -A -s "${1:=main}" }
 # }}}
 
