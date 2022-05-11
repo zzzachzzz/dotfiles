@@ -132,10 +132,29 @@ let g:fzf_action = {
 " Override default Rg command to behave like command line ripgrep & accept options
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --type-add 'js:*.{js,ts,jsx,tsx}' " . <q-args>, 1, <bang>0)
 
-  " Replace operation on entries in quickfix list, used after :Rg
-  nnoremap <Leader>R
-    \ :cdo s// \| update
-    \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+" Replace operation on entries in quickfix list, used after :Rg
+nnoremap <Leader>R
+  \ :cdo s// \| update
+  \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+
+" Wipeout buffers with FZF
+" https://github.com/junegunn/fzf.vim/pull/733#issuecomment-559720813
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:wipeout_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BW call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:wipeout_buffers(lines) },
+  \ 'options': '--multi --reverse'
+\ }))
 " }}}
 
 " Vim-Commentary {{{
