@@ -332,8 +332,10 @@ function! GetCmdForFiletype()
   \ 'javascript': 'node',
   \ 'typescript': 'node',
   \ 'python': 'python3',
-  \ 'cs': 'dotnet-script',
+  \ 'cs': 'dotnet run',
   \ }
+  if &ft == 'cs'
+    return ":!" . l:ft_runcmd[&ft]
   if has_key(l:ft_runcmd, &ft)
     return ":!" . l:ft_runcmd[&ft] . " %"
   else
