@@ -93,8 +93,8 @@ bindkey '^e' edit-command-line
 function atmux() { tmux new-session -A -s "${1:=main}" }
 # }}}
 
-# FZF include hidden files
-export FZF_DEFAULT_COMMAND='rg --hidden --ignore-file ~/.ignore --files-with-matches ""'
+# FZF use ripgrep and include hidden files
+export FZF_DEFAULT_COMMAND='rg --hidden --ignore-file ~/.ignore --files'
 
 # fd use ignore file
 alias fd='fd --ignore-file ~/.ignore'
