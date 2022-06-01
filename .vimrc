@@ -303,6 +303,7 @@ augroup mygroup
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
   autocmd ColorScheme,VimEnter * highlight CocUnusedHighlight cterm=NONE gui=NONE
+  autocmd FileType scss setl iskeyword+=@-@
 augroup end
 
 command! OrganizeImports :call CocAction('runCommand', 'editor.action.organizeImport')
