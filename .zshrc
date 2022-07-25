@@ -106,6 +106,7 @@ alias yay="yay --color=always"
 alias python=python3
 alias mktags="ctags -R --exclude=@$HOME/.ignore --exclude='*.json' --exclude='*.yaml' ."
 alias vim="nvim"
+alias mvim="vim -u NONE" # For quick minimal vim loading no vimrc
 function vims() {
   local filepath="$HOME/.vim/sessions/${PWD##*/}.vim"
   if [ -f $filepath ]; then
