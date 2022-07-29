@@ -108,7 +108,7 @@ alias mktags="ctags -R --exclude=@$HOME/.ignore --exclude='*.json' --exclude='*.
 alias vim="nvim"
 alias mvim="vim -u NONE" # For quick minimal vim loading no vimrc
 function vims() {
-  local filepath="$HOME/.vim/sessions/${PWD##*/}.vim"
+  local filepath="$HOME/.config/nvim/sessions/${PWD##*/}.vim"
   if [ -f $filepath ]; then
     vim -S $filepath
   else

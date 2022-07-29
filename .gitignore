@@ -1,19 +1,7 @@
-.vim/*
-!.vim/colors/
-!.vim/UltiSnips/
-!.vim/spell.utf-8.add
-
-.vim/plugged/*
-!.vim/plugged/
-.vim/plugged/vim-airline-themes/*
-!.vim/plugged/vim-airline-themes/
-.vim/plugged/vim-airline-themes/autoload/*
-!.vim/plugged/vim-airline-themes/autoload/
-.vim/plugged/vim-airline-themes/autoload/airline/*
-!.vim/plugged/vim-airline-themes/autoload/airline/
-.vim/plugged/vim-airline-themes/autoload/airline/themes/*
-!.vim/plugged/vim-airline-themes/autoload/airline/themes/
-!.vim/plugged/vim-airline-themes/autoload/airline/themes/custom_base16_monokai.vim
+.config/nvim/plugin/
+.config/nvim/sessions/*
+!.config/nvim/sessions/.gitkeep
+.config/nvim/spell.utf-8.add.spl
 
 sublime/*
 !sublime/*.sublime-keymap
