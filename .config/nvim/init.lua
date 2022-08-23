@@ -147,14 +147,44 @@ do
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
   local lspconfig = require 'lspconfig'
-  local lsp_servers = { 'pyright', 'tsserver', 'rust_analyzer' }
 
-  for _, lsp_server in pairs(lsp_servers) do
-    lspconfig[lsp_server].setup {
-      on_attach = on_attach,
-      capabilities = capabilities,
-    }
-  end
+  lspconfig['tsserver'].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    handlers = {
+      -- https://github.com/typescript-language-server/typescript-language-server/issues/216
+      ['textDocument/definition'] = function(err, result, method, ...)
+        if vim.tbl_islist(result) and #result > 1 then
+          local filtered_result = {}
+          for k, v in pairs(result) do
+            if string.match(v.targetUri, '%.d.ts') == nil then
+              table.insert(filtered_result, v)
+            end
+          end
+
+          return vim.lsp.handlers['textDocument/definition'](err, filtered_result, method, ...)
+        end
+
+        vim.lsp.handlers['textDocument/definition'](err, result, method, ...)
+      end
+    },
+  }
+
+  lspconfig['rust_analyzer'].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+
+  lspconfig['pyright'].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+
+  lspconfig['omnisharp'].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = { fn.stdpath('data') .. '/mason/packages/omnisharp/omnisharp', '--languageserver' , '--hostPID', tostring(pid) },
+  }
 
   lspconfig['sumneko_lua'].setup {
     on_attach = on_attach,
