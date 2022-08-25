@@ -85,6 +85,7 @@ do
   map('n', '<Leader>l', ':Telescope live_grep<CR>', mapopts)
   map('n', '<Leader>b', ':Telescope buffers<CR>', mapopts)
   map('n', '<Leader>f', ':Telescope find_files<CR>', mapopts)
+  map('n', '<Leader>r', ':Telescope lsp_document_symbols<CR>', mapopts)
 
   telescope.setup {
     defaults = {
@@ -98,6 +99,7 @@ do
       live_grep = { additional_args = function() return ripgrep_options end },
       find_files = { hidden = true },
       buffers = {
+        sort_mru = true,
         sort_lastused = true,
         mappings = {
           i = {
@@ -139,7 +141,7 @@ do
     map('n', '<Leader>wl', function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts)
-    map('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
+    map('n', '<Leader>gR', vim.lsp.buf.rename, bufopts)
     map('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
     map('n', 'gr', vim.lsp.buf.references, bufopts)
   end
@@ -265,6 +267,20 @@ do
   }
   dap.configurations.javascript = js_configs;
   dap.configurations.typescript = js_configs;
+
+  dap.adapters.netcoredbg = {
+    type = 'executable',
+    command = fn.stdpath('data') .. '/mason/packages/netcoredbg/netcoredbg',
+    args = { '--interpreter=vscode' },
+  }
+  dap.configurations.cs = {
+    {
+      name = 'Attach',
+      type = 'netcoredbg',
+      request = 'attach',
+      processId = require('dap.utils').pick_process,
+    }
+  }
 
   dap.adapters.codelldb = {
     type = 'server',
