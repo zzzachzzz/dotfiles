@@ -1,19 +1,13 @@
 [
     {
-        "command": "vscode-neovim.compositeEscape1",
-        "key": "j",
-        "when": "neovim.mode == insert && editorTextFocus",
-        "args": "j"
-    },
-    {
         "key": "Tab",
         "command": "workbench.action.nextEditor",
-        "when": "neovim.mode == normal && editorTextFocus"
+        "when": "vim.mode == 'Normal' && editorTextFocus"
     },
     {
         "key": "Shift+Tab",
         "command": "workbench.action.previousEditor",
-        "when": "neovim.mode == normal && editorTextFocus"
+        "when": "vim.mode == 'Normal' && editorTextFocus"
     },
     {
         "key": "j",
@@ -36,13 +30,7 @@
     },
     {
         "key": "Ctrl+Space",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "sideBarFocus"
-    },
-    {
-        "key": "Ctrl+Space",
-        "command": "workbench.action.focusSideBar",
-        "when": "!sideBarFocus"
+        "command": "workbench.action.toggleSidebarVisibility"
     },
     {
         "key": "Ctrl+j",

@@ -10,6 +10,7 @@ ln -s ~/git/dotfiles/.pdbrc.py ~/.pdbrc.py
 ln -s ~/git/dotfiles/.vimrc_ide ~/git/dotfiles/sublime/.neovintageousrc
 
 # Linux {{{
+# ln -s ~/git/dotfiles/vscode/ ~/.config/Code/User
 # ln -s ~/git/dotfiles/sublime/ ~/.config/sublime-text/Packages/User
 # }}}
 

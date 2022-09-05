@@ -1,11 +1,29 @@
 {
-    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+    "vim.leader": "<space>",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["u"],
+            "commands": ["undo"]
+        },
+        {
+            "before": ["C-r"],
+            "commands": ["redo"]
+        }
+    ],
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "~/.vimrc",
+    "vim.cursorStylePerMode.insert": "line",
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "block",
     "editor.fontSize": 16,
     "terminal.integrated.fontSize": 16,
-    "editor.fontFamily": "'Roboto Mono'",
-    "terminal.integrated.fontFamily": "'Roboto Mono'",
+    "terminal.integrated.fontFamily": "Inconsolata Nerd Font",
     "editor.tabSize": 2,
     "files.exclude": {
         "node_modules": true
@@ -22,6 +40,6 @@
     "workbench.startupEditor": "none",
     "workbench.list.automaticKeyboardNavigation": false,
     "editor.renderControlCharacters": false,
-    "editor.renderIndentGuides": false,
-    "editor.matchBrackets": false
+    "editor.matchBrackets": "never",
+    "editor.guides.indentation": false,
 }
