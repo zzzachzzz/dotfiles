@@ -80,7 +80,7 @@ nnoremap <silent><expr> <Leader><Space>
 nnoremap <Leader>e :execute 'Explore' expand("%:h")<CR>
 
 " Close buffer without closing window
-command! -bang Bd exe 'b #' | exe 'bd<bang> #'
+command! -bang Bd bp|bd<bang> #
 
 " Spell check & file of added words
 autocmd FileType markdown,gitcommit setlocal spell
