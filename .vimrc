@@ -95,6 +95,8 @@ autocmd BufNewFile,BufFilePre,BufRead Dockerfile* set filetype=dockerfile
 " Use '//' instead of multi-line '/* */' comments
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
+autocmd FileType cs setlocal tabstop=4 shiftwidth=4
+
 " Window Splitting & Moving
 noremap <Leader>s :split<CR>
 noremap <Leader>v :vsplit<CR>
