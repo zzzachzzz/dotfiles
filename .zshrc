@@ -146,7 +146,7 @@ function curls() {
 
   if [ $? -eq 0 ]; then
     local pretty_json
-    pretty_json=$(jq --color-output '.' /tmp/curls_body 2> /dev/null)
+    pretty_json=$(jq $([ -z $nocolor ] && echo '--color-output') '.' /tmp/curls_body 2> /dev/null)
     if [ $? -eq 0 ]; then
       echo $pretty_json
     else
