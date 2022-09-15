@@ -18,6 +18,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'tpope/vim-obsession'
   use 'tpope/vim-surround'
+  use 'tpope/vim-fugitive'
   use 'godlygeek/tabular'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
@@ -427,6 +428,11 @@ vim.g['airline#extensions#tabline#show_splits'] = 0
 vim.g['airline#extensions#tabline#show_close_button'] = 0
 vim.g['airline#extensions#tabline#fnamemod'] = ':t'
 vim.g.airline_section_z = '%l:%c'
+-- Move section b, the git branch, to the right side
+vim.g['airline#extensions#default#layout'] = {
+  { 'a', 'c' },
+  { 'b', 'x', 'y', 'z', 'error', 'warning' },
+}
 -- Truncate the status mode to one capital letter
 vim.g.airline_mode_map = {
   ['__'] = '-',
