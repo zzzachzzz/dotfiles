@@ -15,6 +15,7 @@ require('packer').startup(function(use)
   use 'christoomey/vim-tmux-navigator'
   use 'talek/obvious-resize'
   use 'ludovicchabant/vim-gutentags'
+  use 'vim-scripts/ReplaceWithRegister'
   use 'tpope/vim-commentary'
   use 'tpope/vim-obsession'
   use 'tpope/vim-surround'
