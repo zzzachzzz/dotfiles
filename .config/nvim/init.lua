@@ -121,9 +121,11 @@ end
 
 -- LSP {{{
 do
-  map('n', '<Leader>D', vim.diagnostic.setloclist, mapopts)
-  map('n', '[d', vim.diagnostic.goto_prev, mapopts)
-  map('n', ']d', vim.diagnostic.goto_next, mapopts)
+  whichkey.register({
+    ['<Leader>D'] = { vim.diagnostic.setloclist, 'Show Diagnostics' },
+    [']d'] = { vim.diagnostic.goto_next, 'Next Diagnostic' },
+    ['[d'] = { vim.diagnostic.goto_prev, 'Previous Diagnostic' },
+  })
 
   local on_attach = function(client, bufnr)
     -- Enable completion triggered by <C-x><C-o>
@@ -131,21 +133,29 @@ do
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap = true, silent = true, buffer = bufnr }
-    map('n', 'gd', vim.lsp.buf.definition, bufopts)
-    map('n', 'gtd', vim.lsp.buf.type_definition, bufopts)
-    map('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    map('n', 'gh', vim.lsp.buf.hover, bufopts)
-    map('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    map('i', '<C-h>', vim.lsp.buf.signature_help, bufopts)
-    map('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-    map('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-    map('n', '<Leader>wl', function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, bufopts)
-    map('n', '<Leader>gR', vim.lsp.buf.rename, bufopts)
-    map('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
-    map('n', 'gr', vim.lsp.buf.references, bufopts)
+    map('i', '<C-h>', vim.lsp.buf.signature_help, { noremap = true, buffer = bufnr })
+
+    whichkey.register({
+      ['gd'] = { vim.lsp.buf.definition, 'Goto Definition' },
+      ['gi'] = { vim.lsp.buf.implementation, 'Goto Implementation' },
+      ['gh'] = { vim.lsp.buf.hover, 'Show Hover' },
+
+      ['<Leader>g'] = { name = 'Language Server' },
+      ['<Leader>gt'] = { vim.lsp.buf.type_definition, 'Goto Type Definition' },
+      ['<Leader>gd'] = { vim.lsp.buf.declaration, 'Goto Declaration' },
+      ['<Leader>gh'] = { vim.lsp.buf.signature_help, 'Signature Help' },
+      ['<Leader>gr'] = { vim.lsp.buf.references, 'References' },
+      ['<Leader>gR'] = { vim.lsp.buf.rename, 'Rename' },
+      ['<Leader>ga'] = { vim.lsp.buf.code_action, 'Code Actions' },
+
+      ['<Leader>gw'] = { name = 'Workspace' },
+      ['<Leader>gwa'] = { vim.lsp.buf.add_workspace_folder, 'Add Workspace Folder' },
+      ['<Leader>gwr'] = { vim.lsp.buf.remove_workspace_folder, 'Remove Workspace Folder' },
+      ['<Leader>gwl'] = {
+        function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
+        'List Workspace Folders',
+      },
+    }, { buffer = bufnr })
   end
 
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -228,25 +238,25 @@ do
   require('telescope').load_extension('dap')
 
   whichkey.register({
-   ['<Leader>d'] = { name = 'Debugger' },
-   ['<Leader>db'] = { name = 'Breakpoints' },
-   ['<Leader>dbb'] = { dap.toggle_breakpoint, 'Toggle Breakpoint' },
-   ['<Leader>dbc'] = {
-     function() dap.set_breakpoint(fn.input('Breakpoint condition: ')) end,
-     'Set Conditional Breakpoint'
-   },
-   ['<Leader>dbl'] = { dap.list_breakpoints, 'List Breakpoints' },
-   ['<Leader>dbC'] = { dap.clear_breakpoints, 'Clear All Breakpoints' },
-   ['<Leader>dc'] = { dap.continue, 'Continue' },
-   ['<Leader>dC'] = { dap.run_to_cursor, 'Continue to Cursor' },
-   ['<Leader>dh'] = { dapui.eval, 'Eval Expression' },
-   ['<Leader>do'] = { dap.step_over, 'Step Over' },
-   ['<Leader>di'] = { dap.step_into, 'Step Into' },
-   ['<Leader>dI'] = { dap.step_out, 'Step Out' },
-   ['<Leader>dk'] = { dap.up, 'Stacktrace Up' },
-   ['<Leader>dj'] = { dap.down, 'Stacktrace Down' },
-   ['<Leader>dr'] = { dap.repl.open, 'Repl' },
-   ['<Leader>dt'] = { ':Telescope dap ',  'Telescope dap', silent = false },
+    ['<Leader>d'] = { name = 'Debugger' },
+    ['<Leader>db'] = { name = 'Breakpoints' },
+    ['<Leader>dbb'] = { dap.toggle_breakpoint, 'Toggle Breakpoint' },
+    ['<Leader>dbc'] = {
+      function() dap.set_breakpoint(fn.input('Breakpoint condition: ')) end,
+      'Set Conditional Breakpoint'
+    },
+    ['<Leader>dbl'] = { dap.list_breakpoints, 'List Breakpoints' },
+    ['<Leader>dbC'] = { dap.clear_breakpoints, 'Clear All Breakpoints' },
+    ['<Leader>dc'] = { dap.continue, 'Continue' },
+    ['<Leader>dC'] = { dap.run_to_cursor, 'Continue to Cursor' },
+    ['<Leader>dh'] = { dapui.eval, 'Eval Expression' },
+    ['<Leader>do'] = { dap.step_over, 'Step Over' },
+    ['<Leader>di'] = { dap.step_into, 'Step Into' },
+    ['<Leader>dI'] = { dap.step_out, 'Step Out' },
+    ['<Leader>dk'] = { dap.up, 'Stacktrace Up' },
+    ['<Leader>dj'] = { dap.down, 'Stacktrace Down' },
+    ['<Leader>dr'] = { dap.repl.open, 'Repl' },
+    ['<Leader>dt'] = { ':Telescope dap ',  'Telescope dap', silent = false },
   })
   map('v', '<Leader>dh', dapui.eval, mapopts);
 
