@@ -30,6 +30,7 @@ require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { { 'nvim-lua/plenary.nvim' } } }
   use 'neovim/nvim-lspconfig'
+  use 'Hoffs/omnisharp-extended-lsp.nvim'
   use 'williamboman/mason.nvim'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
@@ -197,6 +198,9 @@ do
   lspconfig['omnisharp'].setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    handlers = {
+      ['textDocument/definition'] = require('omnisharp_extended').handler,
+    },
     cmd = { fn.stdpath('data') .. '/mason/packages/omnisharp/omnisharp', '--languageserver' , '--hostPID', tostring(pid) },
   }
 
