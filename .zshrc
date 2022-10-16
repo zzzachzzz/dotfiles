@@ -86,7 +86,7 @@ compinit
 
 # Edit line in Vim with <C-e> {{{
 autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
+bindkey '^[e' edit-command-line
 # }}}
 
 # Tmux & auto attach to session {{{
