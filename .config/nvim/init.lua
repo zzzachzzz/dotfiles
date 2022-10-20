@@ -88,7 +88,6 @@ do
   map('n', '<Leader>l', ':Telescope live_grep<CR>', mapopts)
   map('n', '<Leader>b', ':Telescope buffers<CR>', mapopts)
   map('n', '<Leader>f', ':Telescope find_files<CR>', mapopts)
-  map('n', '<Leader>r', ':Telescope lsp_document_symbols<CR>', mapopts)
 
   telescope.setup {
     defaults = {
@@ -148,6 +147,8 @@ do
       ['<Leader>gr'] = { vim.lsp.buf.references, 'References' },
       ['<Leader>gR'] = { vim.lsp.buf.rename, 'Rename' },
       ['<Leader>ga'] = { vim.lsp.buf.code_action, 'Code Actions' },
+      ['<Leader>gs'] = { ':Telescope lsp_document_symbols<CR>', 'Document Symbols' },
+      ['<Leader>gS'] = { ':Telescope lsp_dynamic_workspace_symbols<CR>', 'Workspace Symbols' },
 
       ['<Leader>gw'] = { name = 'Workspace' },
       ['<Leader>gwa'] = { vim.lsp.buf.add_workspace_folder, 'Add Workspace Folder' },
