@@ -69,7 +69,7 @@ noremap! <C-r>' <C-r>"
 nnoremap <Leader>i <Tab>
 nnoremap <Leader>a ggVG
 nnoremap <Leader>% :let @+ = expand("%:f")
-nnoremap <silent> <Leader><Tab> :b #<CR>
+nnoremap <silent> <Leader>; :b #<CR>
 nnoremap <silent> <C-n> :cn<CR>
 nnoremap <silent> <C-p> :cp<CR>
 

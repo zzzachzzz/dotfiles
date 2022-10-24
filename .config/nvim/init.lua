@@ -59,6 +59,14 @@ require('mason').setup()
 local whichkey = require('which-key')
 whichkey.setup()
 
+-- vim-tmux-navigator {{{
+vim.g.tmux_navigator_no_mappings = 1
+map('n', '<M-h>', ':<C-U>TmuxNavigateLeft<CR>', mapopts)
+map('n', '<M-j>', ':<C-U>TmuxNavigateDown<CR>', mapopts)
+map('n', '<M-k>', ':<C-U>TmuxNavigateUp<CR>', mapopts)
+map('n', '<M-l>', ':<C-U>TmuxNavigateRight<CR>', mapopts)
+-- }}}
+
 -- Telescope {{{
 do
   local telescope = require 'telescope';
