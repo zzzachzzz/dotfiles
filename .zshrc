@@ -1,8 +1,5 @@
 # Path {{{
 export PATH="/usr/local/bin:$HOME/.local/bin:$HOME/bin:$PATH"
-if uname -s | grep -q "Linux" && [[ -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
-    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-fi
 # }}}
 
 # Oh-My-Zsh {{{
