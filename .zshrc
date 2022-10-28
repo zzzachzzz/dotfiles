@@ -1,5 +1,5 @@
 # Path {{{
-export PATH="/usr/local/bin:$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 # }}}
 
 # Zplug {{{
@@ -88,7 +88,6 @@ alias gl="git log"
 alias clipc="xclip -in -sel clipboard -rmlastnl"
 alias clipp="xclip -out -sel clipboard -rmlastnl"
 
-export CXXFLAGS="-std=c++14"
 export IGNOREEOF=4
 
 # For programs without man pages
