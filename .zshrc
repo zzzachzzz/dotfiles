@@ -31,21 +31,6 @@ zplug load
 bindkey '^y' autosuggest-accept
 # }}}
 
-# Misc. Files to Download if Missing {{{
-files=(
-  ~/.git-prompt.sh  # For __git_ps1
-)
-urls=(
-  https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-)
-for i in {1..$#files}; do
-  if [ ! -f $files[$i] ]; then
-    echo "$files[$i] is missing. Downloading..."
-    curl -fL $urls[$i] --output $files[$i]
-  fi
-done
-unset files urls i
-# }}}
 
 # PS1, Git Prompt, & Enable Colors {{{
 autoload -U colors && colors
