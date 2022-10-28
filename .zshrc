@@ -2,22 +2,12 @@
 export PATH="/usr/local/bin:$HOME/.local/bin:$HOME/bin:$PATH"
 # }}}
 
-# Oh-My-Zsh {{{
-export ZSH=~/.oh-my-zsh
-ZSH_THEME="robbyrussell"
-HYPHEN_INSENSITIVE="true"
-plugins=()
-source $ZSH/oh-my-zsh.sh
-# }}}
-
 # Zplug {{{
 source ~/.zplug/init.zsh
-# Plugins {{{
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
-# }}}
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -27,10 +17,18 @@ fi
 zplug load
 # }}}
 
-# Zsh Plugin Keybinds {{{
-bindkey '^y' autosuggest-accept
+# Keybinds {{{
+bindkey -e # Emacs key bindings
+bindkey '^Y' autosuggest-accept # Ctrl-Y
+bindkey '^[e' edit-command-line # Alt-E
+bindkey '^[[1~' beginning-of-line # Home
+bindkey '^[[4~' end-of-line # End
+bindkey '^U' backward-kill-line # Ctrl-U
+bindkey '^[[3~' delete-char # Delete
+bindkey '^[[Z' reverse-menu-complete # Shift-Tab
+bindkey '^[[1;5C' forward-word # Ctrl-RightArrow
+bindkey '^[[1;5D' backward-word # Ctrl-LeftArrow
 # }}}
-
 
 # PS1, Git Prompt, & Enable Colors {{{
 autoload -U colors && colors
@@ -48,15 +46,13 @@ setopt ignoreeof
 setopt extended_glob
 autoload -Uz compinit
 compinit
+zstyle ':completion:*' menu select
+autoload edit-command-line
+zle -N edit-command-line
 # }}}
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Edit line in Vim with <C-e> {{{
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^[e' edit-command-line
-# }}}
 
 # Tmux & auto attach to session {{{
 function atmux() { tmux new-session -A -s "${1:=main}" }
@@ -93,11 +89,13 @@ alias clipc="xclip -in -sel clipboard -rmlastnl"
 alias clipp="xclip -out -sel clipboard -rmlastnl"
 
 export CXXFLAGS="-std=c++14"
-export LS_COLORS='ow=1;90;107'
 export IGNOREEOF=4
 
 # For programs without man pages
 function manh() { "$@" --help | less }
+alias ls="ls --color=auto"
+alias ll="ls -lh --color=auto"
+alias la="ls -lhA --color=auto"
 
 # Helper function for curl
 function curls() {
