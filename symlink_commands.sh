@@ -19,8 +19,12 @@ ln -s ~/git/dotfiles/.vimrc_ide ~/git/dotfiles/sublime/.neovintageousrc
 # ln -s ~/git/dotfiles/sublime/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 # }}}
 
-# Windows symlinks for WSL (from cmd) {{{
+# Windows {{{
+# Windows symlinks for WSL (from cmd)
 # mklink /D "%UserProfile%\AppData\Roaming\Code\User" "%UserProfile%\_\git\dotfiles\vscode"
 # mklink /D "%UserProfile%\AppData\Roaming\Sublime Text 3\Packages\User" "%UserProfile%\_\git\dotfiles\sublime"
+
+# WSL specific config
+# ln -s ~/git/dotfiles/.wsl.zsh ~/.wsl.zsh
 # }}}
 
