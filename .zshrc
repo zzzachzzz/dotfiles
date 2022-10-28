@@ -1,7 +1,3 @@
-# Path {{{
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-# }}}
-
 # Zplug {{{
 source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -51,27 +47,18 @@ autoload edit-command-line
 zle -N edit-command-line
 # }}}
 
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Tmux & auto attach to session {{{
-function atmux() { tmux new-session -A -s "${1:=main}" }
-# }}}
-
-# FZF use ripgrep and include hidden files
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export FZF_DEFAULT_COMMAND='rg --hidden --ignore-file ~/.ignore --files'
-
-# fd use ignore file
-alias fd='fd --ignore-file ~/.ignore'
-
-# Other {{{
+export IGNOREEOF=4
 export EDITOR="nvim"
+alias fd='fd --ignore-file ~/.ignore'
 alias pm="pacman --color=always"
 alias yay="yay --color=always"
 alias python=python3
 alias mktags="ctags -R --exclude=@$HOME/.ignore --exclude='*.json' --exclude='*.yaml' ."
 alias vim="nvim"
 alias mvim="vim -u NONE" # For quick minimal vim loading no vimrc
+alias vimS="vim -S ~/.config/nvim/sessions/"
 function vims() {
   local filepath="$HOME/.config/nvim/sessions/${PWD##*/}.vim"
   if [ -f $filepath ]; then
@@ -80,21 +67,17 @@ function vims() {
     vim -c "Obsess $filepath"
   fi
 }
-alias vimS="vim -S ~/.config/nvim/sessions/"
 alias gs="git status"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gl="git log"
 alias clipc="xclip -in -sel clipboard -rmlastnl"
 alias clipp="xclip -out -sel clipboard -rmlastnl"
-
-export IGNOREEOF=4
-
-# For programs without man pages
-function manh() { "$@" --help | less }
 alias ls="ls --color=auto"
 alias ll="ls -lh --color=auto"
 alias la="ls -lhA --color=auto"
+function atmux() { tmux new-session -A -s "${1:=main}" }
+function manh() { "$@" --help | less } # For programs without man pages
 
 # Helper function for curl
 function curls() {
@@ -122,8 +105,10 @@ function curls() {
     echo "\n$response_code_and_method"
   fi
 }
-# }}}
 
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # WSL specific config
 [ -f ~/.wsl.zsh ] && source ~/.wsl.zsh
+# Per-machine local config
 [ -f ~/.zshrc-local ] && source ~/.zshrc-local
