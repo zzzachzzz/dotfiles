@@ -43,6 +43,8 @@ setopt extended_glob
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
+# Case insensitive completions
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 autoload edit-command-line
 zle -N edit-command-line
 # }}}
