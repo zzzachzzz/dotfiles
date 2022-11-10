@@ -37,9 +37,9 @@ PS1=$'\n%F{81}%~%F{1} %F{197}// %F{72}$(__git_ps1 "%s")%f\n%B%F{141}$ %k%f%b'
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
+setopt sharehistory
 setopt autocd
 setopt ignoreeof
-setopt extended_glob
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
