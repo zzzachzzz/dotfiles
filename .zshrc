@@ -78,6 +78,7 @@ alias clipp="xclip -out -sel clipboard -rmlastnl"
 alias ls="ls --color=auto"
 alias ll="ls -lh --color=auto"
 alias la="ls -lhA --color=auto"
+alias less="less --raw-control-chars"
 function atmux() { tmux new-session -A -s "${1:=main}" }
 function manh() { "$@" --help | less } # For programs without man pages
 
