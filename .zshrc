@@ -79,6 +79,7 @@ alias ls="ls --color=auto"
 alias ll="ls -lh --color=auto"
 alias la="ls -lhA --color=auto"
 alias less="less --raw-control-chars"
+alias help="run-help"
 function atmux() { tmux new-session -A -s "${1:=main}" }
 function manh() { "$@" --help | less } # For programs without man pages
 
