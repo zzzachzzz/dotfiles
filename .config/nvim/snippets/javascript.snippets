@@ -1,14 +1,11 @@
 snippet logv "console.log('v:', v);" w
         console.log('${1}:', ${1});${0}
-
 snippet afo "Arrow Func One Line" w
         (${1}) => ${0}
-
 snippet afm "Arrow Func Multi Line" w
         (${1}) => {
           ${0}
         }${2:;}
-
 snippet r.c "React Component default export" wb
         import * as React from 'react';
 
@@ -20,15 +17,12 @@ snippet r.c "React Component default export" wb
 
 snippet r.us "React.useState" wb
         const [${1}, set${1/\w+/\u${0}/}] = React.useState(${3:''});${0}
-
 snippet r.ue "React.useEffect" wb
         React.useEffect(() => {
           ${0}
         }, []);
-
 snippet r.ur "React.useRef" wb
         const ${1} = React.useRef(${2:null});${0}
-
 snippet r.sty "Styled Component" wb
         const ${2:${1/^[(.]([\w.]+)\)?$/\u${1}/}} = styled${1:.div}`
           ${0}
