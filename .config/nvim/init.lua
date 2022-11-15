@@ -58,6 +58,8 @@ require('mason').setup()
 
 local whichkey = require('which-key')
 whichkey.setup()
+-- triggers_blacklist doesn't seem to work, this does to have whichkey skip '<' auto mappings
+require('which-key.plugins.presets').operators['<lt>'] = nil
 
 -- vim-tmux-navigator {{{
 vim.g.tmux_navigator_no_mappings = 1
