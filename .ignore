@@ -1,8 +1,10 @@
-.git
-.svn
+.git/
+.svn/
 tags
-node_modules
-[Bb]in
-[Bb]uild
-[Dd]ebug
+node_modules/
+[Bb]in/
+[Bb]uild/
+[Dd]ebug/
+*.lock
+.yarn/
 

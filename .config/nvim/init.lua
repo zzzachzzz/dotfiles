@@ -76,9 +76,9 @@ do
 
   local ripgrep_options = {
     '--hidden',
+    '--ignore-file', '~/.ignore',
     '--smart-case',
-    '--type-add',
-    'js:*.{js,ts,jsx,tsx}',
+    '--type-add', 'js:*.{js,ts,jsx,tsx}',
   }
   vim.opt.grepprg = (function()
     local s = 'rg --vimgrep '
