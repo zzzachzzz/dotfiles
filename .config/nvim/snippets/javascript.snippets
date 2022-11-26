@@ -9,14 +9,14 @@ snippet afm "Arrow Func Multi Line" w
 snippet r.c "React Component default export" wb
         import * as React from 'react';
 
-        const `!p snip.rv = snip.basename` = (${1:props}) => {
+        const ${TM_FILENAME_BASE} = (${1:props}) => {
           ${0}
         };
 
-        export default `!p snip.rv = snip.basename` ;
+        export default ${TM_FILENAME_BASE};
 
 snippet r.us "React.useState" wb
-        const [${1}, set${1/\w+/\u${0}/}] = React.useState(${3:''});${0}
+        const [${1}, set${1/(.*)/${1:/capitalize}/}] = React.useState(${3:''});${0}
 snippet r.ue "React.useEffect" wb
         React.useEffect(() => {
           ${0}
@@ -24,6 +24,6 @@ snippet r.ue "React.useEffect" wb
 snippet r.ur "React.useRef" wb
         const ${1} = React.useRef(${2:null});${0}
 snippet r.sty "Styled Component" wb
-        const ${2:${1/^[(.]([\w.]+)\)?$/\u${1}/}} = styled${1:.div}`
+        const ${2} = styled${1:.div}\`
           ${0}
-        `;
+        \`;
