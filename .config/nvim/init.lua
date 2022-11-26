@@ -38,7 +38,7 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
-  use 'L3MON4D3/LuaSnip'
+  use { 'L3MON4D3/LuaSnip', run = 'make install_jsregexp' }
   use 'saadparwaiz1/cmp_luasnip'
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
