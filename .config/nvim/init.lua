@@ -76,7 +76,7 @@ do
 
   local ripgrep_options = {
     '--hidden',
-    '--ignore-file', '~/.ignore',
+    '--ignore-file', '$HOME/.ignore',
     '--smart-case',
     '--type-add', 'js:*.{js,ts,jsx,tsx}',
   }
@@ -84,7 +84,7 @@ do
     local s = 'rg --vimgrep '
     -- Need to quote some options here
     for _, opt in pairs(ripgrep_options) do
-      s = s .. " '" .. opt .. "'"
+      s = s .. ' "' .. opt .. '"'
     end
     return s
   end)()
