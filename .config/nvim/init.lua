@@ -174,6 +174,9 @@ do
 
   local lspconfig = require 'lspconfig'
 
+  -- NOTE see ':help lspconfig-all' to determine lspconfig['<name>'],
+  -- potentially different from installed language server name.
+
   lspconfig['tsserver'].setup {
     on_attach = on_attach,
     capabilities = capabilities,
