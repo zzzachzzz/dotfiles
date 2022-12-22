@@ -45,6 +45,7 @@ require('packer').startup(function(use)
   use 'nvim-telescope/telescope-dap.nvim'
   use 'rcarriga/cmp-dap'
   use 'folke/which-key.nvim'
+  use 'tamton-aquib/duck.nvim'
 
   if packer_bootstrap then
     require('packer').sync()
@@ -511,8 +512,16 @@ vim.g.gutentags_file_list_command = "rg --files --ignore-file $HOME/.ignore --gl
 -- Colorizer
 vim.api.nvim_create_user_command('CH', 'ColorHighlight', { nargs = 0 })
 
--- Vim-Obsession session saving & session loading {{
+-- Vim-Obsession session saving & session loading {{{
 map('n', '<Leader>O', ':Obsess<Space>~/.config/nvim/sessions/', { noremap = true })
 map('n', '<Leader>o', ':so<Space>~/.config/nvim/sessions/', { noremap = true })
 vim.api.nvim_create_user_command('SessionEcho', 'echo v:this_session', { nargs = 0 })
+-- }}}
+
+-- duck.nvim {{{
+do
+  local duck = require('duck')
+  vim.api.nvim_create_user_command('DuckHatch', function() duck.hatch() end, { nargs = 0 })
+  vim.api.nvim_create_user_command('DuckCook', function() duck.cook() end, { nargs = 0 })
+end
 -- }}}
