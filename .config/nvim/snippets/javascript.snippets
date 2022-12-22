@@ -1,12 +1,14 @@
-snippet logv "console.log('v:', v);" w
+snippet logv console.log('v:', v);
         console.log('${1}:', ${1});${0}
-snippet afo "Arrow Func One Line" w
+snippet logg console.log('');
+        console.log('${1}');${0}
+snippet afo Arrow Func One Line
         (${1}) => ${0}
-snippet afm "Arrow Func Multi Line" w
+snippet afm Arrow Func Multi Line
         (${1}) => {
           ${0}
         }${2:;}
-snippet r.c "React Component default export" wb
+snippet r.c React Component default export
         import * as React from 'react';
 
         const ${TM_FILENAME_BASE} = (${1:props}) => {
@@ -15,15 +17,15 @@ snippet r.c "React Component default export" wb
 
         export default ${TM_FILENAME_BASE};
 
-snippet r.us "React.useState" wb
+snippet r.us React.useState
         const [${1}, set${1/(.*)/${1:/capitalize}/}] = React.useState(${3:''});${0}
-snippet r.ue "React.useEffect" wb
+snippet r.ue React.useEffect
         React.useEffect(() => {
           ${0}
         }, []);
-snippet r.ur "React.useRef" wb
+snippet r.ur React.useRef
         const ${1} = React.useRef(${2:null});${0}
-snippet r.sty "Styled Component" wb
+snippet r.sty Styled Component
         const ${2} = styled${1:.div}\`
           ${0}
         \`;
