@@ -6,6 +6,7 @@
   excludesfile = ~/.gitignore_global
   autocrlf = input
   ignorecase = false
+  pager = less -F -X
 
 [alias]
   pushF = push --force-with-lease
