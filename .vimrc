@@ -34,6 +34,7 @@ set history=10000
 
 inoremap jk <Esc>
 cnoremap jk <C-c>
+tnoremap jk <C-\><C-n>
 noremap J 5j
 noremap K 5k
 noremap W 5w
