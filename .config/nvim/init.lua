@@ -518,6 +518,9 @@ map('n', '<Leader>o', ':so<Space>~/.config/nvim/sessions/', { noremap = true })
 vim.api.nvim_create_user_command('SessionEcho', 'echo v:this_session', { nargs = 0 })
 -- }}}
 
+-- Vim-Fugitive
+vim.cmd [[cnoreabbrev git Git]]
+
 -- duck.nvim {{{
 do
   local duck = require('duck')
