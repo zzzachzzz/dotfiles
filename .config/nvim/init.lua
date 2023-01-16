@@ -519,7 +519,7 @@ vim.api.nvim_create_user_command('SessionEcho', 'echo v:this_session', { nargs =
 -- }}}
 
 -- Vim-Fugitive
-vim.cmd [[cnoreabbrev git Git]]
+vim.cmd [[cnoreabbrev <expr> git getcmdpos() <= 4 \|\| getcmdline()[-4:-4] == ' ' ? 'Git' : 'git']]
 
 -- duck.nvim {{{
 do
