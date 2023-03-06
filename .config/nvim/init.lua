@@ -187,7 +187,10 @@ do
         if vim.tbl_islist(result) and #result > 1 then
           local filtered_result = {}
           for k, v in pairs(result) do
-            if string.match(v.targetUri, '%.d.ts') == nil then
+            if (
+              (v.uri and string.match(v.uri, '%.d.ts') == nil)
+              or (v.targetUri and string.match(v.targetUri, '%.d.ts') == nil)
+            ) then
               table.insert(filtered_result, v)
             end
           end
