@@ -222,7 +222,7 @@ do
     cmd = { fn.stdpath('data') .. '/mason/packages/omnisharp/omnisharp', '--languageserver' , '--hostPID', tostring(pid) },
   }
 
-  lspconfig['sumneko_lua'].setup {
+  lspconfig['lua_ls'].setup {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
