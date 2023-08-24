@@ -11,6 +11,7 @@
 [alias]
   pushF = push --force-with-lease
   logg = log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(magenta)%d%C(reset)'
+  b = branch
 
 [commit]
   cleanup = scissors
