@@ -84,8 +84,7 @@ nnoremap <Leader>e :execute 'Explore' expand("%:h")<CR>
 " Close buffer without closing window
 command! -bang Bd bp|bd<bang> #
 
-" Spell check & file of added words
-autocmd FileType markdown,gitcommit setlocal spell
+" Set spellfile with added words, need to call :setlocal spell
 set spellfile=~/.config/nvim/spell.utf-8.add
 
 " Enable native syntax highlight for .md files
