@@ -524,6 +524,9 @@ vim.api.nvim_create_user_command('SessionEcho', 'echo v:this_session', { nargs =
 -- Vim-Fugitive
 vim.cmd [[cnoreabbrev <expr> git getcmdpos() <= 4 \|\| getcmdline()[-4:-4] == ' ' ? 'Git' : 'git']]
 
+-- tabular
+vim.cmd [[cnoreabbrev Tabz Tabularize/,\zs]]
+
 -- duck.nvim {{{
 do
   local duck = require('duck')
