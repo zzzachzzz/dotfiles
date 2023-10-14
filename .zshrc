@@ -51,7 +51,7 @@ autoload edit-command-line
 zle -N edit-command-line
 # }}}
 
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 export FZF_DEFAULT_COMMAND='rg --hidden --ignore-file ~/.ignore --files'
 export IGNOREEOF=4
 export EDITOR="nvim"
