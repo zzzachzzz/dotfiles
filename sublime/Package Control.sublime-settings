@@ -1,18 +1,18 @@
 {
-  "bootstrapped": true,
-  "in_process_packages":
-  [
-  ],
-  "install_prereleases":
-  [
-    "NeoVintageous"
-  ],
-  "installed_packages":
-  [
-    "NeoVintageous",
-    "Package Control",
-    "PackageResourceViewer",
-    "Pretty JSON",
-    "SideBarEnhancements",
-  ],
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"install_prereleases":
+	[
+		"NeoVintageous"
+	],
+	"installed_packages":
+	[
+		"NeoVintageous",
+		"Package Control",
+		"PackageResourceViewer",
+		"Pretty JSON",
+		"SideBarEnhancements"
+	]
 }
