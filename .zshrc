@@ -83,6 +83,8 @@ alias less="less --raw-control-chars"
 alias help="run-help"
 function atmux() { tmux new-session -A -s "${1:=main}" }
 function manh() { "$@" --help | less } # For programs without man pages
+alias apts='apt search --names-only'
+alias dsf=diff-so-fancy
 
 # Helper function for curl
 function curls() {
