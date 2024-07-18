@@ -10,7 +10,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
-require('packer').startup(function(use)
+require('packer').startup({ function(use)
   use 'wbthomason/packer.nvim'
   use 'christoomey/vim-tmux-navigator'
   use 'talek/obvious-resize'
@@ -50,7 +50,11 @@ require('packer').startup(function(use)
   if packer_bootstrap then
     require('packer').sync()
   end
-end)
+end,
+config = {
+  snapshot_path = fn.stdpath('config') .. '/packer-snapshots',
+  snapshot = 'stable.json'
+} })
 
 local mapopts = { noremap = true, silent = true }
 local map = vim.keymap.set;
