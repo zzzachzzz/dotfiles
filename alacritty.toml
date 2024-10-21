@@ -1,4 +1,4 @@
-import = ['C:\Users\zach\AppData/Roaming/alacritty/alacritty-windows.toml']
+import = ['~/AppData/Roaming/alacritty/alacritty-windows.toml']
 live_config_reload = true
 
 [colors.bright]
