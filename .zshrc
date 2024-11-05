@@ -113,6 +113,18 @@ function curls() {
   fi
 }
 
+function towslpath() {
+  python3 << EOF
+import re
+winpath = r'$1'
+driveletter = re.match(r'^\w', winpath)
+assert driveletter is not None
+wslpath = re.sub(r'^\w:', f'/mnt/{driveletter.group(0).lower()}', winpath)
+wslpath = re.sub(r'\\\\', '/', wslpath)
+print(wslpath)
+EOF
+}
+
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # WSL specific config
