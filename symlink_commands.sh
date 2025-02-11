@@ -10,18 +10,30 @@ ln -s ~/git/dotfiles/.pdbrc.py ~/.pdbrc.py
 ln -s ~/git/dotfiles/.vimrc_ide ~/git/dotfiles/sublime/.neovintageousrc
 
 # Linux {{{
-# ln -s ~/git/dotfiles/vscode/ ~/.config/Code/User
+# VSCode
+# ln -s ~/git/dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+# ln -s ~/git/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
+
+# Sublime
 # ln -s ~/git/dotfiles/sublime/ ~/.config/sublime-text/Packages/User
 # }}}
 
 # OSX {{{
-# ln -s ~/git/dotfiles/vscode/ ~/Library/Application\ Support/Code/User
+# VSCode
+# ln -s ~/git/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+# ln -s ~/git/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+# Sublime
 # ln -s ~/git/dotfiles/sublime/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 # }}}
 
 # Windows {{{
-# Windows symlinks for WSL (from cmd)
-# mklink /D "%UserProfile%\AppData\Roaming\Code\User" "%UserProfile%\_\git\dotfiles\vscode"
+# Windows symlinks (from cmd)
+# VSCode
+# mklink "%UserProfile%\AppData\Roaming\Code\User\keybindings.json" "%UserProfile%\git\dotfiles\vscode\keybindings.json"
+# mklink "%UserProfile%\AppData\Roaming\Code\User\settings.json" "%UserProfile%\git\dotfiles\vscode\settings.json"
+
+# Sublime
 # mklink /D "%UserProfile%\AppData\Roaming\Sublime Text 3\Packages\User" "%UserProfile%\_\git\dotfiles\sublime"
 
 # WSL specific config
