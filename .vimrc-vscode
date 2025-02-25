@@ -1,0 +1,31 @@
+source ~/.vimrc
+source ~/_vimrc
+
+" Below is: noremap < ,
+" noremap <lt> ,
+" works with vscode:
+noremap < ,
+
+nnoremap g/ gcc
+vnoremap g/ gc
+
+nnoremap <silent> <Leader><Space> :vsc workbench.action.toggleSidebarVisibility<CR>
+command! ToggleActivityBar :vsc workbench.action.toggleActivityBarVisibility<CR>
+nnoremap <silent> <Leader>f :vsc workbench.action.quickOpen<CR>
+nnoremap <silent> <Leader>F :vsc workbench.action.findInFiles<CR>
+nnoremap <silent> <Leader>l :vsc workbench.action.quickTextSearch<CR>
+nnoremap <silent> <c-]> :vsc editor.action.marker.nextInFiles<CR>
+nnoremap <silent> <c-[> :vsc editor.action.marker.prevInFiles<CR>
+nnoremap <silent> <Leader>gD :vsc workbench.actions.view.problems<CR>
+nnoremap <silent> <Leader>gt :vsc editor.action.goToTypeDefinition<CR>
+nnoremap <silent> <Leader>gi :vsc references-view.findImplementations<CR>
+nnoremap <silent> <Leader>gr :vsc references-view.findReferences<CR>
+nnoremap <silent> <Leader>gR :vsc editor.action.rename<CR>
+nnoremap <silent> <Leader>gs :vsc workbench.action.gotoSymbol<CR>
+nnoremap <silent> <Leader>gS :vsc workbench.action.showAllSymbols<CR>
+nunmap <Leader>%
+nnoremap <silent> <Leader>% :vsc copyRelativeFilePath<CR>
+nnoremap <silent> <Leader>b :vsc workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup<CR>
+nunmap <Leader>e
+nnoremap <silent> <Leader>e :vsc workbench.files.action.showActiveFileInExplorer<CR>
+
