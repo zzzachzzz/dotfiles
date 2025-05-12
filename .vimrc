@@ -14,6 +14,7 @@ catch /^Vim\%((\a\+)\)\=:E185:/
 endtry
 set cursorline
 set ignorecase
+set smartcase
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -31,6 +32,8 @@ au BufEnter * set fo-=c fo-=r fo-=o
 set nohlsearch
 set timeoutlen=500
 set history=10000
+
+let mapleader = " "
 
 inoremap jk <Esc>
 cnoremap jk <C-c>
@@ -53,14 +56,16 @@ noremap <lt> ,
 noremap , ;
 xnoremap <Tab> >gv
 xnoremap <S-Tab> <gv
-
-let mapleader = " "
+nnoremap <Leader>U /[A-Z]<CR>
 
 " Yank and paste using system clipboard.
 noremap <Leader>y "+y
 noremap <Leader>Y "+Y
 noremap <Leader>p "+p
 noremap <Leader>P "+P
+noremap <Leader>d "+d
+noremap <Leader>D "+D
+noremap <Leader>C "+C
 
 noremap <Leader>t :tabedit<Space>
 " Paste in insert and command line modes
