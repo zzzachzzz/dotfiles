@@ -70,15 +70,27 @@ function vims() {
     vim -c "Obsess $filepath"
   fi
 }
+# git {{{
 alias gs="git status"
 alias gd="git diff"
 alias gdc="git diff --cached"
+gitwd="--word-diff=color --word-diff-regex=."
 alias gl="git log"
+alias gb="git branch --sort=committerdate | tac | head"
+alias grevparsehead="git rev-parse --abbrev-ref HEAD"
+alias ghead=grevparsehead
+function gheador() {
+  echo "origin/$(grevparsehead)"
+}
+# }}}
 alias clipc="xclip -in -sel clipboard -rmlastnl"
 alias clipp="xclip -out -sel clipboard -rmlastnl"
 alias ls="ls --color=auto"
 alias ll="ls -lh --color=auto"
 alias la="ls -lhA --color=auto"
+function lst() {
+  ls -t "$@" | head
+}
 alias less="less --raw-control-chars"
 alias help="run-help"
 function atmux() { tmux new-session -A -s "${1:=main}" }
