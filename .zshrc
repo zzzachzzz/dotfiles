@@ -70,6 +70,7 @@ function vims() {
     vim -c "Obsess $filepath"
   fi
 }
+
 # git {{{
 alias gs="git status"
 alias gd="git diff"
@@ -82,7 +83,11 @@ alias ghead=grevparsehead
 function gheador() {
   echo "origin/$(grevparsehead)"
 }
+function cpgitshorthash() {
+  git show --oneline -s "$@" | awk '{print $1}' | clipc
+}
 # }}}
+
 alias clipc="xclip -in -sel clipboard -rmlastnl"
 alias clipp="xclip -out -sel clipboard -rmlastnl"
 alias ls="ls --color=auto"
@@ -134,6 +139,31 @@ assert driveletter is not None
 wslpath = re.sub(r'^\w:', f'/mnt/{driveletter.group(0).lower()}', winpath)
 wslpath = re.sub(r'\\\\', '/', wslpath)
 print(wslpath)
+EOF
+}
+
+function snake_to_camel() {
+  echo "$1" | awk -F'_' '{
+    for (i = 1; i <= NF; i++) {
+      if (i == 1) {
+        printf "%s", $i
+      } else {
+        printf "%s%s", toupper(substr($i, 1, 1)), substr($i, 2)
+      }
+    }
+    print ""
+  }'
+}
+
+function camel_to_snake() {
+  echo "$1" | sed -E 's/([a-z0-9])([A-Z])/\1_\L\2/g' | sed -E 's/^([A-Z])/\L\1/'
+}
+
+function mockingspongebob() {
+  python << EOF
+s = r'$1'
+mocked = ''.join(char.lower() if i % 2 == 0 else char.upper() for i, char in enumerate(s))
+print(mocked)
 EOF
 }
 
