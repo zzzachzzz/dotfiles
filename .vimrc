@@ -32,6 +32,9 @@ au BufEnter * set fo-=c fo-=r fo-=o
 set nohlsearch
 set timeoutlen=500
 set history=10000
+set norelativenumber
+command! Relativenumber :set invrelativenumber
+cnoreabbrev <expr> rel getcmdpos() <= 4 ? 'Rel' : 'rel'
 
 let mapleader = " "
 
