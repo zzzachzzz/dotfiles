@@ -23,7 +23,7 @@ white = "#C6C6C4"
 yellow = "#FFD700"
 
 [colors.primary]
-background = "#000000"
+background = "#2F2F2F"
 foreground = "#C6C6C4"
 
 [cursor.style]
@@ -49,7 +49,7 @@ mods = "Control"
 [window]
 decorations = "full"
 dynamic_title = false
-opacity = 0.8
+opacity = 1.0
 startup_mode = "Windowed"
 title = "Alacritty"
 option_as_alt = "Both"
