@@ -1,3 +1,4 @@
+[general]
 import = ['~/AppData/Roaming/alacritty/alacritty-windows.toml']
 live_config_reload = true
 
@@ -51,3 +52,4 @@ dynamic_title = false
 opacity = 0.8
 startup_mode = "Windowed"
 title = "Alacritty"
+
