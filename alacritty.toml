@@ -52,4 +52,5 @@ dynamic_title = false
 opacity = 0.8
 startup_mode = "Windowed"
 title = "Alacritty"
+option_as_alt = "Both"
 
