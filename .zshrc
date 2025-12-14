@@ -168,6 +168,13 @@ print(mocked)
 EOF
 }
 
+function nvim_packer_plugin_versions() {
+  local data_home="${XDG_DATA_HOME:-$HOME/.local/share}"
+  for d in "$data_home/nvim/site/pack/packer/start/"*; do
+    echo "$(basename "$d")==$(git -C "$d" rev-parse --short HEAD)"
+  done
+}
+
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # WSL specific config
