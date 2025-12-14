@@ -10,6 +10,9 @@ ln -s ~/git/dotfiles/.pdbrc.py ~/.pdbrc.py
 ln -s ~/git/dotfiles/.vimrc_ide ~/git/dotfiles/sublime/.neovintageousrc
 
 # Linux {{{
+# Alacritty
+#ln -s ~/git/dotfiles/alacritty.toml ${XDG_CONFIG_HOME:-$HOME/.config}/alacritty/
+
 # VSCode
 # ln -s ~/git/dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 # ln -s ~/git/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
