@@ -75,7 +75,8 @@ function vims() {
 alias gs="git status"
 alias gd="git diff"
 alias gdc="git diff --cached"
-gitwd="--word-diff=color --word-diff-regex=."
+# To include regex (--word-diff-regex=.), do `$gitwd=.`
+gitwd="--color-words"
 alias gl="git log"
 alias gb="git branch --sort=committerdate | tac | head"
 alias grevparsehead="git rev-parse --abbrev-ref HEAD"
