@@ -1,7 +1,7 @@
-.config/nvim/plugin/
-.config/nvim/sessions/*
-!.config/nvim/sessions/.gitkeep
-.config/nvim/spell.utf-8.add.spl
+nvim/plugin/
+nvim/sessions/*
+!nvim/sessions/.gitkeep
+nvim/spell.utf-8.add.spl
 
 sublime/*
 !sublime/*.sublime-keymap
