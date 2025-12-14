@@ -27,7 +27,7 @@ require('packer').startup({ function(use)
   use 'HerringtonDarkholme/yats.vim'
   use 'maxmellon/vim-jsx-pretty'
   use 'ryanoasis/vim-devicons'
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  use { 'nvim-telescope/telescope.nvim',
         requires = { { 'nvim-lua/plenary.nvim' } } }
   use 'neovim/nvim-lspconfig'
   use 'Hoffs/omnisharp-extended-lsp.nvim'
