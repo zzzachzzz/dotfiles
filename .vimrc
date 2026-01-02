@@ -35,6 +35,7 @@ set history=10000
 set norelativenumber
 command! Relativenumber :set invrelativenumber
 cnoreabbrev <expr> rel getcmdpos() <= 4 ? 'Rel' : 'rel'
+command! Cdpwd :cd %:p:h
 
 let mapleader = " "
 
