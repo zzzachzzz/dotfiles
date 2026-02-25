@@ -34,8 +34,12 @@ set timeoutlen=500
 set history=10000
 set norelativenumber
 command! Relativenumber :set invrelativenumber
-cnoreabbrev <expr> rel getcmdpos() <= 4 ? 'Rel' : 'rel'
+cnoreabbrev <expr> rel CmdAbbrev('rel', 'Rel')
 command! Cdpwd :cd %:p:h
+
+function! CmdAbbrev(from, to) abort
+  return getcmdline() =~# '^' . a:from . '\>' ? a:to : a:from
+endfunction
 
 let mapleader = " "
 
