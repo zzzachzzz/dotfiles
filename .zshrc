@@ -60,7 +60,7 @@ alias pm="pacman --color=always"
 alias yay="yay --color=always"
 alias mktags="ctags -R --exclude=@$HOME/.ignore --exclude='*.json' --exclude='*.yaml' ."
 alias vim="nvim"
-alias mvim="vim -u NONE" # For quick minimal vim loading no vimrc
+alias vim.novimrc="vim -u NONE"
 alias vimS="vim -S ~/.config/nvim/sessions/"
 function vims() {
   local filepath="$HOME/.config/nvim/sessions/${PWD##*/}.vim"
