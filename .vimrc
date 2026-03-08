@@ -38,7 +38,9 @@ cnoreabbrev <expr> rel CmdAbbrev('rel', 'Rel')
 command! Cdpwd :cd %:p:h
 
 function! CmdAbbrev(from, to) abort
-  return getcmdline() =~# '^' . a:from . '\>' ? a:to : a:from
+  " See `:h getcmdline` for guidance on debugging with mapping: `:cmap <F7> <C-\>eescape(getcmdline(), ' \')<CR>`
+  let l:cmdline_range_stripped = substitute(getcmdline(), "^'<,'>", '', '')
+  return cmdline_range_stripped =~# '^' . a:from . '\>' ? a:to : a:from
 endfunction
 
 let mapleader = " "
