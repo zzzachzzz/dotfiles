@@ -73,11 +73,13 @@ function vims() {
 }
 
 # git {{{
+alias g=git
 alias gs="git status"
 alias gd="git diff"
 alias gdc="git diff --cached"
 # To include regex (--word-diff-regex=.), do `$gitwd=.`
 gitwd="--color-words"
+wd="$gitwd"
 alias gl="git log"
 alias gb="git branch --sort=committerdate | tac | head"
 alias grevparsehead="git rev-parse --abbrev-ref HEAD"
