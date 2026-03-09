@@ -15,6 +15,23 @@
   logg = log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(magenta)%d%C(reset)'
   b = branch
   adda = add -A
+  co = checkout
+  s = status
+  d = diff
+  dc = diff --cached
+  head = !git rev-parse --abbrev-ref HEAD
+  heador = !echo "origin/$(git head)"
+  cmp = !echo "origin/main"
+  cmp-merge-base = !git merge-base HEAD "$(git cmp)"
+  # dcmp = !git diff "$(git cmp)"...
+  # This variant allows the args to be placed right after the '...' (no space)
+  dcmp = "!f() { git diff \"$(git cmp)\"...\"$@\"; }; f"
+  rebcmp = !git rebase -i "$(git cmp)"
+  reb = !git rebase -i "$(git cmp-merge-base)"
+  rc = rebase --continue
+  bak = !git branch "$(git head).bak"
+  showd = show --format=""
+  f = fetch --prune
 
 [commit]
   cleanup = scissors
