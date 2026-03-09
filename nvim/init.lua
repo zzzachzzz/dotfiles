@@ -529,7 +529,8 @@ vim.api.nvim_create_user_command('SessionEcho', 'echo v:this_session', { nargs =
 vim.cmd [[cnoreabbrev <expr> git getcmdpos() <= 4 \|\| getcmdline()[-4:-4] == ' ' ? 'Git' : 'git']]
 
 -- tabular
-vim.cmd [[cnoreabbrev Tabz Tabularize/,\zs]]
+vim.cmd [[cnoreabbrev <expr> tabz CmdAbbrev('tabz', 'Tabularize/,\zs')]]
+vim.cmd [[cnoreabbrev <expr> tabu CmdAbbrev('tabu', 'Tabularize/')]]
 
 -- duck.nvim {{{
 do
