@@ -12,6 +12,8 @@
   pushF = push --force-with-lease
   pushU = push origin HEAD -u
   ffmerge = merge --ff-only
+  # Like `ffmerge`, but for fast-forwarding other branches that are not checked out
+  sync = "!f() { if [ \"$#\" -lt 1 ]; then echo 'Missing branch arg'; return 1; fi; git fetch . origin/$1:$1; }; f"
   logg = log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(magenta)%d%C(reset)'
   b = branch
   adda = add -A
@@ -19,9 +21,9 @@
   s = status
   d = diff
   dc = diff --cached
-  head = !git rev-parse --abbrev-ref HEAD
+  head = branch --show-current
   heador = !echo "origin/$(git head)"
-  cmp = !echo "origin/main"
+  cmp = !echo "${GIT_CMP:-origin/main}"
   cmp-merge-base = !git merge-base HEAD "$(git cmp)"
   # dcmp = !git diff "$(git cmp)"...
   # This variant allows the args to be placed right after the '...' (no space)
