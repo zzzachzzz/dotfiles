@@ -1,3 +1,5 @@
+# vim: set ft=gitconfig :
+
 [user]
   name = zzzachzzz
   email = zach1rosen@gmail.com
@@ -8,9 +10,33 @@
   pager = less -F -X
 
 [alias]
+  which = "!f() { git config get alias.$@; }; f"
+
+  head = rev-parse --abbrev-ref @
+  upstream = rev-parse --abbrev-ref @{u}
+  base = !echo "${GIT_BASE:-origin/main}"
+  baselocal = !git base | sed 's/^origin\\///'
+
+  # This variant allows the args to be placed right after the '..' (no space),
+  # which allows you to specify another '.' for a '...' merge-base diff, or other branch, etc.
+  dupstream = "!f() { git diff \"$(git upstream)\"..\"$@\"; }; f"
+  dbase = "!f() { git diff \"$(git base)\"..\"$@\"; }; f"
+  dbaselocal = "!f() { git diff \"$(git baselocal)\"..\"$@\"; }; f"
+
+  base-merge-base = !git merge-base HEAD "$(git base)"
+  setbase = "!f() { if [ \"$#\" -lt 1 ]; then echo 'Missing branch arg'; return 1; fi; git config set --local alias.base \"!echo 'origin/$1'\"; }; f"
+
+  rebbase = !git rebase -i "$(git base)"
+  reb = !git rebase -i "$(git base-merge-base)"
+  rc = rebase --continue
+
   pushF = push --force-with-lease
   pushU = push origin HEAD -u
   ffmerge = merge --ff-only
+  # Like `ffmerge`, but for fast-forwarding other branches that are not checked out
+  sync = "!f() { if [ \"$#\" -lt 1 ]; then echo 'Missing branch arg'; return 1; fi; git fetch . origin/$1:$1; }; f"
+  syncbase = !git sync "$(git baselocal)"
+  boar = !git fetch origin && git syncbase && git switch "$(git baselocal)"
   logg = log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(magenta)%d%C(reset)'
   b = branch
   adda = add -A
@@ -18,16 +44,6 @@
   s = status
   d = diff
   dc = diff --cached
-  head = !git rev-parse --abbrev-ref HEAD
-  heador = !echo "origin/$(git head)"
-  cmp = !echo "origin/main"
-  cmp-merge-base = !git merge-base HEAD "$(git cmp)"
-  # dcmp = !git diff "$(git cmp)"...
-  # This variant allows the args to be placed right after the '...' (no space)
-  dcmp = "!f() { git diff \"$(git cmp)\"...\"$@\"; }; f"
-  rebcmp = !git rebase -i "$(git cmp)"
-  reb = !git rebase -i "$(git cmp-merge-base)"
-  rc = rebase --continue
   bak = !git branch "$(git head).bak"
   showd = show --format=""
   f = fetch --prune
