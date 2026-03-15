@@ -92,6 +92,7 @@ function cpgitshorthash() {
 }
 # }}}
 
+# misc {{{
 alias clipc="xclip -in -sel clipboard -rmlastnl"
 alias clipp="xclip -out -sel clipboard -rmlastnl"
 alias ls="ls --color=auto"
@@ -106,6 +107,8 @@ function atmux() { tmux new-session -A -s "${1:=main}" }
 function manh() { "$@" --help | less } # For programs without man pages
 alias apts='apt search --names-only'
 alias dsf=diff-so-fancy
+alias npmscripts='jq .scripts package.json'
+# }}}
 
 # Helper function for curl
 function curls() {
