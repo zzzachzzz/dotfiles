@@ -4,8 +4,7 @@ ln -s ~/git/dotfiles/.vimrc ~/.vimrc
 ln -s ~/git/dotfiles/nvim/ ~/.config/nvim
 ln -s ~/git/dotfiles/custom_base16_monokai.vim "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/pack/packer/start/vim-airline-themes/autoload/airline/themes/"
 ln -s ~/git/dotfiles/.ignore ~/.ignore
-ln -s ~/git/dotfiles/.gitignore_global ~/.gitignore_global
-ln -s ~/git/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/git/dotfiles/git/ ~/.config/git
 ln -s ~/git/dotfiles/.pdbrc.py ~/.pdbrc.py
 ln -s ~/git/dotfiles/.vimrc_ide ~/git/dotfiles/sublime/.neovintageousrc
 
