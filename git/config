@@ -13,6 +13,8 @@
   ffmerge = merge --ff-only
   # Like `ffmerge`, but for fast-forwarding other branches that are not checked out
   sync = "!f() { if [ \"$#\" -lt 1 ]; then echo 'Missing branch arg'; return 1; fi; git fetch . origin/$1:$1; }; f"
+  synccmp = !git sync "$(git cmplocal)"
+  boar = !git fetch origin && git synccmp && git switch "$(git cmplocal)"
   logg = log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(magenta)%d%C(reset)'
   b = branch
   adda = add -A
@@ -23,6 +25,8 @@
   head = branch --show-current
   heador = !echo "origin/$(git head)"
   cmp = !echo "${GIT_CMP:-origin/main}"
+  setcmp = "!f() { if [ \"$#\" -lt 1 ]; then echo 'Missing branch arg'; return 1; fi; git config set --local alias.cmp \"!echo 'origin/$1'\"; }; f"
+  cmplocal = !git cmp | sed 's/^origin\\///'
   cmp-merge-base = !git merge-base HEAD "$(git cmp)"
   # dcmp = !git diff "$(git cmp)"...
   # This variant allows the args to be placed right after the '...' (no space)
